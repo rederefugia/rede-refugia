@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+
+import localization from "../../utils/localization";
 
 /**
  * @memberof Screens
@@ -9,7 +11,7 @@ import { StyleSheet, View, Text, Button } from 'react-native';
 const SettingsScreen = () => {
     return (
         <View style={styles.view}>
-            <Text>Settings Screen</Text>
+            <Text>{localization.t('settings')}</Text>
         </View>
     );
 };

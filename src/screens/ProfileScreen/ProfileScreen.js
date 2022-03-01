@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
+import localization from "../../utils/localization";
+
 /**
  * @memberof Screens
  * @name ProfileScreen
@@ -9,7 +11,7 @@ import { StyleSheet, View, Text } from 'react-native';
 const ProfileScreen = () => {
     return (
         <View style={styles.view}>
-            <Text>Profile Screen</Text>
+            <Text>{localization.t('profile')}</Text>
         </View>
     );
 };

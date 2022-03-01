@@ -1,8 +1,9 @@
 import { useWindowDimensions } from "react-native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
-import { Ionicons, FontAwesome } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 
+import localization from "../utils/localization";
 import screens from "../screens";
 
 const Drawer = createDrawerNavigator();
@@ -17,32 +18,32 @@ const PrivateNavigation = () => {
 
   return (
     <Drawer.Navigator
-      initialRouteName="Home"
+      initialRouteName={localization.t('home')}
       screenOptions={{
         drawerType: isLargeScreen ? "permanent" : "front",
       }}
     >
       <Drawer.Screen
-        name="Home"
+        name={localization.t('home')}
         component={screens.HomeScreen}
         options={{
-          drawerLabel: "Home",
+          drawerLabel: localization.t('home'),
           drawerIcon: (config) => <FontAwesome name="home" size={18} />,
         }}
       />
       <Drawer.Screen
-        name="Profile"
+        name={localization.t('profile')}
         component={screens.ProfileScreen}
         options={{
-          drawerLabel: "Profile",
+          drawerLabel: localization.t('profile'),
           drawerIcon: (config) => <FontAwesome name="user" size={18} />,
         }}
       />
       <Drawer.Screen
-        name="Settings"
+        name={localization.t('settings')}
         component={screens.SettingsScreen}
         options={{
-          drawerLabel: "Settings",
+          drawerLabel: localization.t('settings'),
           drawerIcon: (config) => <FontAwesome name="cogs" size={18} />,
         }}
       />

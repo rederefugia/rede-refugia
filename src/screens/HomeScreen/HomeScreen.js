@@ -1,19 +1,17 @@
 import * as React from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+
+import localization from "../../utils/localization";
 
 /**
  * @memberof Screens
  * @name HomeScreen
  * @description It implemets the Home Screen page
  */
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = () => {
     return (
         <View style={styles.view}>
-            <Text>Home Screen</Text>
-            <Button
-                title="Go to Profile"
-                onPress={() => navigation.navigate('Profile')}
-            />
+            <Text>{localization.t('home')}</Text>
         </View>
     );
 };
