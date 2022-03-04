@@ -1,7 +1,3 @@
-import PrivateNavigation from "./PrivateNavigation";
-import PublicNavigation from "./PublicNavigation";
+import navigator from "./Navigator";
 
-export default {
-  PrivateNavigation,
-  PublicNavigation,
-};
+export const Navigator = navigator;

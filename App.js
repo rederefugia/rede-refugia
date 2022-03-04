@@ -1,17 +1,17 @@
 import "react-native-gesture-handler";
 
-import { NavigationContainer } from "@react-navigation/native";
 import { Provider as PaperProvide } from "react-native-paper";
 
-import navigation from "./src/navigation";
+import providers from "./src/providers";
+import { Navigator } from "./src/navigation";
 import theme from "./src/utils/theme";
 
 export default function App() {
   return (
-    <PaperProvide theme={theme.DefaultTheme}>
-      <NavigationContainer theme={theme.DefaultTheme}>
-        <navigation.PublicNavigation />
-      </NavigationContainer>
-    </PaperProvide>
+    <providers.auth.AuthProvider>
+      <PaperProvide theme={theme.DefaultTheme}>
+        <Navigator theme={theme.DefaultTheme} />
+      </PaperProvide>
+    </providers.auth.AuthProvider>
   );
 }
