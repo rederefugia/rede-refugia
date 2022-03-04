@@ -28,6 +28,13 @@ export const AuthProvider = ({ children }) => {
             console.error(e);
           }
         },
+        logout: async () => {
+          try {
+            await firebase.auth().signOut();
+          } catch (e) {
+            console.error(e);
+          }
+        },
       }}
     >
       {children}
