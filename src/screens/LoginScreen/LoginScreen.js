@@ -2,17 +2,25 @@ import * as React from "react";
 import { StyleSheet, View } from "react-native";
 import { TextInput, Button, HelperText, Card } from "react-native-paper";
 
+import providers from "../../providers";
+
 /**
  * @memberof Screens
  * @name LoginScreen
  * @description It implemets the Login Screen page
  */
 const LoginScreen = () => {
+  const { login } = React.useContext(providers.auth.AuthContext);
+
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
 
   const hasErrors = () => {
     return username.length > 0 && !username.includes("@");
+  };
+
+  const handleLogin = () => {
+      login(username, password);
   };
 
   return (
@@ -37,8 +45,8 @@ const LoginScreen = () => {
             left={<TextInput.Icon name="key-variant" />}
           />
         </Card.Content>
-        <Card.Actions style={styles.actions} >
-          <Button icon="login-variant" mode="contained">
+        <Card.Actions style={styles.actions}>
+          <Button icon="login-variant" mode="contained" onPress={handleLogin} >
             Enter
           </Button>
         </Card.Actions>
@@ -53,7 +61,7 @@ const LoginScreen = () => {
  */
 const styles = StyleSheet.create({
   view: { flex: 1, alignItems: "center", justifyContent: "center" },
-  actions: { paddingHorizontal: "16px" }
+  actions: { paddingHorizontal: "16px" },
 });
 
 export default LoginScreen;

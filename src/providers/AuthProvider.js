@@ -21,6 +21,13 @@ export const AuthProvider = ({ children }) => {
         authenticated: user !== null,
         setUser,
         loadingAuthState,
+        login: async (email, password) => {
+          try {
+            await firebase.auth().signInWithEmailAndPassword(email, password);
+          } catch (e) {
+            console.error(e);
+          }
+        },
       }}
     >
       {children}
