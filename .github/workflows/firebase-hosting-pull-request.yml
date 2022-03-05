@@ -10,6 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm i -g expo-cli
+      - name: Create .env file
+        env:
+          FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
+        run: |
+          touch .env
+          echo $FIREBASE_CONFIG >> .env
       - run: npm ci && npm run build:web
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
