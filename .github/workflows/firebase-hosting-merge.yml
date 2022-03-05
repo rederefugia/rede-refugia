@@ -18,6 +18,7 @@ jobs:
         run: |
           touch .env
           echo $FIREBASE_CONFIG >> .env
+          cat .env
       - run: npm ci && npm run build:web
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
