@@ -11,7 +11,7 @@ import providers from "../../providers";
  * @description It implemets the Login Screen page
  */
 const LoginScreen = () => {
-  const { login } = React.useContext(providers.auth.AuthContext);
+  const { authError, login } = React.useContext(providers.auth.AuthContext);
 
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -29,9 +29,12 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.view}>
-      <Card>
+      <Card style={styles.card}>
         <Card.Title title={localization.t("screens.login.title")} />
         <Card.Content>
+          <HelperText type="error" visible={authError}>
+            {authError}
+          </HelperText>
           <TextInput
             placeholder={localization.t("screens.login.email_placeholder")}
             value={username}
@@ -50,7 +53,12 @@ const LoginScreen = () => {
           />
         </Card.Content>
         <Card.Actions style={styles.actions}>
-          <Button icon="login-variant" mode="contained" onPress={handleLogin} loading={isLoading} >
+          <Button
+            icon="login-variant"
+            mode="contained"
+            onPress={handleLogin}
+            loading={isLoading}
+          >
             {localization.t("screens.login.enter_button_label")}
           </Button>
         </Card.Actions>
@@ -65,6 +73,7 @@ const LoginScreen = () => {
  */
 const styles = StyleSheet.create({
   view: { flex: 1, alignItems: "center", justifyContent: "center" },
+  card: { width: "30%" },
   actions: { paddingHorizontal: "16px" },
 });
 
