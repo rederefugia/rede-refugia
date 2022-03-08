@@ -15,13 +15,16 @@ const LoginScreen = () => {
 
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const hasErrors = () => {
     return username.length > 0 && !username.includes("@");
   };
 
-  const handleLogin = () => {
-    login(username, password);
+  const handleLogin = async () => {
+    setIsLoading(true);
+    await login(username, password);
+    setIsLoading(false);
   };
 
   return (
@@ -47,7 +50,7 @@ const LoginScreen = () => {
           />
         </Card.Content>
         <Card.Actions style={styles.actions}>
-          <Button icon="login-variant" mode="contained" onPress={handleLogin}>
+          <Button icon="login-variant" mode="contained" onPress={handleLogin} loading={isLoading} >
             {localization.t("screens.login.enter_button_label")}
           </Button>
         </Card.Actions>
