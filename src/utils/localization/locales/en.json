@@ -1,5 +1,14 @@
 {
     "home": "Home",
     "profile": "Profile",
-    "settings": "Settings"
+    "settings": "Settings",
+    "screens": {
+        "login": {
+            "title": "Welcome to Rede Refugia",
+            "email_placeholder": "Enter your email",
+            "email_invalid_message": "Email address is invalid!",
+            "password_placeholder": "Enter your password",
+            "enter_button_label": "Login"
+        }
+    }
 }

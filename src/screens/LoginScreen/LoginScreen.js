@@ -2,6 +2,7 @@ import * as React from "react";
 import { StyleSheet, View } from "react-native";
 import { TextInput, Button, HelperText, Card } from "react-native-paper";
 
+import localization from "../../utils/localization";
 import providers from "../../providers";
 
 /**
@@ -20,25 +21,25 @@ const LoginScreen = () => {
   };
 
   const handleLogin = () => {
-      login(username, password);
+    login(username, password);
   };
 
   return (
     <View style={styles.view}>
       <Card>
-        <Card.Title title="Login" />
+        <Card.Title title={localization.t("screens.login.title")} />
         <Card.Content>
           <TextInput
-            placeholder="Email"
+            placeholder={localization.t("screens.login.email_placeholder")}
             value={username}
             onChangeText={setUsername}
             left={<TextInput.Icon name="account" />}
           />
           <HelperText type="error" visible={hasErrors()}>
-            Email address is invalid!
+            {localization.t("screens.login.email_invalid_message")}
           </HelperText>
           <TextInput
-            placeholder="Password"
+            placeholder={localization.t("screens.login.password_placeholder")}
             value={password}
             onChangeText={setPassword}
             secureTextEntry
@@ -46,8 +47,8 @@ const LoginScreen = () => {
           />
         </Card.Content>
         <Card.Actions style={styles.actions}>
-          <Button icon="login-variant" mode="contained" onPress={handleLogin} >
-            Enter
+          <Button icon="login-variant" mode="contained" onPress={handleLogin}>
+            {localization.t("screens.login.enter_button_label")}
           </Button>
         </Card.Actions>
       </Card>
