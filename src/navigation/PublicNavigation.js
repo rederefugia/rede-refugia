@@ -7,8 +7,11 @@ const Stack = createNativeStackNavigator();
 
 const PublicNavigation = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Login" component={screens.LoginScreen} />
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen
+        name="Login"
+        component={screens.LoginScreen}
+      />
     </Stack.Navigator>
   );
 };
