@@ -38,6 +38,14 @@ export const AuthProvider = ({ children }) => {
             console.error(e);
           }
         },
+        signup: async (email, password) => {
+          try {
+            await firebase.auth().createUserWithEmailAndPassword(email, password);
+          } catch (e) {
+            console.error(e);
+            setAuthError(e.message);
+          }
+        }
       }}
     >
       {children}

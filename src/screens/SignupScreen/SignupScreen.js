@@ -11,7 +11,7 @@ import providers from "../../providers";
  * @description It implemets the Singup Screen page
  */
 const SingupScreen = ({ navigation }) => {
-  const { authError } = React.useContext(providers.auth.AuthContext);
+  const { authError, signup } = React.useContext(providers.auth.AuthContext);
 
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -23,6 +23,7 @@ const SingupScreen = ({ navigation }) => {
 
   const handleSingup = async () => {
     setIsLoading(true);
+    await signup(username, password);
     setIsLoading(false);
   };
 
