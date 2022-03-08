@@ -8,10 +8,8 @@ const Stack = createNativeStackNavigator();
 const PublicNavigation = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen
-        name="Login"
-        component={screens.LoginScreen}
-      />
+      <Stack.Screen name="login" component={screens.LoginScreen} />
+      <Stack.Screen name="signup" component={screens.SignupScreen} />
     </Stack.Navigator>
   );
 };

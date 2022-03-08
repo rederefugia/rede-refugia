@@ -8,7 +8,16 @@
             "email_placeholder": "Digite seu email",
             "email_invalid_message": "Endereço de email inválido!",
             "password_placeholder": "Digite sua senha",
-            "enter_button_label": "Login"
+            "enter_button_label": "Login",
+            "signup_button_label": "Cadastre-se"
+        },
+        "signup": {
+            "title": "Cadastre-se na Rede Refugia",
+            "email_placeholder": "Digite seu email",
+            "email_invalid_message": "Endereço de email inválido!",
+            "password_placeholder": "Digite sua senha",
+            "enter_button_label": "Criar",
+            "cancel_button_label":"Cancelar"
         }
     }
 }

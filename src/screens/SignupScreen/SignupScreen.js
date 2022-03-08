@@ -7,11 +7,11 @@ import providers from "../../providers";
 
 /**
  * @memberof Screens
- * @name LoginScreen
- * @description It implemets the Login Screen page
+ * @name SingupScreen
+ * @description It implemets the Singup Screen page
  */
-const LoginScreen = ({ navigation }) => {
-  const { authError, login } = React.useContext(providers.auth.AuthContext);
+const SingupScreen = ({ navigation }) => {
+  const { authError } = React.useContext(providers.auth.AuthContext);
 
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -21,31 +21,30 @@ const LoginScreen = ({ navigation }) => {
     return username.length > 0 && !username.includes("@");
   };
 
-  const handleLogin = async () => {
+  const handleSingup = async () => {
     setIsLoading(true);
-    await login(username, password);
     setIsLoading(false);
   };
 
   return (
     <View style={styles.view}>
       <Card style={styles.card}>
-        <Card.Title title={localization.t("screens.login.title")} />
+        <Card.Title title={localization.t("screens.signup.title")} />
         <Card.Content>
           <HelperText type="error" visible={authError}>
             {authError}
           </HelperText>
           <TextInput
-            placeholder={localization.t("screens.login.email_placeholder")}
+            placeholder={localization.t("screens.signup.email_placeholder")}
             value={username}
             onChangeText={setUsername}
             left={<TextInput.Icon name="account" />}
           />
           <HelperText type="error" visible={hasErrors()}>
-            {localization.t("screens.login.email_invalid_message")}
+            {localization.t("screens.signup.email_invalid_message")}
           </HelperText>
           <TextInput
-            placeholder={localization.t("screens.login.password_placeholder")}
+            placeholder={localization.t("screens.signup.password_placeholder")}
             value={password}
             onChangeText={setPassword}
             secureTextEntry
@@ -56,19 +55,18 @@ const LoginScreen = ({ navigation }) => {
           <Button
             icon="login-variant"
             mode="contained"
-            onPress={handleLogin}
+            onPress={handleSingup}
             loading={isLoading}
           >
-            {localization.t("screens.login.enter_button_label")}
+            {localization.t("screens.signup.enter_button_label")}
           </Button>
           <Button
             style={styles.button_signup}
-            icon={"arrow-right"}
-            onPress={() => {
-              navigation.navigate("signup");
-            }}
+            icon="cancel"
+            color="red"
+            onPress={() => navigation.navigate("login")}
           >
-            {localization.t("screens.login.signup_button_label")}
+            {localization.t("screens.signup.cancel_button_label")}
           </Button>
         </Card.Actions>
       </Card>
@@ -78,7 +76,7 @@ const LoginScreen = ({ navigation }) => {
 
 /**
  * @name styles
- * @description it implements the Login screen page' style grouped by component view
+ * @description it implements the Singup screen page' style grouped by component view
  */
 const styles = StyleSheet.create({
   view: { flex: 1, alignItems: "center", justifyContent: "center" },
@@ -86,4 +84,4 @@ const styles = StyleSheet.create({
   actions: { paddingHorizontal: "16px", justifyContent: "space-between" },
 });
 
-export default LoginScreen;
+export default SingupScreen;
