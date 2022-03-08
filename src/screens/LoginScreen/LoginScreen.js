@@ -61,6 +61,9 @@ const LoginScreen = () => {
           >
             {localization.t("screens.login.enter_button_label")}
           </Button>
+          <Button style={styles.button_signup} icon={"arrow-right"}>
+            {localization.t("screens.login.signup_button_label")}
+          </Button>
         </Card.Actions>
       </Card>
     </View>
@@ -74,7 +77,7 @@ const LoginScreen = () => {
 const styles = StyleSheet.create({
   view: { flex: 1, alignItems: "center", justifyContent: "center" },
   card: { width: "30%" },
-  actions: { paddingHorizontal: "16px" },
+  actions: { paddingHorizontal: "16px", justifyContent: "space-between" },
 });
 
 export default LoginScreen;

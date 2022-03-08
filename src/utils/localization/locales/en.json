@@ -8,7 +8,8 @@
             "email_placeholder": "Enter your email",
             "email_invalid_message": "Email address is invalid!",
             "password_placeholder": "Enter your password",
-            "enter_button_label": "Login"
+            "enter_button_label": "Login",
+            "signup_button_label": "Sign-up"
         }
     }
 }
