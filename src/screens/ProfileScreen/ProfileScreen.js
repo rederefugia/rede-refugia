@@ -1,6 +1,7 @@
 import * as React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
 
+import components from "../../components";
 import localization from "../../utils/localization";
 import providers from "../../providers";
 
@@ -10,11 +11,11 @@ import providers from "../../providers";
  * @description It implemets the Profile Screen page
  */
 const ProfileScreen = () => {
-  const { user } = React.useContext(providers.auth.AuthContext);
+  const { user, setUser } = React.useContext(providers.auth.AuthContext);
 
   return (
     <View style={styles.view}>
-      <Text>{localization.t("profile") + " " + user.name}</Text>
+      <components.InlineTextEdit fieldName="Name" value={user.name} />
     </View>
   );
 };
@@ -24,7 +25,11 @@ const ProfileScreen = () => {
  * @description it implements the profile screen page' style grouped by component view
  */
 const styles = StyleSheet.create({
-  view: { flex: 1, alignItems: "center", justifyContent: "center" },
+  view: {
+    flex: 1,
+    alignItems: "baseline",
+    padding: "16px",
+  },
 });
 
 export default ProfileScreen;
