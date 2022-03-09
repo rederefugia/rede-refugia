@@ -14,16 +14,22 @@ import firestore from "../../utils/firebase/firestore";
 const InstitutionIdentificationScreen = ({ navigation }) => {
   const [cnpj, setCnpj] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
-  const [isInUse, setIsInUse] = React.useState(false);
+  const [error, setError] = React.useState("");
 
   const next = async () => {
     setIsLoading(true);
     try {
       const data = await firestore.find("users", "cnpj", "==", cnpj);
-      if (data.length > 0) setIsInUse(true);
-      else navigation.navigate("auth-data");
+      if (data.length > 0) {
+        setError(
+          localization.t(
+            "screens.institution_identification.cnpj_error_message"
+          )
+        );
+      } else navigation.navigate("auth-data");
     } catch (e) {
       console.error(e);
+      setError(e.message);
     }
     setIsLoading(false);
   };
@@ -38,10 +44,8 @@ const InstitutionIdentificationScreen = ({ navigation }) => {
           <Headline>
             {localization.t("screens.institution_identification.headline")}
           </Headline>
-          <HelperText visible={isInUse} type="error">
-            {localization.t(
-              "screens.institution_identification.cnpj_error_message"
-            )}
+          <HelperText visible={error.length > 0} type="error">
+            {error}
           </HelperText>
           <TextInput
             value={cnpj}
