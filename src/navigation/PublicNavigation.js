@@ -9,7 +9,20 @@ const PublicNavigation = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="login" component={screens.LoginScreen} />
-      <Stack.Screen name="signup" component={screens.SignupScreen} />
+      <Stack.Group key="signup">
+        <Stack.Screen
+          name="user-type"
+          component={screens.signup.UserTypeScreen}
+        />
+        <Stack.Screen
+          name="institution-identification"
+          component={screens.signup.InstitutionIdentificationScreen}
+        />
+        <Stack.Screen
+          name="auth-data"
+          component={screens.signup.AuthDataScreen}
+        />
+      </Stack.Group>
     </Stack.Navigator>
   );
 };

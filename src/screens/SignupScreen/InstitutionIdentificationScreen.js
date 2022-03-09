@@ -13,8 +13,7 @@ import localization from "../../utils/localization";
 import firestore from "../../utils/firebase/firestore";
 
 const InstitutionIdentificationScreen = ({ navigation }) => {
-  const [setUser] = React.useContext(providers.auth.AuthContext);
-  const [cnpj, setCnpj] = React.useState("");
+  const { cnpj, setCnpj } = React.useContext(providers.auth.AuthContext);
   const [isLoading, setIsLoading] = React.useState(false);
   const [error, setError] = React.useState("");
 
@@ -29,7 +28,6 @@ const InstitutionIdentificationScreen = ({ navigation }) => {
           )
         );
       } else {
-        setUser({ cnpj });
         navigation.navigate("auth-data");
       }
     } catch (e) {

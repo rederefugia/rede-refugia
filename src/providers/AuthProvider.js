@@ -6,6 +6,7 @@ export const AuthContext = React.createContext({});
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [cnpj, setCnpj] = useState("");
   const [loadingAuthState, setLoadingAuthState] = useState(true);
   const [authError, setAuthError] = useState(null);
 
@@ -27,6 +28,8 @@ export const AuthProvider = ({ children }) => {
         setUser,
         loadingAuthState,
         authError,
+        cnpj,
+        setCnpj,
         login: async (email, password) => {
           try {
             await firebase.auth().signInWithEmailAndPassword(email, password);
@@ -47,8 +50,12 @@ export const AuthProvider = ({ children }) => {
             const userCredentials = await firebase
               .auth()
               .createUserWithEmailAndPassword(userData.email, password);
-              await firestore.createWithId('users', userCredentials.user.uid, userData);
-            console.log(userCredentials, userData);
+              let data = {
+                ...user,
+                ...userData
+              };
+              if (cnpj.length > 0) data.cnpj = cnpj;
+            await firestore.createWithId("users", userCredentials.user.uid, data);
           } catch (e) {
             console.error(e);
             setAuthError(e.message);

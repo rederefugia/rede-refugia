@@ -65,7 +65,7 @@ const LoginScreen = ({ navigation }) => {
             style={styles.button_signup}
             icon={"arrow-right"}
             onPress={() => {
-              navigation.navigate("signup");
+              navigation.navigate("user-type");
             }}
           >
             {localization.t("screens.login.signup_button_label")}

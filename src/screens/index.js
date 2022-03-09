@@ -15,5 +15,5 @@ export default {
   HomeScreen,
   SettingsScreen,
   LoginScreen,
-  SignupScreen,
+  signup: SignupScreen,
 };
