@@ -17,19 +17,28 @@ import providers from "../../providers";
  * @description It implemets the AuthData Screen page
  */
 const AuthDataScreen = ({ navigation }) => {
-  const { authError, signup } = React.useContext(providers.auth.AuthContext);
+  const { authError, signup } = React.useContext(
+    providers.auth.AuthContext
+  );
 
-  const [username, setUsername] = React.useState("");
+  const [userData, setUserData] = React.useState({
+    name: "",
+    email: "",
+  });
   const [password, setPassword] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
 
   const hasErrors = () => {
-    return username.length > 0 && !username.includes("@");
+    return userData.email.length > 0 && !userData.email.includes("@");
+  };
+
+  const handleInputTextChange = (paramName, paramValue) => {
+    setUserData((data) => ({ ...data, [paramName]: paramValue }));
   };
 
   const handleSignup = async () => {
     setIsLoading(true);
-    await signup(username, password);
+    await signup(userData, password);
     setIsLoading(false);
   };
 
@@ -43,10 +52,17 @@ const AuthDataScreen = ({ navigation }) => {
             {authError}
           </HelperText>
           <TextInput
-            placeholder={localization.t("screens.auth_data.email_placeholder")}
-            value={username}
-            onChangeText={setUsername}
+            placeholder={localization.t("screens.auth_data.name_placeholder")}
+            value={userData.name}
+            onChangeText={(data) => handleInputTextChange("name", data)}
             left={<TextInput.Icon name="account" />}
+          />
+          <br />
+          <TextInput
+            placeholder={localization.t("screens.auth_data.email_placeholder")}
+            value={userData.email}
+            onChangeText={(data) => handleInputTextChange("email", data)}
+            left={<TextInput.Icon name="email" />}
           />
           <HelperText type="error" visible={hasErrors()}>
             {localization.t("screens.auth_data.email_invalid_message")}

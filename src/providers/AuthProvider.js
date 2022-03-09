@@ -6,13 +6,16 @@ export const AuthContext = React.createContext({});
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loadingAuthState, setLoadingAuthState] = useState(true);
-  const [authError, setAuthError] = useState();
+  const [authError, setAuthError] = useState(null);
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
-      setUser(user);
-      setLoadingAuthState(false);
-    });
+    const unregisterAuthObservable = firebase
+      .auth()
+      .onAuthStateChanged((user) => {
+        setUser(user);
+        setLoadingAuthState(false);
+      });
+    return () => unregisterAuthObservable();
   }, []);
 
   return (
@@ -38,14 +41,17 @@ export const AuthProvider = ({ children }) => {
             console.error(e);
           }
         },
-        signup: async (email, password) => {
+        signup: async (userData, password) => {
           try {
-            await firebase.auth().createUserWithEmailAndPassword(email, password);
+            const userCredentials = await firebase
+              .auth()
+              .createUserWithEmailAndPassword(userData.email, password);
+            console.log(userCredentials, userData);
           } catch (e) {
             console.error(e);
             setAuthError(e.message);
           }
-        }
+        },
       }}
     >
       {children}

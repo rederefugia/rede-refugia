@@ -14,6 +14,7 @@
         "auth_data": {
             "title": "Signup",
             "headline": "Provide your access data",
+            "name_placeholder": "Enter your name",
             "email_placeholder": "Enter your email",
             "email_invalid_message": "Email address is invalid!",
             "password_placeholder": "Enter your password",

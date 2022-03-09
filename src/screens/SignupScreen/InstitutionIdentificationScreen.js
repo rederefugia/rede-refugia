@@ -8,10 +8,12 @@ import {
   TextInput,
 } from "react-native-paper";
 
+import providers from "../../providers";
 import localization from "../../utils/localization";
 import firestore from "../../utils/firebase/firestore";
 
 const InstitutionIdentificationScreen = ({ navigation }) => {
+  const [setUser] = React.useContext(providers.auth.AuthContext);
   const [cnpj, setCnpj] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
   const [error, setError] = React.useState("");
@@ -26,7 +28,10 @@ const InstitutionIdentificationScreen = ({ navigation }) => {
             "screens.institution_identification.cnpj_error_message"
           )
         );
-      } else navigation.navigate("auth-data");
+      } else {
+        setUser({ cnpj });
+        navigation.navigate("auth-data");
+      }
     } catch (e) {
       console.error(e);
       setError(e.message);
