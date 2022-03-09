@@ -1,4 +1,4 @@
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, where, getDocs, doc, setDoc } from "firebase/firestore";
 
 import firebase from "./firebase";
 
@@ -16,4 +16,9 @@ const find = async (
   return data;
 };
 
-export default { find };
+const createWithId = async (collectionName, id, data) => {
+  const ref = doc(firebase.firestore(), collectionName, id);
+  await setDoc(ref, data);
+};
+
+export default { find, createWithId };
