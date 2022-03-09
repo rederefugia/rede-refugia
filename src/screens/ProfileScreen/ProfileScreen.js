@@ -13,9 +13,22 @@ import providers from "../../providers";
 const ProfileScreen = () => {
   const { user, setUser } = React.useContext(providers.auth.AuthContext);
 
+  const setUserData = (paramName, paramValue) => {
+    setUser({ ...user, [paramName]: paramValue });
+  };
+
   return (
     <View style={styles.view}>
-      <components.InlineTextEdit fieldName="Name" value={user.name} />
+      <components.InlineTextEdit
+        fieldName={localization.t("screens.profile.name_field_label")}
+        value={user.name}
+        setValue={(value) => setUserData("name", value)}
+      />
+      <components.InlineTextEdit
+        fieldName={localization.t("screens.profile.phone_field_label")}
+        value={user.phoneNumber}
+        setValue={(value) => setUserData("phoneNumber", value)}
+      />
     </View>
   );
 };

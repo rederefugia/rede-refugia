@@ -2,7 +2,18 @@
     "home": "Home",
     "profile": "Profile",
     "settings": "Settings",
+    "components": {
+        "inline_text_edit": {
+            "input_text_helper": "Press <Enter> to complete the change",
+            "edit_button_label": "Edit"
+        }
+    },
     "screens": {
+        "profile": {
+            "name_field_label": "Name",
+            "email_field_label": "Email",
+            "phone_field_label": "Phone"
+        },
         "login": {
             "title": "Welcome to Rede Refugia",
             "email_placeholder": "Enter your email",

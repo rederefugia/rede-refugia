@@ -15,7 +15,9 @@ export const AuthProvider = ({ children }) => {
       .auth()
       .onAuthStateChanged(async (user) => {
         if (user) {
-          const userData = await firestore.getById("users", user.uid);
+          let userData = await firestore.getById("users", user.uid);
+          userData.photoURL = user.photoURL ? user.photoURL : '';
+          userData.phoneNumber = user.phoneNumber ? user.phoneNumber : '';
           setUser({ ...user, ...userData });
         } else setUser(user);
         setLoadingAuthState(false);
