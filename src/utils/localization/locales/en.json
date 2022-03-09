@@ -11,12 +11,20 @@
             "enter_button_label": "Login",
             "signup_button_label": "Sign-up"
         },
-        "signup": {
-            "title": "Signup to Rede Refugia",
+        "auth_data": {
+            "title": "Provide your access data",
             "email_placeholder": "Enter your email",
             "email_invalid_message": "Email address is invalid!",
             "password_placeholder": "Enter your password",
             "enter_button_label": "Signup",
+            "cancel_button_label": "Cancel"
+        },
+        "user_type": {
+            "title": "Signup",
+            "question_text": "Are you an institution representative?",
+            "switch_text": "Yes, I am!!!",
+            "info_message": "This action can't be changed after the signup",
+            "next_button_label": "Next",
             "cancel_button_label": "Cancel"
         }
     }
