@@ -1,6 +1,12 @@
 import * as React from "react";
 import { StyleSheet, View } from "react-native";
-import { TextInput, Button, HelperText, Card } from "react-native-paper";
+import {
+  Headline,
+  TextInput,
+  Button,
+  HelperText,
+  Card,
+} from "react-native-paper";
 
 import localization from "../../utils/localization";
 import providers from "../../providers";
@@ -32,6 +38,7 @@ const AuthDataScreen = ({ navigation }) => {
       <Card style={styles.card}>
         <Card.Title title={localization.t("screens.auth_data.title")} />
         <Card.Content>
+          <Headline>{localization.t("screens.auth_data.headline")}</Headline>
           <HelperText type="error" visible={authError}>
             {authError}
           </HelperText>
@@ -45,7 +52,9 @@ const AuthDataScreen = ({ navigation }) => {
             {localization.t("screens.auth_data.email_invalid_message")}
           </HelperText>
           <TextInput
-            placeholder={localization.t("screens.auth_data.password_placeholder")}
+            placeholder={localization.t(
+              "screens.auth_data.password_placeholder"
+            )}
             value={password}
             onChangeText={setPassword}
             secureTextEntry
@@ -80,7 +89,7 @@ const AuthDataScreen = ({ navigation }) => {
  */
 const styles = StyleSheet.create({
   view: { flex: 1, alignItems: "center", justifyContent: "center" },
-  card: { width: "30%" },
+  card: { minWidth: "30%" },
   actions: { paddingHorizontal: "16px", justifyContent: "space-between" },
 });
 

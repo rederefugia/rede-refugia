@@ -22,6 +22,10 @@ const UserTypeScreen = ({ navigation }) => {
 
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
 
+  const next = () => {
+    if (!isSwitchOn) navigation.navigate("auth-data");
+  };
+
   return (
     <View style={styles.view}>
       <Card style={styles.card}>
@@ -50,7 +54,7 @@ const UserTypeScreen = ({ navigation }) => {
           >
             {localization.t("screens.user_type.cancel_button_label")}
           </Button>
-          <Button icon="arrow-right">
+          <Button icon="arrow-right" onPress={next}>
             {localization.t("screens.user_type.next_button_label")}
           </Button>
         </Card.Actions>

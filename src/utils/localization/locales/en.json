@@ -12,7 +12,8 @@
             "signup_button_label": "Sign-up"
         },
         "auth_data": {
-            "title": "Provide your access data",
+            "title": "Signup",
+            "headline": "Provide your access data",
             "email_placeholder": "Enter your email",
             "email_invalid_message": "Email address is invalid!",
             "password_placeholder": "Enter your password",
