@@ -4,20 +4,28 @@ import {
   Button,
   Card,
   Headline,
-  Paragraph,
   HelperText,
   TextInput,
 } from "react-native-paper";
 
 import localization from "../../utils/localization";
+import firestore from "../../utils/firebase/firestore";
 
 const InstitutionIdentificationScreen = ({ navigation }) => {
   const [cnpj, setCnpj] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
   const [isInUse, setIsInUse] = React.useState(false);
 
-  const next = () => {
-    navigation.navigate("auth-data");
+  const next = async () => {
+    setIsLoading(true);
+    try {
+      const data = await firestore.find("users", "cnpj", "==", cnpj);
+      if (data.length > 0) setIsInUse(true);
+      else navigation.navigate("auth-data");
+    } catch (e) {
+      console.error(e);
+    }
+    setIsLoading(false);
   };
 
   return (
