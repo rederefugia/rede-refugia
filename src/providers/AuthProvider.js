@@ -13,8 +13,11 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unregisterAuthObservable = firebase
       .auth()
-      .onAuthStateChanged((user) => {
-        setUser(user);
+      .onAuthStateChanged(async (user) => {
+        if (user) {
+          const userData = await firestore.getById("users", user.uid);
+          setUser({ ...user, ...userData });
+        } else setUser(user);
         setLoadingAuthState(false);
       });
     return () => unregisterAuthObservable();
@@ -50,12 +53,16 @@ export const AuthProvider = ({ children }) => {
             const userCredentials = await firebase
               .auth()
               .createUserWithEmailAndPassword(userData.email, password);
-              let data = {
-                ...user,
-                ...userData
-              };
-              if (cnpj.length > 0) data.cnpj = cnpj;
-            await firestore.createWithId("users", userCredentials.user.uid, data);
+            let data = {
+              ...user,
+              ...userData,
+            };
+            if (cnpj.length > 0) data.cnpj = cnpj;
+            await firestore.createWithId(
+              "users",
+              userCredentials.user.uid,
+              data
+            );
           } catch (e) {
             console.error(e);
             setAuthError(e.message);
