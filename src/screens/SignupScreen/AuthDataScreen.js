@@ -27,7 +27,7 @@ const AuthDataScreen = ({ navigation }) => {
     return username.length > 0 && !username.includes("@");
   };
 
-  const handleSingup = async () => {
+  const handleSignup = async () => {
     setIsLoading(true);
     await signup(username, password);
     setIsLoading(false);
@@ -65,7 +65,7 @@ const AuthDataScreen = ({ navigation }) => {
           <Button
             icon="login-variant"
             mode="contained"
-            onPress={handleSingup}
+            onPress={handleSignup}
             loading={isLoading}
           >
             {localization.t("screens.auth_data.enter_button_label")}

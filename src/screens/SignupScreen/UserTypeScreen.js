@@ -24,6 +24,7 @@ const UserTypeScreen = ({ navigation }) => {
 
   const next = () => {
     if (!isSwitchOn) navigation.navigate("auth-data");
+    else navigation.navigate("institution-identification");
   };
 
   return (

@@ -27,6 +27,13 @@
             "info_message": "This action can't be changed after the signup",
             "next_button_label": "Next",
             "cancel_button_label": "Cancel"
+        },
+        "institution_identification": {
+            "title": "Signup",
+            "headline": "What is your CNPJ?",
+            "cnpj_error_message": "This CNPJ is in the system already. Only one account per CNPJ is allowed.",
+            "next_button_label": "Next",
+            "cancel_button_label": "Cancel"
         }
     }
 }
