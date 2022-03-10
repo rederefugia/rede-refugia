@@ -10,15 +10,22 @@ export const AuthProvider = ({ children }) => {
   const [loadingAuthState, setLoadingAuthState] = useState(true);
   const [authError, setAuthError] = useState(null);
 
+  const mergeUserData = (authData, userData) => {
+    userData.photoURL = authData.photoURL ? authData.photoURL : '';
+    userData.phoneNumber = authData.phoneNumber ? authData.phoneNumber : '';
+    userData.uid = authData.uid ? authData.uid : '';
+    userData.email = authData.email ? authData.email : '';
+    return userData;
+  };
+
   useEffect(() => {
     const unregisterAuthObservable = firebase
       .auth()
       .onAuthStateChanged(async (user) => {
         if (user) {
           let userData = await firestore.getById("users", user.uid);
-          userData.photoURL = user.photoURL ? user.photoURL : '';
-          userData.phoneNumber = user.phoneNumber ? user.phoneNumber : '';
-          setUser({ ...user, ...userData });
+          userData = mergeUserData(user, userData);
+          setUser(userData);
         } else setUser(user);
         setLoadingAuthState(false);
       });

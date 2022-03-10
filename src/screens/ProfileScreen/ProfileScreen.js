@@ -2,8 +2,9 @@ import * as React from "react";
 import { StyleSheet, View } from "react-native";
 
 import components from "../../components";
-import localization from "../../utils/localization";
 import providers from "../../providers";
+import localization from "../../utils/localization";
+import firestore from "../../utils/firebase/firestore";
 
 /**
  * @memberof Screens
@@ -14,7 +15,10 @@ const ProfileScreen = () => {
   const { user, setUser } = React.useContext(providers.auth.AuthContext);
 
   const setUserData = (paramName, paramValue) => {
-    setUser({ ...user, [paramName]: paramValue });
+    firestore
+      .updateById("users", user.uid, { [paramName]: paramValue })
+      .then(() => setUser({ ...user, [paramName]: paramValue }))
+      .catch((error) => console.error(error));
   };
 
   return (
