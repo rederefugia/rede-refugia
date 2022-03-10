@@ -1,11 +1,12 @@
 import * as React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import {
   Text,
   Paragraph,
   Button,
   TextInput,
   HelperText,
+  List,
 } from "react-native-paper";
 
 import localization from "../../utils/localization";
@@ -30,8 +31,7 @@ const InlineTextEdit = ({ fieldName, value, setValue }) => {
   };
 
   return (
-    <Paragraph style={styles.paragraph}>
-      <Text style={styles.label}>{fieldName}:</Text>
+    <View>
       {isEditing ? (
         <>
           <TextInput
@@ -39,24 +39,26 @@ const InlineTextEdit = ({ fieldName, value, setValue }) => {
             onChangeText={setEditingValue}
             onKeyDown={onKeyDown}
             onBlur={onBlur}
-          /><br />
+          />
+          <br />
           <HelperText visible={true}>
             {localization.t("components.inline_text_edit.input_text_helper")}
           </HelperText>
         </>
       ) : (
-        <>
-          <Text>{value}</Text>
-          <Button
-            icon="square-edit-outline"
-            compact={true}
-            onPress={() => setIsEditing(true)}
-          >
-            {localization.t("components.inline_text_edit.edit_button_label")}
-          </Button>
-        </>
+        <List.Item
+          title={fieldName}
+          description={value}
+          onPress={() => setIsEditing(true)}
+          right={(props) => (
+            <List.Icon
+              {...props}
+              icon="square-edit-outline"
+            />
+          )}
+        />
       )}
-    </Paragraph>
+    </View>
   );
 };
 
