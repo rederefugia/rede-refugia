@@ -37,10 +37,14 @@ const styles = {
     paddingHorizontal: theme.space,
     justifyContent: "space-between",
   },
+  cardActionsButton: {
+    fontWeight: "normal",
+    padding: theme.spaceSmall
+  },
   cardView: {
     borderBottomColor: "#5E205D",
-    borderBottomWidth: theme.space
-  }
+    borderBottomWidth: theme.space,
+  },
 };
 
 export const DefaultTheme = theme;

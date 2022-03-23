@@ -71,6 +71,8 @@ const LoginScreen = ({ navigation }) => {
         </Card.Content>
         <Card.Actions style={styles.cardActions}>
           <Button
+            style={styles.cardActionsButton}
+            uppercase={false}
             mode="contained"
             onPress={handleLogin}
             loading={isLoading}
@@ -78,6 +80,8 @@ const LoginScreen = ({ navigation }) => {
             {localization.t("screens.login.enter_button_label")}
           </Button>
           <Button
+            style={styles.cardActionsButton}
+            uppercase={false}
             mode="contained"
             onPress={() => {
               navigation.navigate("user-type");
@@ -97,7 +101,10 @@ const LoginScreen = ({ navigation }) => {
  */
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
-  logo: { margin: "auto", marginVertical: theme.DefaultTheme.spaceSmall }
+  logo: {
+    margin: "auto",
+    marginVertical: theme.DefaultTheme.spaceSmall,
+  },
 });
 
 export default LoginScreen;
