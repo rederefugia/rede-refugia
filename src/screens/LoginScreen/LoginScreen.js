@@ -1,6 +1,12 @@
 import * as React from "react";
 import { StyleSheet, View } from "react-native";
-import { TextInput, Button, HelperText, Card } from "react-native-paper";
+import {
+  TextInput,
+  Button,
+  HelperText,
+  Card,
+  Avatar,
+} from "react-native-paper";
 
 import theme from "../../utils/theme";
 import localization from "../../utils/localization";
@@ -34,9 +40,13 @@ const LoginScreen = ({ navigation }) => {
         <Card.Title
           style={styles.cardHeader}
           title={localization.t("screens.login.title")}
-          titleStyle={{...theme.DefaultStyle.cardHeaderTitle}}
+          titleStyle={{ ...theme.DefaultStyle.cardHeaderTitle }}
         />
         <Card.Content>
+          <Avatar.Image
+            source={require("../../../assets/logo.png")}
+            style={styles.logo}
+          />
           <HelperText type="error" visible={authError}>
             {authError}
           </HelperText>
@@ -87,7 +97,11 @@ const LoginScreen = ({ navigation }) => {
  */
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
-  actions: { paddingHorizontal: "16px", justifyContent: "space-between" },
+  logo: { margin: "auto", marginVertical: theme.DefaultTheme.spaceSmall },
+  actions: {
+    paddingHorizontal: theme.DefaultTheme.space,
+    justifyContent: "space-between",
+  },
 });
 
 export default LoginScreen;

@@ -7,6 +7,9 @@ const MergedTheme = merge(PaperDefaultTheme, NavigationDefaultTheme);
 const theme = {
   ...MergedTheme,
   roundness: "8px",
+  spaceSmall: "8px",
+  space: "16px",
+  spaceLarge: "32px",
   colors: {
     primary: "#862F84",
     background: "#FFFFFF",
@@ -24,8 +27,7 @@ const styles = {
   cardHeaderTitle: {
     color: "#FFFFFF",
     fontFamily: "Inter",
-    fontSize: "30px",
-    fontWeight: "700"
+    fontSize: "24px",
   },
 };
 
