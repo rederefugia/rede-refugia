@@ -1,3 +1,3 @@
-import { DefaultTheme, DarkTheme } from "./merge";
+import { DefaultTheme, DefaultStyle } from "./merge";
 
-export default { DefaultTheme, DarkTheme };
+export default { DefaultTheme, DefaultStyle };

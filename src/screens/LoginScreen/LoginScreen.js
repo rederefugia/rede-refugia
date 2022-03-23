@@ -2,6 +2,7 @@ import * as React from "react";
 import { StyleSheet, View } from "react-native";
 import { TextInput, Button, HelperText, Card } from "react-native-paper";
 
+import theme from "../../utils/theme";
 import localization from "../../utils/localization";
 import providers from "../../providers";
 
@@ -29,8 +30,12 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <View style={styles.view}>
-      <Card style={styles.card}>
-        <Card.Title title={localization.t("screens.login.title")} />
+      <Card>
+        <Card.Title
+          style={styles.cardHeader}
+          title={localization.t("screens.login.title")}
+          titleStyle={{...theme.DefaultStyle.cardHeaderTitle}}
+        />
         <Card.Content>
           <HelperText type="error" visible={authError}>
             {authError}
@@ -81,8 +86,7 @@ const LoginScreen = ({ navigation }) => {
  * @description it implements the Login screen page' style grouped by component view
  */
 const styles = StyleSheet.create({
-  view: { flex: 1, alignItems: "center", justifyContent: "center" },
-  card: { width: "30%" },
+  ...theme.DefaultStyle,
   actions: { paddingHorizontal: "16px", justifyContent: "space-between" },
 });
 
