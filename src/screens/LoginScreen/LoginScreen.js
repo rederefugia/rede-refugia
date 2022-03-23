@@ -36,7 +36,7 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <View style={styles.view}>
-      <Card>
+      <Card style={styles.cardView}>
         <Card.Title
           style={styles.cardHeader}
           title={localization.t("screens.login.title")}
@@ -55,6 +55,7 @@ const LoginScreen = ({ navigation }) => {
             value={username}
             onChangeText={setUsername}
             left={<TextInput.Icon name="account" />}
+            style={styles.cardInput}
           />
           <HelperText type="error" visible={hasErrors()}>
             {localization.t("screens.login.email_invalid_message")}
@@ -65,11 +66,11 @@ const LoginScreen = ({ navigation }) => {
             onChangeText={setPassword}
             secureTextEntry
             left={<TextInput.Icon name="key-variant" />}
+            style={styles.cardInput}
           />
         </Card.Content>
-        <Card.Actions style={styles.actions}>
+        <Card.Actions style={styles.cardActions}>
           <Button
-            icon="login-variant"
             mode="contained"
             onPress={handleLogin}
             loading={isLoading}
@@ -77,8 +78,7 @@ const LoginScreen = ({ navigation }) => {
             {localization.t("screens.login.enter_button_label")}
           </Button>
           <Button
-            style={styles.button_signup}
-            icon={"arrow-right"}
+            mode="contained"
             onPress={() => {
               navigation.navigate("user-type");
             }}
@@ -97,11 +97,7 @@ const LoginScreen = ({ navigation }) => {
  */
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
-  logo: { margin: "auto", marginVertical: theme.DefaultTheme.spaceSmall },
-  actions: {
-    paddingHorizontal: theme.DefaultTheme.space,
-    justifyContent: "space-between",
-  },
+  logo: { margin: "auto", marginVertical: theme.DefaultTheme.spaceSmall }
 });
 
 export default LoginScreen;

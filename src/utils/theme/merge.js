@@ -29,6 +29,18 @@ const styles = {
     fontFamily: "Inter",
     fontSize: "24px",
   },
+  cardInput: {
+    borderRadius: theme.roundness,
+  },
+  cardActions: {
+    marginVertical: theme.space,
+    paddingHorizontal: theme.space,
+    justifyContent: "space-between",
+  },
+  cardView: {
+    borderBottomColor: "#5E205D",
+    borderBottomWidth: theme.space
+  }
 };
 
 export const DefaultTheme = theme;
