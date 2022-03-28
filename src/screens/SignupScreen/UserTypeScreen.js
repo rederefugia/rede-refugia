@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, ImageBackground } from "react-native";
 import {
   Button,
   Card,
@@ -10,6 +10,7 @@ import {
   HelperText,
 } from "react-native-paper";
 
+import theme from "../../utils/theme";
 import localization from "../../utils/localization";
 
 /**
@@ -28,26 +29,33 @@ const UserTypeScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.view}>
-      <Card style={styles.card}>
-        <Card.Title title={localization.t("screens.user_type.title")} />
-        <Card.Content>
-          <Headline>
-            {localization.t("screens.user_type.question_text")}
-          </Headline>
-          <Paragraph style={styles.paragraph}>
-            <Switch value={isSwitchOn} onValueChange={onToggleSwitch} />
-            <Text style={styles.switch_label}>
-              {localization.t("screens.user_type.switch_text")}
-            </Text>
-          </Paragraph>
-          <Paragraph>
-            <HelperText visible={isSwitchOn} type="info">
-              {localization.t("screens.user_type.info_message")}
-            </HelperText>
-          </Paragraph>
-        </Card.Content>
-        <Card.Actions style={styles.actions}>
+    <ImageBackground
+      resizeMode="cover"
+      source={require("../../../assets/login-background.png")}
+      style={{ flex: 1, backgroundColor: theme.DefaultTheme.colors.accent }}
+    >
+      <View style={styles.view}>
+        <Card style={styles.cardView}>
+          <Card.Title
+            style={styles.cardHeader}
+            title={localization.t("screens.user_type.question_text")}
+            titleStyle={{ ...theme.DefaultStyle.cardHeaderTitle }}
+          />
+          <Card.Content>
+            <Paragraph style={styles.paragraph}>
+              <Switch value={isSwitchOn} onValueChange={onToggleSwitch} />
+              <Text style={styles.switch_label}>
+                {localization.t("screens.user_type.switch_text")}
+              </Text>
+            </Paragraph>
+            <Paragraph>
+              <HelperText visible={isSwitchOn} type="info">
+                {localization.t("screens.user_type.info_message")}
+              </HelperText>
+            </Paragraph>
+          </Card.Content>
+        </Card>
+        <View>
           <Button
             color="red"
             icon="cancel"
@@ -58,18 +66,21 @@ const UserTypeScreen = ({ navigation }) => {
           <Button icon="arrow-right" onPress={next}>
             {localization.t("screens.user_type.next_button_label")}
           </Button>
-        </Card.Actions>
-      </Card>
-    </View>
+        </View>
+      </View>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  view: { flex: 1, alignItems: "center", justifyContent: "center" },
-  card: { minWidth: "30%" },
-  paragraph: { paddingVertical: "16px" },
-  switch_label: { marginHorizontal: "16px" },
-  actions: { paddingHorizontal: "16px", justifyContent: "space-between" },
+  ...theme.DefaultStyle,
+  view: {
+    ...theme.DefaultStyle.view,
+  },
+  logo: {
+    margin: "auto",
+    marginVertical: theme.DefaultTheme.spaceSmall,
+  },
 });
 
 export default UserTypeScreen;
