@@ -55,15 +55,21 @@ const UserTypeScreen = ({ navigation }) => {
             </Card.Content>
           </Card>
         </View>
-        <View>
+        <View style={{ flexDirection: "row",  }}>
           <Button
-            color="red"
-            icon="cancel"
+            style={styles.button}
+            uppercase={false}
+            mode="contained"
             onPress={() => navigation.navigate("login")}
           >
             {localization.t("screens.user_type.cancel_button_label")}
           </Button>
-          <Button icon="arrow-right" onPress={next}>
+          <Button
+            style={styles.button}
+            uppercase={false}
+            mode="contained"
+            onPress={next}
+          >
             {localization.t("screens.user_type.next_button_label")}
           </Button>
         </View>
@@ -87,10 +93,14 @@ const styles = StyleSheet.create({
   },
   paragraph: {
     color: theme.DefaultTheme.colors.background,
-    fontSize: theme.DefaultTheme.fontSize
+    fontSize: theme.DefaultTheme.fontSize,
   },
   switch_label: {
-    marginHorizontal: theme.DefaultTheme.space
+    marginHorizontal: theme.DefaultTheme.space,
+  },
+  button: {
+    ...theme.DefaultStyle.cardActionsButton,
+    margin: theme.DefaultTheme.space
   }
 });
 
