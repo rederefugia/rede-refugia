@@ -3,7 +3,6 @@ import { StyleSheet, View, ImageBackground } from "react-native";
 import {
   Button,
   Card,
-  Headline,
   Switch,
   Paragraph,
   Text,
@@ -55,7 +54,7 @@ const UserTypeScreen = ({ navigation }) => {
             </Card.Content>
           </Card>
         </View>
-        <View style={{ flexDirection: "row",  }}>
+        <View style={{ flexDirection: "row"  }}>
           <Button
             style={styles.button}
             uppercase={false}

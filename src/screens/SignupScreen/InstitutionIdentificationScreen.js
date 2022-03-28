@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, ImageBackground } from "react-native";
 import {
   Button,
   Card,
@@ -8,6 +8,7 @@ import {
   TextInput,
 } from "react-native-paper";
 
+import theme from "../../utils/theme";
 import providers from "../../providers";
 import localization from "../../utils/localization";
 import firestore from "../../utils/firebase/firestore";
@@ -38,50 +39,74 @@ const InstitutionIdentificationScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.view}>
-      <Card style={styles.card}>
-        <Card.Title
-          title={localization.t("screens.institution_identification.title")}
-        />
-        <Card.Content>
-          <Headline>
-            {localization.t("screens.institution_identification.headline")}
-          </Headline>
-          <HelperText visible={error.length > 0} type="error">
-            {error}
-          </HelperText>
-          <TextInput
-            value={cnpj}
-            onChangeText={setCnpj}
-            left={<TextInput.Icon name="account-tie" />}
-          />
-        </Card.Content>
-        <Card.Actions style={styles.actions}>
+    <ImageBackground
+      resizeMode="cover"
+      source={require("../../../assets/login-background.png")}
+      style={{ flex: 1, backgroundColor: theme.DefaultTheme.colors.accent }}
+    >
+      <View style={styles.view}>
+        <View>
+          <Card style={styles.cardView}>
+            <Card.Title
+              style={styles.cardHeader}
+              titleStyle={{ ...theme.DefaultStyle.cardHeaderTitle }}
+              title={localization.t(
+                "screens.institution_identification.headline"
+              )}
+            />
+            <Card.Content>
+              <HelperText visible={error.length > 0} type="error">
+                {error}
+              </HelperText>
+              <TextInput
+                value={cnpj}
+                onChangeText={setCnpj}
+                style={styles.cardInput}
+              />
+            </Card.Content>
+          </Card>
+        </View>
+        <View style={{ flexDirection: "row" }}>
           <Button
-            color="red"
-            icon="cancel"
+            style={styles.button}
+            uppercase={false}
+            mode="contained"
             onPress={() => navigation.navigate("login")}
           >
             {localization.t(
               "screens.institution_identification.cancel_button_label"
             )}
           </Button>
-          <Button icon="arrow-right" onPress={next} loading={isLoading}>
+          <Button
+            style={styles.button}
+            uppercase={false}
+            mode="contained"
+            onPress={next}
+            loading={isLoading}
+          >
             {localization.t(
               "screens.institution_identification.next_button_label"
             )}
           </Button>
-        </Card.Actions>
-      </Card>
-    </View>
+        </View>
+      </View>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  view: { flex: 1, alignItems: "center", justifyContent: "center" },
-  card: { minWidth: "30%" },
-  paragraph: { paddingVertical: "16px" },
-  actions: { paddingHorizontal: "16px", justifyContent: "space-between" },
+  ...theme.DefaultStyle,
+  view: {
+    ...theme.DefaultStyle.view,
+  },
+  cardContent: {
+    ...theme.DefaultStyle.view,
+    paddingVertical: theme.DefaultTheme.space,
+  },
+  button: {
+    ...theme.DefaultStyle.cardActionsButton,
+    margin: theme.DefaultTheme.space,
+  },
 });
 
 export default InstitutionIdentificationScreen;

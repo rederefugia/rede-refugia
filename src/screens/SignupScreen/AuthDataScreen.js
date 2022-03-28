@@ -1,7 +1,6 @@
 import * as React from "react";
 import { StyleSheet, View, ImageBackground } from "react-native";
 import {
-  Headline,
   TextInput,
   Button,
   HelperText,
