@@ -107,9 +107,6 @@ const LoginScreen = ({ navigation }) => {
  */
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
-  view: {
-    ...theme.DefaultStyle.view,
-  },
   logo: {
     margin: "auto",
     marginVertical: theme.DefaultTheme.spaceSmall,
