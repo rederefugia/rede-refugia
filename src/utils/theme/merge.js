@@ -14,6 +14,7 @@ const theme = {
     primary: "#862F84",
     background: "#FFFFFF",
     surface: "#849DD7",
+    accent: "#FFE0FE",
   },
 };
 
