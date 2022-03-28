@@ -10,6 +10,9 @@ const theme = {
   spaceSmall: "8px",
   space: "16px",
   spaceLarge: "32px",
+  fontSize: "16px",
+  fontSizeLarge: "24px",
+  fontSizeSmall: "12px",
   colors: {
     primary: "#862F84",
     background: "#FFFFFF",
@@ -26,9 +29,9 @@ const styles = {
     borderTopEndRadius: theme.roundness,
   },
   cardHeaderTitle: {
-    color: "#FFFFFF",
+    color: theme.colors.background,
     fontFamily: "Inter",
-    fontSize: "24px",
+    fontSize: theme.fontSizeLarge,
   },
   cardInput: {
     borderRadius: theme.roundness,
@@ -40,7 +43,7 @@ const styles = {
   },
   cardActionsButton: {
     fontWeight: "normal",
-    padding: theme.spaceSmall
+    padding: theme.spaceSmall,
   },
   cardView: {
     borderBottomColor: "#5E205D",

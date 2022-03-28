@@ -35,26 +35,26 @@ const UserTypeScreen = ({ navigation }) => {
       style={{ flex: 1, backgroundColor: theme.DefaultTheme.colors.accent }}
     >
       <View style={styles.view}>
-        <Card style={styles.cardView}>
-          <Card.Title
-            style={styles.cardHeader}
-            title={localization.t("screens.user_type.question_text")}
-            titleStyle={{ ...theme.DefaultStyle.cardHeaderTitle }}
-          />
-          <Card.Content>
-            <Paragraph style={styles.paragraph}>
-              <Switch value={isSwitchOn} onValueChange={onToggleSwitch} />
-              <Text style={styles.switch_label}>
-                {localization.t("screens.user_type.switch_text")}
-              </Text>
-            </Paragraph>
-            <Paragraph>
+        <View>
+          <Card style={styles.cardView}>
+            <Card.Title
+              style={styles.cardHeader}
+              title={localization.t("screens.user_type.question_text")}
+              titleStyle={{ ...theme.DefaultStyle.cardHeaderTitle }}
+            />
+            <Card.Content style={styles.cardContent}>
+              <Paragraph style={styles.paragraph}>
+                <Switch value={isSwitchOn} onValueChange={onToggleSwitch} />
+                <Text style={styles.switch_label}>
+                  {localization.t("screens.user_type.switch_text")}
+                </Text>
+              </Paragraph>
               <HelperText visible={isSwitchOn} type="info">
                 {localization.t("screens.user_type.info_message")}
               </HelperText>
-            </Paragraph>
-          </Card.Content>
-        </Card>
+            </Card.Content>
+          </Card>
+        </View>
         <View>
           <Button
             color="red"
@@ -81,6 +81,17 @@ const styles = StyleSheet.create({
     margin: "auto",
     marginVertical: theme.DefaultTheme.spaceSmall,
   },
+  cardContent: {
+    ...theme.DefaultStyle.view,
+    paddingVertical: theme.DefaultTheme.space,
+  },
+  paragraph: {
+    color: theme.DefaultTheme.colors.background,
+    fontSize: theme.DefaultTheme.fontSize
+  },
+  switch_label: {
+    marginHorizontal: theme.DefaultTheme.space
+  }
 });
 
 export default UserTypeScreen;
