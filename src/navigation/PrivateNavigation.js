@@ -3,9 +3,11 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import { TextInput } from "react-native-paper";
 
-import localization from "../utils/localization";
-import screens from "../screens";
 import { DrawerCustomContent } from "./DrawerCustomContent";
+
+import screens from "../screens";
+import theme from "../utils/theme";
+import localization from "../utils/localization";
 
 const Drawer = createDrawerNavigator();
 
@@ -23,6 +25,15 @@ const PrivateNavigation = () => {
       drawerContent={(props) => <DrawerCustomContent {...props} />}
       screenOptions={{
         drawerType: isLargeScreen ? "permanent" : "front",
+        drawerStyle: {
+          backgroundColor: theme.DefaultTheme.colors.purple,
+        },
+        headerStyle: {
+          backgroundColor: theme.DefaultTheme.colors.light_pink,
+          borderBottomLeftRadius: "36px",
+          borderBottomColor: theme.DefaultTheme.colors.light_pink,
+          
+        }
       }}
     >
       <Drawer.Screen

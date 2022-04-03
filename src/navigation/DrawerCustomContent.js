@@ -39,8 +39,8 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: "36px"
   },
   logo: {
-    margin: theme.DefaultTheme.space,
-    resizeMode: "center",
+    marginVertical: theme.DefaultTheme.space,
+    resizeMode: "contain",
     width: "70%",
     height: "100px",
   },

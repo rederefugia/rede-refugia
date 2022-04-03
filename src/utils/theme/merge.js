@@ -19,6 +19,8 @@ const theme = {
     surface: "#849DD7",
     accent: "#FFE0FE",
     light_pink: "#FEE2FF",
+    light_purple: "",
+    purple: "#9E76CF"
   },
 };
 
