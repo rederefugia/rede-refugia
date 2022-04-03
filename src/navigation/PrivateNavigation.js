@@ -5,7 +5,7 @@ import { TextInput } from "react-native-paper";
 
 import localization from "../utils/localization";
 import screens from "../screens";
-import { LogoutItem } from "./LogoutItem";
+import { DrawerCustomContent } from "./DrawerCustomContent";
 
 const Drawer = createDrawerNavigator();
 
@@ -20,7 +20,7 @@ const PrivateNavigation = () => {
   return (
     <Drawer.Navigator
       initialRouteName={localization.t("home")}
-      drawerContent={(props) => <LogoutItem {...props} />}
+      drawerContent={(props) => <DrawerCustomContent {...props} />}
       screenOptions={{
         drawerType: isLargeScreen ? "permanent" : "front",
       }}

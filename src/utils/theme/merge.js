@@ -18,6 +18,7 @@ const theme = {
     background: "#FFFFFF",
     surface: "#849DD7",
     accent: "#FFE0FE",
+    light_pink: "#FEE2FF",
   },
 };
 
