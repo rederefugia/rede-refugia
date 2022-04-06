@@ -39,7 +39,6 @@ export const DrawerCustomContent = (props) => {
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
   header: {
-    ...theme.DefaultStyle.view,
     flex: 0.25,
     backgroundColor: theme.DefaultTheme.colors.light_pink,
     borderBottomRightRadius: theme.DefaultTheme.roundnessLarge,
