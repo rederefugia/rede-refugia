@@ -59,6 +59,8 @@ const styles = {
     borderBottomWidth: theme.space,
   },
   menuItem: {
+    fontFamily: theme.fontFamily,
+    fontWeight: theme.fontWeight,
     margin: theme.noSpace,
     marginVertical: theme.spaceSmall,
     paddingLeft: theme.space,
