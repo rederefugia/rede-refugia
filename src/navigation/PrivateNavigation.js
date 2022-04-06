@@ -25,15 +25,20 @@ const PrivateNavigation = () => {
       drawerContent={(props) => <DrawerCustomContent {...props} />}
       screenOptions={{
         drawerType: isLargeScreen ? "permanent" : "front",
+        drawerActiveTintColor: theme.DefaultTheme.colors.white,
+        drawerInactiveTintColor: theme.DefaultTheme.colors.white,
         drawerStyle: {
           backgroundColor: theme.DefaultTheme.colors.purple,
-          borderRightWidth: theme.DefaultTheme.noSpace
+          borderRightWidth: theme.DefaultTheme.noSpace,
         },
         headerStyle: {
           backgroundColor: theme.DefaultTheme.colors.light_pink,
           borderBottomLeftRadius: theme.DefaultTheme.roundnessLarge,
           borderBottomColor: theme.DefaultTheme.colors.light_pink,
-        }
+        },
+        drawerItemStyle: {
+          ...theme.DefaultStyle.menuItem
+        },
       }}
     >
       <Drawer.Screen
@@ -41,7 +46,6 @@ const PrivateNavigation = () => {
         component={screens.HomeScreen}
         options={{
           drawerLabel: localization.t("home"),
-          drawerIcon: (config) => <TextInput.Icon name="home" size={18} />,
         }}
       />
       <Drawer.Screen
@@ -49,7 +53,6 @@ const PrivateNavigation = () => {
         component={screens.ProfileScreen}
         options={{
           drawerLabel: localization.t("profile"),
-          drawerIcon: (config) => <TextInput.Icon name="account" />,
         }}
       />
       <Drawer.Screen
@@ -57,7 +60,6 @@ const PrivateNavigation = () => {
         component={screens.SettingsScreen}
         options={{
           drawerLabel: localization.t("settings"),
-          drawerIcon: (config) => <TextInput.Icon name="cog" />,
         }}
       />
     </Drawer.Navigator>

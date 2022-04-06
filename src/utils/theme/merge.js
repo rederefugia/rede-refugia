@@ -22,7 +22,8 @@ const theme = {
     accent: "#FFE0FE",
     light_pink: "#FEE2FF",
     light_purple: "",
-    purple: "#9E76CF"
+    purple: "#9E76CF",
+    white: "#FAFAFA"
   },
 };
 
@@ -54,6 +55,11 @@ const styles = {
     borderBottomColor: "#5E205D",
     borderBottomWidth: theme.space,
   },
+  menuItem: {
+    margin: theme.noSpace,
+    marginVertical: theme.spaceSmall,
+    paddingLeft: theme.space,
+  }
 };
 
 export const DefaultTheme = theme;

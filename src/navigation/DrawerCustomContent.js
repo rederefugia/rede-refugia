@@ -24,9 +24,12 @@ export const DrawerCustomContent = (props) => {
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
         <DrawerItem
+          {...props}
           label="Logout"
           onPress={logout}
-          icon={() => <TextInput.Icon name="logout" />}
+          style={theme.DefaultStyle.menuItem}
+          activeTintColor={theme.DefaultTheme.colors.white}
+          inactiveTintColor={theme.DefaultTheme.colors.white}
         />
       </DrawerContentScrollView>
     </SafeAreaView>
@@ -44,7 +47,7 @@ const styles = StyleSheet.create({
   logo: {
     marginVertical: theme.DefaultTheme.space,
     resizeMode: "contain",
-    width: "80%",
-    height: "80%",
+    width: "70%",
+    height: "70%",
   },
 });
