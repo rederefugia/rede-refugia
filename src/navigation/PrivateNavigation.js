@@ -36,6 +36,13 @@ const PrivateNavigation = () => {
           borderBottomLeftRadius: theme.DefaultTheme.roundnessLarge,
           borderBottomColor: theme.DefaultTheme.colors.light_pink,
         },
+        headerTitleStyle: {
+          color: theme.DefaultTheme.colors.purpleDark,
+          fontSize: theme.DefaultTheme.fontSizeLarge,
+          fontWeight: theme.DefaultTheme.fontWeightLarge,
+          fontFamily: theme.DefaultTheme.fontFamily
+          
+        },
         drawerItemStyle: {
           ...theme.DefaultStyle.menuItem
         },

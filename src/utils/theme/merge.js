@@ -15,13 +15,16 @@ const theme = {
   fontSize: "16px",
   fontSizeLarge: "24px",
   fontSizeSmall: "12px",
+  fontWeight: "500",
+  fontWeightLarge: "900",
+  fontFamily: "Inter",
   colors: {
     primary: "#862F84",
     background: "#FFFFFF",
     surface: "#849DD7",
     accent: "#FFE0FE",
     light_pink: "#FEE2FF",
-    light_purple: "",
+    purpleDark: "#5E205D",
     purple: "#9E76CF",
     white: "#FAFAFA"
   },
@@ -36,7 +39,7 @@ const styles = {
   },
   cardHeaderTitle: {
     color: theme.colors.background,
-    fontFamily: "Inter",
+    fontFamily: theme.fontFamily,
     fontSize: theme.fontSizeLarge,
   },
   cardInput: {
@@ -52,7 +55,7 @@ const styles = {
     padding: theme.spaceSmall,
   },
   cardView: {
-    borderBottomColor: "#5E205D",
+    borderBottomColor: theme.colors.purpleDark,
     borderBottomWidth: theme.space,
   },
   menuItem: {
