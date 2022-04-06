@@ -1,8 +1,6 @@
 import { useWindowDimensions } from "react-native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
-import { TextInput } from "react-native-paper";
-
 import { DrawerCustomContent } from "./DrawerCustomContent";
 
 import screens from "../screens";
@@ -40,11 +38,10 @@ const PrivateNavigation = () => {
           color: theme.DefaultTheme.colors.purpleDark,
           fontSize: theme.DefaultTheme.fontSizeLarge,
           fontWeight: theme.DefaultTheme.fontWeightLarge,
-          fontFamily: theme.DefaultTheme.fontFamily
-          
+          fontFamily: theme.DefaultTheme.fontFamily,
         },
         drawerItemStyle: {
-          ...theme.DefaultStyle.menuItem
+          ...theme.DefaultStyle.menuItem,
         },
       }}
     >

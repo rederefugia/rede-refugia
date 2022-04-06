@@ -33,7 +33,7 @@ const theme = {
 const styles = {
   view: { flex: 1, alignItems: "center", justifyContent: "center" },
   cardHeader: {
-    backgroundColor: "#5E205D",
+    backgroundColor: theme.colors.purpleDark,
     borderTopStartRadius: theme.roundness,
     borderTopEndRadius: theme.roundness,
   },

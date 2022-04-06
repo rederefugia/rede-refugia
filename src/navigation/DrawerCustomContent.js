@@ -5,7 +5,6 @@ import {
   DrawerItemList,
   DrawerItem,
 } from "@react-navigation/drawer";
-import { Avatar, TextInput } from "react-native-paper";
 
 import providers from "../providers";
 import theme from "../utils/theme";
