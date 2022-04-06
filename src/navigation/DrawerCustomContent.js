@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, View, Image } from "react-native";
+import { SafeAreaView, StyleSheet, View, Image } from "react-native";
 import {
   DrawerContentScrollView,
   DrawerItemList,
@@ -14,20 +14,22 @@ export const DrawerCustomContent = (props) => {
   const { logout } = React.useContext(providers.auth.AuthContext);
 
   return (
-    <DrawerContentScrollView {...props}>
+    <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.header}>
         <Image
           style={styles.logo}
           source={require("../../assets/logo-rede-refugia.png")}
         />
       </View>
-      <DrawerItemList {...props} />
-      <DrawerItem
-        label="Logout"
-        onPress={logout}
-        icon={() => <TextInput.Icon name="logout" />}
-      />
-    </DrawerContentScrollView>
+      <DrawerContentScrollView {...props}>
+        <DrawerItemList {...props} />
+        <DrawerItem
+          label="Logout"
+          onPress={logout}
+          icon={() => <TextInput.Icon name="logout" />}
+        />
+      </DrawerContentScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -35,13 +37,14 @@ const styles = StyleSheet.create({
   ...theme.DefaultStyle,
   header: {
     ...theme.DefaultStyle.view,
+    flex: 0.25,
     backgroundColor: theme.DefaultTheme.colors.light_pink,
-    borderBottomRightRadius: "36px"
+    borderBottomRightRadius: theme.DefaultTheme.roundnessLarge,
   },
   logo: {
     marginVertical: theme.DefaultTheme.space,
     resizeMode: "contain",
-    width: "70%",
-    height: "100px",
+    width: "80%",
+    height: "80%",
   },
 });

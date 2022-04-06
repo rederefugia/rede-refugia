@@ -27,12 +27,12 @@ const PrivateNavigation = () => {
         drawerType: isLargeScreen ? "permanent" : "front",
         drawerStyle: {
           backgroundColor: theme.DefaultTheme.colors.purple,
+          borderRightWidth: theme.DefaultTheme.noSpace
         },
         headerStyle: {
           backgroundColor: theme.DefaultTheme.colors.light_pink,
-          borderBottomLeftRadius: "36px",
+          borderBottomLeftRadius: theme.DefaultTheme.roundnessLarge,
           borderBottomColor: theme.DefaultTheme.colors.light_pink,
-          
         }
       }}
     >

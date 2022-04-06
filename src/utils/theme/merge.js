@@ -6,7 +6,9 @@ const MergedTheme = merge(PaperDefaultTheme, NavigationDefaultTheme);
 
 const theme = {
   ...MergedTheme,
-  roundness: "8px",
+  roundness: "15px",
+  roundnessLarge: "36px",
+  noSpace: "0px",
   spaceSmall: "8px",
   space: "16px",
   spaceLarge: "32px",
