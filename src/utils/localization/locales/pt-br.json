@@ -3,6 +3,10 @@
     "profile": "Perfil",
     "settings": "Configurações",
     "screens": {
+        "profile": {
+            "update_button": "Atualizar",
+            "save_button": "Salvar"
+        },
         "login": {
             "title": "Benvindo a Rede Refugia",
             "email_placeholder": "Digite seu email",

@@ -1,10 +1,12 @@
 import * as React from "react";
 import { StyleSheet, View } from "react-native";
+import { Button } from "react-native-paper";
 
 import components from "../../components";
 import providers from "../../providers";
 import localization from "../../utils/localization";
 import firestore from "../../utils/firebase/firestore";
+import theme from "../../utils/theme";
 
 /**
  * @memberof Screens
@@ -22,17 +24,15 @@ const ProfileScreen = () => {
   };
 
   return (
-    <View style={styles.view}>
-      <components.InlineTextEdit
-        fieldName={localization.t("screens.profile.name_field_label")}
-        value={user.name}
-        setValue={(value) => setUserData("name", value)}
-      />
-      <components.InlineTextEdit
-        fieldName={localization.t("screens.profile.phone_field_label")}
-        value={user.phoneNumber}
-        setValue={(value) => setUserData("phoneNumber", value)}
-      />
+    <View style={styles.mainContent}>
+      <View style={styles.row}>
+        <Button mode="contained" style={styles.button}>
+          {localization.t("screens.profile.update_button")}
+        </Button>
+        <Button mode="contained" style={styles.button}>
+          {localization.t("screens.profile.save_button")}
+        </Button>
+      </View>
     </View>
   );
 };
@@ -42,11 +42,17 @@ const ProfileScreen = () => {
  * @description it implements the profile screen page' style grouped by component view
  */
 const styles = StyleSheet.create({
-  view: {
+  ...theme.DefaultStyle,
+  row: {
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "flex-start",
     flex: 1,
-    alignItems: "baseline",
-    padding: "16px",
   },
+  button: {
+    ...theme.DefaultStyle.button,
+    marginLeft: theme.DefaultTheme.spaceLarge,
+  }
 });
 
 export default ProfileScreen;

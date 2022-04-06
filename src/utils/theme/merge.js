@@ -26,12 +26,16 @@ const theme = {
     light_pink: "#FEE2FF",
     purpleDark: "#5E205D",
     purple: "#9E76CF",
-    white: "#FAFAFA"
+    white: "#FAFAFA",
   },
 };
 
 const styles = {
   view: { flex: 1, alignItems: "center", justifyContent: "center" },
+  mainContent: {
+    flex: 1,
+    margin: theme.spaceLarge,
+  },
   cardHeader: {
     backgroundColor: theme.colors.purpleDark,
     borderTopStartRadius: theme.roundness,
@@ -64,7 +68,13 @@ const styles = {
     margin: theme.noSpace,
     marginVertical: theme.spaceSmall,
     paddingLeft: theme.space,
-  }
+  },
+  button: {
+    fontFamily: theme.fontFamily,
+    fontSize: theme.fontSize,
+    fontWeight: "700",
+    padding: theme.spaceSmall
+  },
 };
 
 export const DefaultTheme = theme;

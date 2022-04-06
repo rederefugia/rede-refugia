@@ -10,9 +10,8 @@
     },
     "screens": {
         "profile": {
-            "name_field_label": "Name",
-            "email_field_label": "Email",
-            "phone_field_label": "Phone"
+            "update_button": "Update",
+            "save_button": "Save"
         },
         "login": {
             "title": "Welcome to Rede Refugia",
