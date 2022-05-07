@@ -4,6 +4,8 @@
     "settings": "Configurações",
     "screens": {
         "profile": {
+            "address_group_title": "Endereço",
+            "contact_group_title": "Contato",
             "update_button": "Atualizar",
             "save_button": "Salvar"
         },

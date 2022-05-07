@@ -3,11 +3,13 @@ import { StyleSheet, View } from "react-native";
 
 import theme from "../../utils/theme";
 
-const InputGroupSkeleton = () => {
+const InputGroupSkeleton = (props) => {
+    const { left, right } = props;
+
   return (
     <View style={styles.group}>
-      <View style={styles.column}>Left Columns</View>
-      <View style={styles.column}>Right Column</View>
+      <View style={styles.column}>{left}</View>
+      <View style={styles.column}>{right}</View>
     </View>
   );
 };

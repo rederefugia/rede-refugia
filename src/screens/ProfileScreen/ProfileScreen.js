@@ -25,9 +25,25 @@ const ProfileScreen = () => {
 
   return (
     <View style={styles.mainContent}>
-      <components.InputGroupSkeleton />
-      <components.InputGroupSkeleton />
-      <components.InputGroupSkeleton />
+      <components.InputGroupSkeleton
+        left={"Left Side 1"}
+        right={"Right side 1"}
+      />
+      <components.InputGroupSkeleton
+        left={
+          <components.InputGroupTitle
+            title={localization.t("screens.profile.address_group_title")}
+          />
+        }
+        right={"Right side 2"}
+      />
+      <components.InputGroupSkeleton
+        left={
+          <components.InputGroupTitle
+            title={localization.t("screens.profile.contact_group_title")}
+          />}
+        right={"Right side 3"}
+      />
     </View>
   );
 };
@@ -41,7 +57,7 @@ const styles = StyleSheet.create({
   button: {
     ...theme.DefaultStyle.button,
     marginLeft: theme.DefaultTheme.spaceLarge,
-  }
+  },
 });
 
 export default ProfileScreen;

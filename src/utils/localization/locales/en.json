@@ -10,6 +10,8 @@
     },
     "screens": {
         "profile": {
+            "address_group_title": "Address",
+            "contact_group_title": "Contact",
             "update_button": "Update",
             "save_button": "Save"
         },
