@@ -11,10 +11,11 @@ export const AuthProvider = ({ children }) => {
   const [authError, setAuthError] = useState(null);
 
   const mergeUserData = (authData, userData) => {
-    userData.photoURL = authData.photoURL ? authData.photoURL : '';
-    userData.phoneNumber = authData.phoneNumber ? authData.phoneNumber : '';
-    userData.uid = authData.uid ? authData.uid : '';
-    userData.email = authData.email ? authData.email : '';
+    userData.photoURL = authData.photoURL ? authData.photoURL : "";
+    userData.phoneNumber = authData.phoneNumber ? authData.phoneNumber : "";
+    userData.uid = authData.uid ? authData.uid : "";
+    userData.email = authData.email ? authData.email : "";
+    userData.birthday = userData.birthday ? userData.birthday : "";
     return userData;
   };
 

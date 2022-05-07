@@ -5,6 +5,7 @@
     "screens": {
         "profile": {
             "name_text_input_label": "Nome:",
+            "birthday_text_input_label": "Data de Nascimento",
             "address_group_title": "Endereço",
             "contact_group_title": "Contato",
             "update_button": "Atualizar meus dados"

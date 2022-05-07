@@ -11,6 +11,7 @@
     "screens": {
         "profile": {
             "name_text_input_label": "Name:",
+            "birthday_text_input_label": "Birthday",
             "address_group_title": "Address",
             "contact_group_title": "Contact",
             "update_button": "Update data"
