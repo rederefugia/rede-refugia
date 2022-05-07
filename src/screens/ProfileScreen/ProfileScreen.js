@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StyleSheet, View } from "react-native";
-import { Button } from "react-native-paper";
+import { Button, TextInput } from "react-native-paper";
 
 import components from "../../components";
 import providers from "../../providers";
@@ -26,7 +26,13 @@ const ProfileScreen = () => {
   return (
     <View style={styles.mainContent}>
       <components.InputGroupSkeleton
-        left={"Left Side 1"}
+        left={
+          <TextInput
+            label={localization.t("screens.profile.name_text_input_label")}
+            value={user.name}
+            style={styles.inputText}
+          />
+        }
         right={"Right side 1"}
       />
       <components.InputGroupSkeleton
@@ -41,7 +47,8 @@ const ProfileScreen = () => {
         left={
           <components.InputGroupTitle
             title={localization.t("screens.profile.contact_group_title")}
-          />}
+          />
+        }
         right={"Right side 3"}
       />
     </View>
@@ -57,6 +64,10 @@ const styles = StyleSheet.create({
   button: {
     ...theme.DefaultStyle.button,
     marginLeft: theme.DefaultTheme.spaceLarge,
+  },
+  inputText: {
+    backgroundColor: theme.DefaultTheme.colors.white,
+    borderRadius: theme.DefaultTheme.roundness,
   },
 });
 

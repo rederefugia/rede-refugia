@@ -4,6 +4,7 @@
     "settings": "Configurações",
     "screens": {
         "profile": {
+            "name_text_input_label": "Nome:",
             "address_group_title": "Endereço",
             "contact_group_title": "Contato",
             "update_button": "Atualizar",

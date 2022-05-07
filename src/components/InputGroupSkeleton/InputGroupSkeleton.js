@@ -4,7 +4,7 @@ import { StyleSheet, View } from "react-native";
 import theme from "../../utils/theme";
 
 const InputGroupSkeleton = (props) => {
-    const { left, right } = props;
+  const { left, right } = props;
 
   return (
     <View style={styles.group}>
@@ -20,10 +20,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: theme.DefaultTheme.colors.gray,
     borderRadius: theme.DefaultTheme.roundness,
-    padding: theme.DefaultTheme.spaceLarge,
+    padding: theme.DefaultTheme.space,
     margin: theme.DefaultTheme.space,
   },
-  column: { flex: 1 },
+  column: { flex: 1, margin: theme.DefaultTheme.space },
 });
 
 export default InputGroupSkeleton;
