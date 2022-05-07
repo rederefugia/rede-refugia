@@ -25,14 +25,9 @@ const ProfileScreen = () => {
 
   return (
     <View style={styles.mainContent}>
-      <View style={styles.row}>
-        <Button mode="contained" style={styles.button}>
-          {localization.t("screens.profile.update_button")}
-        </Button>
-        <Button mode="contained" style={styles.button}>
-          {localization.t("screens.profile.save_button")}
-        </Button>
-      </View>
+      <components.InputGroupSkeleton />
+      <components.InputGroupSkeleton />
+      <components.InputGroupSkeleton />
     </View>
   );
 };
@@ -43,12 +38,6 @@ const ProfileScreen = () => {
  */
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
-  row: {
-    flexDirection: "row",
-    justifyContent: "flex-end",
-    alignItems: "flex-start",
-    flex: 1,
-  },
   button: {
     ...theme.DefaultStyle.button,
     marginLeft: theme.DefaultTheme.spaceLarge,

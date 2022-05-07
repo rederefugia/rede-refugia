@@ -6,7 +6,7 @@ const MergedTheme = merge(PaperDefaultTheme, NavigationDefaultTheme);
 
 const theme = {
   ...MergedTheme,
-  roundness: "15px",
+  roundness: "12px",
   roundnessLarge: "36px",
   noSpace: "0px",
   spaceSmall: "8px",
@@ -27,6 +27,7 @@ const theme = {
     purpleDark: "#5E205D",
     purple: "#9E76CF",
     white: "#FAFAFA",
+    gray: "#E1E0E0"
   },
 };
 
@@ -73,7 +74,7 @@ const styles = {
     fontFamily: theme.fontFamily,
     fontSize: theme.fontSize,
     fontWeight: "700",
-    padding: theme.spaceSmall
+    paddingHorizontal: theme.spaceSmall
   },
 };
 
