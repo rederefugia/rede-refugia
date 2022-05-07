@@ -13,8 +13,7 @@
             "name_text_input_label": "Name:",
             "address_group_title": "Address",
             "contact_group_title": "Contact",
-            "update_button": "Update",
-            "save_button": "Save"
+            "update_button": "Update data"
         },
         "login": {
             "title": "Welcome to Rede Refugia",
