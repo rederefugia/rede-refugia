@@ -21,6 +21,7 @@
             "contact_group_title": "Contact",
             "cellphone_text_input_label": "Cellphone:",
             "land_line_text_input_label": "Land Line:",
+            "email_text_input_label": "Email:",
             "update_button": "Update data"
         },
         "login": {

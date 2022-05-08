@@ -15,6 +15,7 @@
             "contact_group_title": "Contato",
             "cellphone_text_input_label": "Celular:",
             "land_line_text_input_label": "Telefone:",
+            "email_text_input_label": "Email:",
             "update_button": "Atualizar meus dados"
         },
         "login": {

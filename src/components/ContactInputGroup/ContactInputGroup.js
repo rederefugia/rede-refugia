@@ -11,9 +11,17 @@ const ContactInputGroup = ({ userData, setUserData, styles }) => {
   return (
     <InputGroupSkeleton
       left={
+        <>
         <InputGroupTitle
           title={localization.t("screens.profile.contact_group_title")}
         />
+        <TextInput
+            label={localization.t("screens.profile.email_text_input_label")}
+            value={userData.email}
+            style={styles.inputText}
+            disabled={true}
+          />
+        </>
       }
       right={
         <>
