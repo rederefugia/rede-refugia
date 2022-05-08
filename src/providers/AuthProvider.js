@@ -16,6 +16,7 @@ export const AuthProvider = ({ children }) => {
     userData.uid = authData.uid ? authData.uid : "";
     userData.email = authData.email ? authData.email : "";
     userData.birthday = userData.birthday ? userData.birthday : "";
+    userData.zipCode = userData.zipCode ? userData.zipCode : "";
     return userData;
   };
 

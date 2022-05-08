@@ -53,9 +53,17 @@ const ProfileScreen = () => {
       />
       <components.InputGroupSkeleton
         left={
-          <components.InputGroupTitle
-            title={localization.t("screens.profile.address_group_title")}
-          />
+          <>
+            <components.InputGroupTitle
+              title={localization.t("screens.profile.address_group_title")}
+            />
+            <TextInput
+              label={localization.t("screens.profile.zip_code_text_input_label")}
+              value={userData.zipCode}
+              onChangeText={(value) => setUserData({ zipCode: value })}
+              style={styles.inputText}
+            />
+          </>
         }
         right={<Text>"Right side 2"</Text>}
       />
