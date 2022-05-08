@@ -17,6 +17,7 @@
             "state_text_input_label": "State:",
             "city_text_input_label": "City:",
             "neighborhood_text_input_label": "Neighborhood:",
+            "street_text_input_label": "Street:",
             "contact_group_title": "Contact",
             "update_button": "Update data"
         },
