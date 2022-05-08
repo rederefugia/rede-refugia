@@ -17,6 +17,13 @@
                 "female_option": "Female",
                 "other_option": "Other"
             },
+            "status_combo_box_label": "Status:",
+            "status_combo_box": {
+                "refugee_option": "Refugee",
+                "refugee_requester_option": "Refugee Requester",
+                "stateless_option": "Stateless Person",
+                "humanitarian_visa_holder_option": "Humanitarian Visa Holder"
+            },
             "birthday_text_input_label": "Birthday:",
             "address_group_title": "Address",
             "zip_code_text_input_label": "Zip Code:",

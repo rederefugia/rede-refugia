@@ -23,6 +23,7 @@ export const AuthProvider = ({ children }) => {
     userData.street = userData.street ? userData.street : "";
     userData.landLine = userData.landLine ? userData.landLine : "";
     userData.gender = userData.gender ? userData.gender : "";
+    userData.status = userData.status ? userData.status : "";
     return userData;
   };
 

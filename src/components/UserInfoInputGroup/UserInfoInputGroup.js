@@ -16,6 +16,16 @@ const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
     localization.t("screens.profile.gender_combo_box.other_option"),
   ];
 
+  const status_options = [
+    "",
+    localization.t("screens.profile.status_combo_box.refugee_option"),
+    localization.t("screens.profile.status_combo_box.refugee_requester_option"),
+    localization.t("screens.profile.status_combo_box.stateless_option"),
+    localization.t(
+      "screens.profile.status_combo_box.humanitarian_visa_holder_option"
+    ),
+  ];
+
   return (
     <InputGroupSkeleton
       left={
@@ -25,6 +35,12 @@ const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
             value={userData.name}
             onChangeText={(value) => setUserData({ name: value })}
             style={styles.inputText}
+          />
+          <ComboBox
+            label={localization.t("screens.profile.status_combo_box_label")}
+            options={status_options}
+            selection={userData.status}
+            setSelection={(value) => setUserData({ status: value })}
           />
         </>
       }

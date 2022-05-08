@@ -11,6 +11,13 @@
                 "female_option": "Mulher",
                 "other_option": "Outro"
             },
+            "status_combo_box_label": "Situação:",
+            "status_combo_box": {
+                "refugee_option": "Refugiário",
+                "refugee_requester_option": "Solicitante de Refúgio",
+                "stateless_option": "Apatrida",
+                "humanitarian_visa_holder_option": "Portador de Visto Humanitário"
+            },
             "birthday_text_input_label": "Data de Nascimento:",
             "address_group_title": "Endereço",
             "zip_code_text_input_label": "CEP:",
