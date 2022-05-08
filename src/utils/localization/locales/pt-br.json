@@ -10,6 +10,7 @@
             "zip_code_text_input_label": "CEP:",
             "state_text_input_label": "Estado:",
             "city_text_input_label": "Cidade:",
+            "neighborhood_text_input_label": "Bairro:",
             "contact_group_title": "Contato",
             "update_button": "Atualizar meus dados"
         },

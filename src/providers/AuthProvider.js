@@ -19,6 +19,7 @@ export const AuthProvider = ({ children }) => {
     userData.zipCode = userData.zipCode ? userData.zipCode : "";
     userData.state = userData.state ? userData.state : "";
     userData.city = userData.city ? userData.city : "";
+    userData.neighborhood = userData.neighborhood ? userData.neighborhood : "";
     return userData;
   };
 

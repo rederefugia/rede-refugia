@@ -81,6 +81,12 @@ const ProfileScreen = () => {
               onChangeText={(value) => setUserData({ city: value })}
               style={styles.inputText}
             />
+            <TextInput
+              label={localization.t("screens.profile.neighborhood_text_input_label")}
+              value={userData.neighborhood}
+              onChangeText={(value) => setUserData({ neighborhood: value })}
+              style={styles.inputText}
+            />
           </>
         }
       />

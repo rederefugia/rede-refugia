@@ -16,6 +16,7 @@
             "zip_code_text_input_label": "Zip Code:",
             "state_text_input_label": "State:",
             "city_text_input_label": "City:",
+            "neighborhood_text_input_label": "Neighborhood:",
             "contact_group_title": "Contact",
             "update_button": "Update data"
         },
