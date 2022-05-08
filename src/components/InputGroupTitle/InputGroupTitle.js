@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     borderRadius: theme.DefaultTheme.roundness,
     color: theme.DefaultTheme.colors.white,
     backgroundColor: theme.DefaultTheme.colors.purpleDark,
-    marginVertical: theme.DefaultTheme.spaceSmall,
+    marginBottom: theme.DefaultTheme.spaceLarge,
   },
 });
 
