@@ -63,6 +63,12 @@ const ProfileScreen = () => {
               onChangeText={(value) => setUserData({ zipCode: value })}
               style={styles.inputText}
             />
+            <TextInput
+              label={localization.t("screens.profile.state_text_input_label")}
+              value={userData.state}
+              onChangeText={(value) => setUserData({ state: value })}
+              style={styles.inputText}
+            />
           </>
         }
         right={<Text>"Right side 2"</Text>}
@@ -101,6 +107,7 @@ const styles = StyleSheet.create({
   inputText: {
     backgroundColor: theme.DefaultTheme.colors.white,
     borderRadius: theme.DefaultTheme.roundness,
+    marginVertical: theme.DefaultTheme.spaceSmall,
   },
   button: { alignSelf: "center", minWidth: "30%" },
 });

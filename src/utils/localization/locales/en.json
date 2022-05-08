@@ -14,6 +14,7 @@
             "birthday_text_input_label": "Birthday:",
             "address_group_title": "Address",
             "zip_code_text_input_label": "Zip Code:",
+            "state_text_input_label": "State:",
             "contact_group_title": "Contact",
             "update_button": "Update data"
         },

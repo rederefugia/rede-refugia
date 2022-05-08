@@ -8,6 +8,7 @@
             "birthday_text_input_label": "Data de Nascimento:",
             "address_group_title": "Endereço",
             "zip_code_text_input_label": "CEP:",
+            "state_text_input_label": "Estado:",
             "contact_group_title": "Contato",
             "update_button": "Atualizar meus dados"
         },

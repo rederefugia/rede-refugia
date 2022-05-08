@@ -16,7 +16,6 @@ const InputGroupSkeleton = (props) => {
 
 const styles = StyleSheet.create({
   group: {
-    ...theme.DefaultStyle.view,
     flexDirection: "row",
     backgroundColor: theme.DefaultTheme.colors.gray,
     borderRadius: theme.DefaultTheme.roundness,
