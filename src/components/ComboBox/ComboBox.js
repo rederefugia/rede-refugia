@@ -1,32 +1,39 @@
 import * as React from "react";
 import { StyleSheet, View } from "react-native";
 
+import { Text } from "react-native-paper";
 import { Picker } from "@react-native-picker/picker";
 
 import theme from "../../utils/theme";
 
-const ComboBox = ({ options, selection, setSelection}) => {
-
+const ComboBox = ({ label, options, selection, setSelection }) => {
   return (
-    <Picker
-      selectedValue={selection}
-      onValueChange={(itemValue, itemIndex) => setSelection(itemValue)}
-    >
-      {options.map((option) => (
-        <Picker.Item label={option} value={option} />
-      ))}
-    </Picker>
+    <View style={styles.view}>
+      <Text style={styles.label}>{label}</Text>
+      <Picker
+        style={styles.picker}
+        selectedValue={selection}
+        onValueChange={(itemValue, itemIndex) => setSelection(itemValue)}
+      >
+        {options.map((option, index) => (
+          <Picker.Item key={index} label={option} value={option} />
+        ))}
+      </Picker>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  title: {
-    alignSelf: "flex-start",
+  view: {
+    marginVertical: theme.DefaultTheme.space,
+  },
+  label: {
+    padding: theme.DefaultTheme.spaceSmall,
+  },
+  picker: {
     padding: theme.DefaultTheme.space,
     borderRadius: theme.DefaultTheme.roundness,
-    color: theme.DefaultTheme.colors.white,
-    backgroundColor: theme.DefaultTheme.colors.purpleDark,
-    marginBottom: theme.DefaultTheme.spaceLarge,
+    borderColor: theme.DefaultTheme.colors.white,
   },
 });
 

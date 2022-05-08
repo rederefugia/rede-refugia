@@ -11,6 +11,7 @@
     "screens": {
         "profile": {
             "name_text_input_label": "Name:",
+            "gender_combo_box_label": "Gender:",
             "gender_combo_box": {
                 "male_option": "Male",
                 "female_option": "Female",

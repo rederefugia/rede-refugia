@@ -37,6 +37,7 @@ const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
             style={styles.inputText}
           />
           <ComboBox
+            label={localization.t("screens.profile.gender_combo_box_label")}
             options={gender_options}
             selection={userData.gender}
             setSelection={(value) => setUserData({ gender: value })}
