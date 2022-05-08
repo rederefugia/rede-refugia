@@ -9,6 +9,13 @@ import ComboBox from "../ComboBox";
 import localization from "../../utils/localization";
 
 const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
+  const gender_options = [
+    "",
+    localization.t("screens.profile.gender_combo_box.male_option"),
+    localization.t("screens.profile.gender_combo_box.female_option"),
+    localization.t("screens.profile.gender_combo_box.other_option"),
+  ];
+
   return (
     <InputGroupSkeleton
       left={
@@ -19,16 +26,22 @@ const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
             onChangeText={(value) => setUserData({ name: value })}
             style={styles.inputText}
           />
-          <ComboBox />
         </>
       }
       right={
-        <TextInput
-          label={localization.t("screens.profile.birthday_text_input_label")}
-          value={mask(userData.birthday, "99/99/9999")}
-          onChangeText={(value) => setUserData({ birthday: value })}
-          style={styles.inputText}
-        />
+        <>
+          <TextInput
+            label={localization.t("screens.profile.birthday_text_input_label")}
+            value={mask(userData.birthday, "99/99/9999")}
+            onChangeText={(value) => setUserData({ birthday: value })}
+            style={styles.inputText}
+          />
+          <ComboBox
+            options={gender_options}
+            selection={userData.gender}
+            setSelection={(value) => setUserData({ gender: value })}
+          />
+        </>
       }
     />
   );

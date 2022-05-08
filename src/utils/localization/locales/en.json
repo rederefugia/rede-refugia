@@ -11,6 +11,11 @@
     "screens": {
         "profile": {
             "name_text_input_label": "Name:",
+            "gender_combo_box": {
+                "male_option": "Male",
+                "female_option": "Female",
+                "other_option": "Other"
+            },
             "birthday_text_input_label": "Birthday:",
             "address_group_title": "Address",
             "zip_code_text_input_label": "Zip Code:",

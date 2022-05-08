@@ -5,16 +5,16 @@ import { Picker } from "@react-native-picker/picker";
 
 import theme from "../../utils/theme";
 
-const ComboBox = ({ title }) => {
-  const [selectedLanguage, setSelectedLanguage] = React.useState();
+const ComboBox = ({ options, selection, setSelection}) => {
 
   return (
     <Picker
-      selectedValue={selectedLanguage}
-      onValueChange={(itemValue, itemIndex) => setSelectedLanguage(itemValue)}
+      selectedValue={selection}
+      onValueChange={(itemValue, itemIndex) => setSelection(itemValue)}
     >
-      <Picker.Item label="Java" value="java" />
-      <Picker.Item label="JavaScript" value="js" />
+      {options.map((option) => (
+        <Picker.Item label={option} value={option} />
+      ))}
     </Picker>
   );
 };
