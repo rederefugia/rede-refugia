@@ -19,6 +19,7 @@
             "neighborhood_text_input_label": "Neighborhood:",
             "street_text_input_label": "Street:",
             "contact_group_title": "Contact",
+            "cellphone_text_input_label": "Cellphone:",
             "update_button": "Update data"
         },
         "login": {

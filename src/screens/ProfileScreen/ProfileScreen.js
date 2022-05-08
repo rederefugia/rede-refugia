@@ -56,13 +56,10 @@ const ProfileScreen = () => {
         setUserData={setUserData}
         styles={styles}
       />
-      <components.InputGroupSkeleton
-        left={
-          <components.InputGroupTitle
-            title={localization.t("screens.profile.contact_group_title")}
-          />
-        }
-        right={<Text>"Right side 3"</Text>}
+      <components.ContactInputGroup
+        userData={userData}
+        setUserData={setUserData}
+        styles={styles}
       />
       <Button
         style={styles.button}
