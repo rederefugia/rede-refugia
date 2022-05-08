@@ -16,7 +16,7 @@ const ComboBox = ({ label, options, selection, setSelection }) => {
         onValueChange={(itemValue, itemIndex) => setSelection(itemValue)}
       >
         {options.map((option, index) => (
-          <Picker.Item key={index} label={option} value={option} />
+          <Picker.Item key={index} label={option.label} value={option.value} />
         ))}
       </Picker>
     </View>

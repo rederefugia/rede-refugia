@@ -10,20 +10,45 @@ import localization from "../../utils/localization";
 
 const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
   const gender_options = [
-    "",
-    localization.t("screens.profile.gender_combo_box.male_option"),
-    localization.t("screens.profile.gender_combo_box.female_option"),
-    localization.t("screens.profile.gender_combo_box.other_option"),
+    { value: "", label: "" },
+    {
+      value: "male",
+      label: localization.t("screens.profile.gender_combo_box.male_option"),
+    },
+    {
+      value: "female",
+      label: localization.t("screens.profile.gender_combo_box.female_option"),
+    },
+    {
+      value: "other",
+      label: localization.t("screens.profile.gender_combo_box.other_option"),
+    },
   ];
 
   const status_options = [
-    "",
-    localization.t("screens.profile.status_combo_box.refugee_option"),
-    localization.t("screens.profile.status_combo_box.refugee_requester_option"),
-    localization.t("screens.profile.status_combo_box.stateless_option"),
-    localization.t(
-      "screens.profile.status_combo_box.humanitarian_visa_holder_option"
-    ),
+    { value: "", label: "" },
+    {
+      value: "refugee",
+      label: localization.t("screens.profile.status_combo_box.refugee_option"),
+    },
+    {
+      value: "refugee_requester",
+      label: localization.t(
+        "screens.profile.status_combo_box.refugee_requester_option"
+      ),
+    },
+    {
+      value: "stateless",
+      label: localization.t(
+        "screens.profile.status_combo_box.stateless_option"
+      ),
+    },
+    {
+      value: "humanitarian_visa_holder",
+      label: localization.t(
+        "screens.profile.status_combo_box.humanitarian_visa_holder_option"
+      ),
+    },
   ];
 
   return (
