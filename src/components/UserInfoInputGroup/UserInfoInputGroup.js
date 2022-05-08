@@ -4,6 +4,7 @@ import { TextInput } from "react-native-paper";
 import { mask } from "react-native-mask-text";
 
 import InputGroupSkeleton from "../InputGroupSkeleton";
+import ComboBox from "../ComboBox";
 
 import localization from "../../utils/localization";
 
@@ -11,12 +12,15 @@ const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
   return (
     <InputGroupSkeleton
       left={
-        <TextInput
-          label={localization.t("screens.profile.name_text_input_label")}
-          value={userData.name}
-          onChangeText={(value) => setUserData({ name: value })}
-          style={styles.inputText}
-        />
+        <>
+          <TextInput
+            label={localization.t("screens.profile.name_text_input_label")}
+            value={userData.name}
+            onChangeText={(value) => setUserData({ name: value })}
+            style={styles.inputText}
+          />
+          <ComboBox />
+        </>
       }
       right={
         <TextInput
