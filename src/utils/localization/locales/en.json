@@ -20,6 +20,7 @@
             "street_text_input_label": "Street:",
             "contact_group_title": "Contact",
             "cellphone_text_input_label": "Cellphone:",
+            "land_line_text_input_label": "Land Line:",
             "update_button": "Update data"
         },
         "login": {

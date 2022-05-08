@@ -21,6 +21,7 @@ export const AuthProvider = ({ children }) => {
     userData.city = userData.city ? userData.city : "";
     userData.neighborhood = userData.neighborhood ? userData.neighborhood : "";
     userData.street = userData.street ? userData.street : "";
+    userData.landLine = userData.landLine ? userData.landLine : "";
     return userData;
   };
 

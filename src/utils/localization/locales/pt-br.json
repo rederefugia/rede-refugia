@@ -14,6 +14,7 @@
             "street_text_input_label": "Rua:",
             "contact_group_title": "Contato",
             "cellphone_text_input_label": "Celular:",
+            "land_line_text_input_label": "Telefone:",
             "update_button": "Atualizar meus dados"
         },
         "login": {

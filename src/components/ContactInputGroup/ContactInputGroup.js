@@ -23,6 +23,12 @@ const ContactInputGroup = ({ userData, setUserData, styles }) => {
             onChangeText={(value) => setUserData({ phoneNumber: value })}
             style={styles.inputText}
           />
+          <TextInput
+            label={localization.t("screens.profile.land_line_text_input_label")}
+            value={userData.landLine}
+            onChangeText={(value) => setUserData({ landLine: value })}
+            style={styles.inputText}
+          />
         </>
       }
     />
