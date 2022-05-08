@@ -58,7 +58,9 @@ const ProfileScreen = () => {
               title={localization.t("screens.profile.address_group_title")}
             />
             <TextInput
-              label={localization.t("screens.profile.zip_code_text_input_label")}
+              label={localization.t(
+                "screens.profile.zip_code_text_input_label"
+              )}
               value={userData.zipCode}
               onChangeText={(value) => setUserData({ zipCode: value })}
               style={styles.inputText}
@@ -71,7 +73,16 @@ const ProfileScreen = () => {
             />
           </>
         }
-        right={<Text>"Right side 2"</Text>}
+        right={
+          <>
+            <TextInput
+              label={localization.t("screens.profile.city_text_input_label")}
+              value={userData.city}
+              onChangeText={(value) => setUserData({ city: value })}
+              style={styles.inputText}
+            />
+          </>
+        }
       />
       <components.InputGroupSkeleton
         left={

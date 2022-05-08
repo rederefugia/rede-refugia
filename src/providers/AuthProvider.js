@@ -18,6 +18,7 @@ export const AuthProvider = ({ children }) => {
     userData.birthday = userData.birthday ? userData.birthday : "";
     userData.zipCode = userData.zipCode ? userData.zipCode : "";
     userData.state = userData.state ? userData.state : "";
+    userData.city = userData.city ? userData.city : "";
     return userData;
   };
 
