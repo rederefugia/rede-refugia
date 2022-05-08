@@ -1,7 +1,6 @@
 import * as React from "react";
 import { StyleSheet, View } from "react-native";
-import { Button, TextInput, Text } from "react-native-paper";
-import { mask } from "react-native-mask-text";
+import { Button } from "react-native-paper";
 
 import components from "../../components";
 import providers from "../../providers";
@@ -33,23 +32,10 @@ const ProfileScreen = () => {
 
   return (
     <View style={styles.mainContent}>
-      <components.InputGroupSkeleton
-        left={
-          <TextInput
-            label={localization.t("screens.profile.name_text_input_label")}
-            value={userData.name}
-            onChangeText={(value) => setUserData({ name: value })}
-            style={styles.inputText}
-          />
-        }
-        right={
-          <TextInput
-            label={localization.t("screens.profile.birthday_text_input_label")}
-            value={mask(userData.birthday, "99/99/9999")}
-            onChangeText={(value) => setUserData({ birthday: value })}
-            style={styles.inputText}
-          />
-        }
+      <components.UserInfoInputGroup
+        userData={userData}
+        setUserData={setUserData}
+        styles={styles}
       />
       <components.AddressInputGroup
         userData={userData}

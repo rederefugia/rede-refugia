@@ -1,13 +1,11 @@
-import InlineTextEdit from "./InlineTextEdit";
-import InputGroupSkeleton from "./InputGroupSkeleton";
 import InputGroupTitle from "./InputGroupTitle";
 import AddressInputGroup from "./AddressInputGroup";
 import ContactInputGroup from "./ContactInputGroup";
+import UserInfoInputGroup from "./UserInfoInputGroup";
 
 export default {
-  InlineTextEdit,
-  InputGroupSkeleton,
   InputGroupTitle,
   AddressInputGroup,
   ContactInputGroup,
+  UserInfoInputGroup,
 };
