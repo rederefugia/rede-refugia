@@ -9,72 +9,34 @@ import ComboBox from "../ComboBox";
 import localization from "../../utils/localization";
 
 const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
-  
-  const gender_options = [
-    { value: "", label: "" },
+  const options_map = [
+    { name: "gender", values: ["male", "female", "other"] },
     {
-      value: "male",
-      label: localization.t("screens.profile.gender_combo_box.male_option"),
+      name: "status",
+      values: [
+        "refugee",
+        "refugee_requester",
+        "stateless",
+        "humanitarian_visa_holder",
+      ],
     },
     {
-      value: "female",
-      label: localization.t("screens.profile.gender_combo_box.female_option"),
-    },
-    {
-      value: "other",
-      label: localization.t("screens.profile.gender_combo_box.other_option"),
-    },
-  ];
-
-  const status_options = [
-    { value: "", label: "" },
-    {
-      value: "refugee",
-      label: localization.t("screens.profile.status_combo_box.refugee_option"),
-    },
-    {
-      value: "refugee_requester",
-      label: localization.t(
-        "screens.profile.status_combo_box.refugee_requester_option"
-      ),
-    },
-    {
-      value: "stateless",
-      label: localization.t(
-        "screens.profile.status_combo_box.stateless_option"
-      ),
-    },
-    {
-      value: "humanitarian_visa_holder",
-      label: localization.t(
-        "screens.profile.status_combo_box.humanitarian_visa_holder_option"
-      ),
+      name: "motive",
+      values: ["race", "religion", "gender", "nationality", "social_group"],
     },
   ];
 
-  const motive_options = [
-    { value: "", label: "" },
-    {
-      value: "race",
-      label: localization.t("screens.profile.motive_combo_box.race_option"),
-    },
-    {
-      value: "religion",
-      label: localization.t("screens.profile.motive_combo_box.religion_option"),
-    },
-    {
-      value: "gender",
-      label: localization.t("screens.profile.motive_combo_box.gender_option"),
-    },
-    {
-      value: "nationality",
-      label: localization.t("screens.profile.motive_combo_box.nationality_option"),
-    },
-    {
-      value: "social_group",
-      label: localization.t("screens.profile.motive_combo_box.social_group_option"),
-    },
-  ];
+  const options = options_map.map((group) => {
+    let opts = group.values.map((opt) => {
+      return {
+        value: opt,
+        label: localization.t(
+          `screens.profile.${group.name}_combo_box.${opt}_option`
+        ),
+      };
+    });
+    return [{ value: "", label: "" }].concat(opts);
+  });
 
   return (
     <InputGroupSkeleton
@@ -88,7 +50,7 @@ const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
           />
           <ComboBox
             label={localization.t("screens.profile.status_combo_box_label")}
-            options={status_options}
+            options={options[1]}
             selection={userData.status}
             setSelection={(value) => setUserData({ status: value })}
           />
@@ -110,13 +72,13 @@ const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
           />
           <ComboBox
             label={localization.t("screens.profile.gender_combo_box_label")}
-            options={gender_options}
+            options={options[0]}
             selection={userData.gender}
             setSelection={(value) => setUserData({ gender: value })}
           />
           <ComboBox
             label={localization.t("screens.profile.motive_combo_box_label")}
-            options={motive_options}
+            options={options[2]}
             selection={userData.motive}
             setSelection={(value) => setUserData({ motive: value })}
           />
