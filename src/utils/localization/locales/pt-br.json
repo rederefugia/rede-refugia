@@ -26,6 +26,7 @@
                 "nationality_option": "Nacionalidade",
                 "social_group_option": "Grupo Social"
             },
+            "country_text_input_label": "País:",
             "birthday_text_input_label": "Data de Nascimento:",
             "address_group_title": "Endereço",
             "zip_code_text_input_label": "CEP:",

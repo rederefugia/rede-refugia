@@ -25,6 +25,7 @@ export const AuthProvider = ({ children }) => {
     userData.gender = userData.gender ? userData.gender : "";
     userData.status = userData.status ? userData.status : "";
     userData.motive = userData.motive ? userData.motive : "";
+    userData.country = userData.country ? userData.country : "";
     return userData;
   };
 

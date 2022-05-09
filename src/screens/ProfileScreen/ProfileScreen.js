@@ -75,6 +75,12 @@ const styles = StyleSheet.create({
     borderRadius: theme.DefaultTheme.roundness,
     marginVertical: theme.DefaultTheme.spaceSmall,
   },
+  inputTextLarge: {
+    backgroundColor: theme.DefaultTheme.colors.white,
+    borderRadius: theme.DefaultTheme.roundness,
+    marginBottom: theme.DefaultTheme.spaceSmall,
+    marginTop: "38px",
+  },
   button: { alignSelf: "center", minWidth: "30%" },
 });
 

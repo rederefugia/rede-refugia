@@ -92,6 +92,12 @@ const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
             selection={userData.status}
             setSelection={(value) => setUserData({ status: value })}
           />
+          <TextInput
+            label={localization.t("screens.profile.country_text_input_label")}
+            value={userData.name}
+            onChangeText={(value) => setUserData({ country: value })}
+            style={styles.inputTextLarge}
+          />
         </>
       }
       right={
