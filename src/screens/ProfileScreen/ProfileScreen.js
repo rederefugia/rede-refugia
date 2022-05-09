@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 import { Button } from "react-native-paper";
 
 import components from "../../components";
@@ -31,7 +31,7 @@ const ProfileScreen = () => {
   };
 
   return (
-    <View style={styles.mainContent}>
+    <ScrollView style={styles.mainContent}>
       <components.UserInfoInputGroup
         userData={userData}
         setUserData={setUserData}
@@ -56,7 +56,7 @@ const ProfileScreen = () => {
       >
         {localization.t("screens.profile.update_button")}
       </Button>
-    </View>
+    </ScrollView>
   );
 };
 
