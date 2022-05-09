@@ -9,6 +9,7 @@ import ComboBox from "../ComboBox";
 import localization from "../../utils/localization";
 
 const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
+  
   const gender_options = [
     { value: "", label: "" },
     {
@@ -51,6 +52,30 @@ const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
     },
   ];
 
+  const motive_options = [
+    { value: "", label: "" },
+    {
+      value: "race",
+      label: localization.t("screens.profile.motive_combo_box.race_option"),
+    },
+    {
+      value: "religion",
+      label: localization.t("screens.profile.motive_combo_box.religion_option"),
+    },
+    {
+      value: "gender",
+      label: localization.t("screens.profile.motive_combo_box.gender_option"),
+    },
+    {
+      value: "nationality",
+      label: localization.t("screens.profile.motive_combo_box.nationality_option"),
+    },
+    {
+      value: "social_group",
+      label: localization.t("screens.profile.motive_combo_box.social_group_option"),
+    },
+  ];
+
   return (
     <InputGroupSkeleton
       left={
@@ -82,6 +107,12 @@ const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
             options={gender_options}
             selection={userData.gender}
             setSelection={(value) => setUserData({ gender: value })}
+          />
+          <ComboBox
+            label={localization.t("screens.profile.motive_combo_box_label")}
+            options={motive_options}
+            selection={userData.motive}
+            setSelection={(value) => setUserData({ motive: value })}
           />
         </>
       }

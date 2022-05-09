@@ -24,6 +24,14 @@
                 "stateless_option": "Stateless Person",
                 "humanitarian_visa_holder_option": "Humanitarian Visa Holder"
             },
+            "motive_combo_box_label": "Motive:",
+            "motive_combo_box": {
+                "race_option": "Race",
+                "religion_option": "Religion",
+                "gender_option": "Gender",
+                "nationality_option": "Nationality",
+                "social_group_option": "Social Group"
+            },
             "birthday_text_input_label": "Birthday:",
             "address_group_title": "Address",
             "zip_code_text_input_label": "Zip Code:",

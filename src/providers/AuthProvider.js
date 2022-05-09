@@ -24,6 +24,7 @@ export const AuthProvider = ({ children }) => {
     userData.landLine = userData.landLine ? userData.landLine : "";
     userData.gender = userData.gender ? userData.gender : "";
     userData.status = userData.status ? userData.status : "";
+    userData.motive = userData.motive ? userData.motive : "";
     return userData;
   };
 

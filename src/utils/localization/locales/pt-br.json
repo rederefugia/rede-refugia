@@ -18,6 +18,14 @@
                 "stateless_option": "Apatrida",
                 "humanitarian_visa_holder_option": "Portador de Visto Humanitário"
             },
+            "motive_combo_box_label": "Motivo:",
+            "motive_combo_box": {
+                "race_option": "Raça",
+                "religion_option": "Religião",
+                "gender_option": "Gênero",
+                "nationality_option": "Nacionalidade",
+                "social_group_option": "Grupo Social"
+            },
             "birthday_text_input_label": "Data de Nascimento:",
             "address_group_title": "Endereço",
             "zip_code_text_input_label": "CEP:",
