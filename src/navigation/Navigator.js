@@ -13,7 +13,12 @@ const Navigator = ({ theme }) => {
   );
 
   if (loadingAuthState) {
-    return <ActivityIndicator animating={true} />;
+    return (
+      <ActivityIndicator
+        style={{ flex: 1, alignContent: "center", justifyContent: "center" }}
+        animating={true}
+      />
+    );
   }
 
   return (
