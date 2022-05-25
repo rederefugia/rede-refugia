@@ -1,25 +1,34 @@
 import * as React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
 
 import { Button } from "react-native-paper";
+
+import ModalCard from "../ModalCard";
 
 import theme from "../../utils/theme";
 
 const CreateOpportunitiesButton = ({ label }) => {
+  const [visible, setVisible] = React.useState(false);
+
   return (
-    <Button
-      mode="contained"
-      uppercase={false}
-      icon="plus"
-      style={styles.button}
-    >
-      {label}
-    </Button>
+    <>
+      <ModalCard visible={visible} setVisible={setVisible} />
+      <Button
+        mode="contained"
+        uppercase={false}
+        icon="plus"
+        style={styles.button}
+        onPress={() => setVisible(true)}
+      >
+        {label}
+      </Button>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
-  button: { marginHorizontal: theme.DefaultTheme.space },
+  ...theme.DefaultStyle,
+  button: { margin: theme.DefaultTheme.space },
 });
 
 export default CreateOpportunitiesButton;
