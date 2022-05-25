@@ -4,7 +4,8 @@
     "settings": "Configurações",
     "screens": {
         "opportunities": {
-            "name": "Oportunidades"
+            "name": "Oportunidades",
+            "create_header_button_label": "Criar"
         },
         "profile": {
             "name_text_input_label": "Nome:",

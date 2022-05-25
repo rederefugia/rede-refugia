@@ -10,7 +10,8 @@
     },
     "screens": {
         "opportunities": {
-            "name": "Opportunities"
+            "name": "Opportunities",
+            "create_header_button_label": "Create"
         },
         "profile": {
             "name_text_input_label": "Name:",
