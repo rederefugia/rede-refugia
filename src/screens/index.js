@@ -9,6 +9,7 @@ import HomeScreen from "./HomeScreen";
 import SettingsScreen from "./SettingsScreen";
 import LoginScreen from "./LoginScreen";
 import SignupScreen from "./SignupScreen";
+import OpportunitiesScreen from "./OpportunitiesScreen";
 
 export default {
   ProfileScreen,
@@ -16,4 +17,5 @@ export default {
   SettingsScreen,
   LoginScreen,
   signup: SignupScreen,
+  OpportunitiesScreen,
 };

@@ -19,7 +19,7 @@ const PrivateNavigation = () => {
 
   return (
     <Drawer.Navigator
-      initialRouteName={localization.t("home")}
+      initialRouteName={localization.t("screens.opportunities.name")}
       drawerContent={(props) => <DrawerCustomContent {...props} />}
       screenOptions={{
         drawerType: isLargeScreen ? "permanent" : "front",
@@ -46,10 +46,10 @@ const PrivateNavigation = () => {
       }}
     >
       <Drawer.Screen
-        name={localization.t("home")}
-        component={screens.HomeScreen}
+        name={localization.t("screens.opportunities.name")}
+        component={screens.OpportunitiesScreen}
         options={{
-          drawerLabel: localization.t("home"),
+          drawerLabel: localization.t("screens.opportunities.name"),
         }}
       />
       <Drawer.Screen

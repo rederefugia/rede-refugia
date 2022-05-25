@@ -9,6 +9,9 @@
         }
     },
     "screens": {
+        "opportunities": {
+            "name": "Opportunities"
+        },
         "profile": {
             "name_text_input_label": "Name:",
             "gender_combo_box_label": "Gender:",

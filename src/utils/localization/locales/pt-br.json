@@ -3,6 +3,9 @@
     "profile": "Perfil",
     "settings": "Configurações",
     "screens": {
+        "opportunities": {
+            "name": "Oportunidades"
+        },
         "profile": {
             "name_text_input_label": "Nome:",
             "gender_combo_box_label": "Genero:",
