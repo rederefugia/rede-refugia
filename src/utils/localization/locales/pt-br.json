@@ -5,7 +5,14 @@
     "screens": {
         "opportunities": {
             "name": "Oportunidades",
-            "create_header_button_label": "Criar"
+            "create_header_button_label": "Criar",
+            "create_opportunity_modal": {
+                "step_1": {
+                    "title": "O que deseja criar?",
+                    "request_option": "Uma oferta de oportunidade",
+                    "offer_option": "Uma busca por oportunidade"
+                }
+            }
         },
         "profile": {
             "name_text_input_label": "Nome:",

@@ -42,7 +42,9 @@ const StepperModal = ({ visible, setVisible, steps }) => {
               />
             )}
           />
-          <Card.Content>{steps[currentStep].content}</Card.Content>
+          <Card.Content style={styles.cardContent}>
+            {steps[currentStep].content}
+          </Card.Content>
           <Card.Actions style={styles.cardActions}>
             <Button
               style={styles.cardActionsButton}
@@ -75,11 +77,15 @@ const styles = StyleSheet.create({
   cardActions: {
     ...theme.DefaultStyle.cardActions,
     justifyContent: "center",
+    marginVertical: theme.DefaultTheme.noSpace,
   },
   cardHeader: {
     ...theme.DefaultStyle.cardHeader,
-    minHeight: "50px"
-  }
+    minHeight: "50px",
+  },
+  cardContent: {
+    color: theme.DefaultTheme.colors.white,
+  },
 });
 
 export default StepperModal;
