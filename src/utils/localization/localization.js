@@ -8,10 +8,10 @@ import fr from "./locales/fr.json";
 
 i18n.translations = {
   en, es, fr,
-  "pt-br": pt_br,
+  "pt-BR": pt_br,
 };
 
 i18n.locale = Localization.locale;
 i18n.fallbacks = true;
-
+console.log(i18n.locale)
 export default i18n;

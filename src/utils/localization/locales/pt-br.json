@@ -2,6 +2,16 @@
     "home": "Início",
     "profile": "Perfil",
     "settings": "Configurações",
+    "components": {
+        "inline_text_edit": {
+            "input_text_helper": "Press <Enter> to complete the change",
+            "edit_button_label": "Edit"
+        },
+        "stepper_modal": {
+            "next_button_label": "Próximo",
+            "finish_button_label": "Finalizar"
+        }
+    },
     "screens": {
         "opportunities": {
             "name": "Oportunidades",

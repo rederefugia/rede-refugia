@@ -4,6 +4,7 @@ import { StyleSheet, Modal, View } from "react-native";
 import { Button, Card, IconButton } from "react-native-paper";
 
 import theme from "../../utils/theme";
+import localization from "../../utils/localization";
 
 const StepperModal = ({ visible, setVisible, steps }) => {
   let [currentStep, setCurrentStep] = React.useState(0);
@@ -52,7 +53,7 @@ const StepperModal = ({ visible, setVisible, steps }) => {
               mode="contained"
               onPress={nextStep}
             >
-              Next
+              {localization.t("components.stepper_modal.next_button_label")}
             </Button>
           </Card.Actions>
         </Card>
