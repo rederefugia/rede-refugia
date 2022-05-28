@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 
 import { Button } from "react-native-paper";
 
-import ModalCard from "../ModalCard";
+import StepperModal from "../StepperModal";
 
 import theme from "../../utils/theme";
 
@@ -12,7 +12,7 @@ const CreateOpportunitiesButton = ({ label }) => {
 
   return (
     <>
-      <ModalCard visible={visible} setVisible={setVisible} />
+      <StepperModal visible={visible} setVisible={setVisible} />
       <Button
         mode="contained"
         uppercase={false}

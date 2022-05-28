@@ -27,7 +27,8 @@ const theme = {
     purpleDark: "#5E205D",
     purple: "#9E76CF",
     white: "#FAFAFA",
-    gray: "#E1E0E0"
+    gray: "#E1E0E0",
+    black: "#000000"
   },
 };
 

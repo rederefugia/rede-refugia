@@ -5,7 +5,9 @@ import { Button, Title, Paragraph, Card } from "react-native-paper";
 
 import theme from "../../utils/theme";
 
-const ModalCard = ({ visible, setVisible }) => {
+const StepperModal = ({ visible, setVisible }) => {
+
+
   return (
     <Modal
       animationType="fade"
@@ -29,16 +31,8 @@ const ModalCard = ({ visible, setVisible }) => {
               style={styles.cardActionsButton}
               uppercase={false}
               mode="contained"
-              onPress={() => setVisible(false)}
             >
-              Cancel
-            </Button>
-            <Button
-              style={styles.cardActionsButton}
-              uppercase={false}
-              mode="contained"
-            >
-              Ok
+              Next
             </Button>
           </Card.Actions>
         </Card>
@@ -50,9 +44,8 @@ const ModalCard = ({ visible, setVisible }) => {
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
   cardView: {
-    ...theme.DefaultStyle.cardView,
     minWidth: "30%",
-    shadowColor: "#000",
+    shadowColor: theme.DefaultTheme.colors.black,
     shadowOffset: {
       width: 0,
       height: 5,
@@ -61,6 +54,10 @@ const styles = StyleSheet.create({
     shadowRadius: theme.DefaultTheme.roundnessLarge,
     elevation: 5,
   },
+  cardActions: {
+    ...theme.DefaultStyle.cardActions,
+    justifyContent: "center"
+  }
 });
 
-export default ModalCard;
+export default StepperModal;
