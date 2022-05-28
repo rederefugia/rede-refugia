@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StyleSheet, Modal, View } from "react-native";
 
-import { Button, Card } from "react-native-paper";
+import { Button, Card, IconButton } from "react-native-paper";
 
 import theme from "../../utils/theme";
 
@@ -26,6 +26,21 @@ const StepperModal = ({ visible, setVisible, steps }) => {
             style={styles.cardHeader}
             titleStyle={{ ...theme.DefaultStyle.cardHeaderTitle }}
             title={steps[currentStep].title}
+            rightStyle={{
+              marginHorizontal: theme.DefaultTheme.spaceSmall,
+              marginVertical: theme.DefaultTheme.noSpace,
+            }}
+            right={(props) => (
+              <IconButton
+                {...props}
+                style={{
+                  backgroundColor: theme.DefaultTheme.colors.white,
+                }}
+                icon="close"
+                size={14}
+                onPress={() => setVisible(false)}
+              />
+            )}
           />
           <Card.Content>{steps[currentStep].content}</Card.Content>
           <Card.Actions style={styles.cardActions}>
@@ -60,6 +75,10 @@ const styles = StyleSheet.create({
   cardActions: {
     ...theme.DefaultStyle.cardActions,
     justifyContent: "center",
+  },
+  cardHeader: {
+    ...theme.DefaultStyle.cardHeader,
+    minHeight: "50px"
   }
 });
 
