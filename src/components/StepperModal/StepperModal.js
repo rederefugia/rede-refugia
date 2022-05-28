@@ -1,12 +1,17 @@
 import * as React from "react";
 import { StyleSheet, Modal, View } from "react-native";
 
-import { Button, Title, Paragraph, Card } from "react-native-paper";
+import { Button, Card } from "react-native-paper";
 
 import theme from "../../utils/theme";
 
-const StepperModal = ({ visible, setVisible }) => {
+const StepperModal = ({ visible, setVisible, steps }) => {
+  let [currentStep, setCurrentStep] = React.useState(0);
 
+  const nextStep = () =>
+    setCurrentStep(
+      currentStep < steps.length - 1 ? (currentStep += 1) : currentStep
+    );
 
   return (
     <Modal
@@ -20,17 +25,15 @@ const StepperModal = ({ visible, setVisible }) => {
           <Card.Title
             style={styles.cardHeader}
             titleStyle={{ ...theme.DefaultStyle.cardHeaderTitle }}
-            title="Card Title"
+            title={steps[currentStep].title}
           />
-          <Card.Content>
-            <Title>Card title</Title>
-            <Paragraph>Card content</Paragraph>
-          </Card.Content>
+          <Card.Content>{steps[currentStep].content}</Card.Content>
           <Card.Actions style={styles.cardActions}>
             <Button
               style={styles.cardActionsButton}
               uppercase={false}
               mode="contained"
+              onPress={nextStep}
             >
               Next
             </Button>
@@ -56,7 +59,7 @@ const styles = StyleSheet.create({
   },
   cardActions: {
     ...theme.DefaultStyle.cardActions,
-    justifyContent: "center"
+    justifyContent: "center",
   }
 });
 
