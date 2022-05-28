@@ -14,7 +14,7 @@ const OpportunitiesScreen = ({ navigation }) => {
   React.useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <components.CreateOpportunitiesButton
+        <components.CreateOpportunityButton
           label={localization.t(
             "screens.opportunities.create_header_button_label"
           )}
