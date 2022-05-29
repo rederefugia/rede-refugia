@@ -5,6 +5,7 @@ import OpportunityType from "./OpportunityType";
 import OpportunityCategory from "./OpportunityCategory";
 import OpportunityLink from "./OpportunityLink";
 import OpportunityLocation from "./OpportunityLocation";
+import OpportunityDescription from "./OpportunityDescription";
 
 import localization from "../../utils/localization";
 
@@ -48,6 +49,12 @@ const CreateOpportunityModal = ({ visible, setVisible }) => {
               "screens.opportunities.create_opportunity_modal.opportunity_location.offer_title"
             ),
       content: <OpportunityLocation setOpportunity={setOpportunity} />,
+    },
+    {
+      title: localization.t(
+        "screens.opportunities.create_opportunity_modal.opportunity_description.title"
+      ),
+      content: <OpportunityDescription setOpportunity={setOpportunity} />,
     },
   ];
 

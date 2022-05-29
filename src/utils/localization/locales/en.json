@@ -47,6 +47,10 @@
                     "offer_title": "Where is the offer?",
                     "request_title": "Where is the request?",
                     "zip_code_input_text_label": "ZipCode:"
+                },
+                "opportunity_description": {
+                    "title": "Opportunity description",
+                    "counter_label": "Characters:"
                 }
             }
         },

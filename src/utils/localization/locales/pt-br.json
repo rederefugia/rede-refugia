@@ -47,6 +47,10 @@
                     "offer_title": "Onde será ofertado?",
                     "request_title": "Onde será boscado?",
                     "zip_code_input_text_label": "CEP:"
+                },
+                "opportunity_description": {
+                    "title": "Descrição da oportunidade",
+                    "counter_label": "Caracteres:"
                 }
             }
         },
