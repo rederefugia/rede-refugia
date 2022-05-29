@@ -8,7 +8,7 @@ import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 
 const OpportunityType = ({ setOpportunity }) => {
-  const [value, setValue] = React.useState("request");
+  const [value, setValue] = React.useState("");
 
   return (
     <RadioButton.Group

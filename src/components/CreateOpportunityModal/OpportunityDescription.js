@@ -14,7 +14,7 @@ const OpportunityDescription = ({ setOpportunity }) => {
   const handleTextChange = (value) => {
     if (value.length < MAX_LENGTH) {
       setText(value);
-      setOpportunity(value);
+      setOpportunity({ description: value });
     }
   };
 
@@ -26,6 +26,7 @@ const OpportunityDescription = ({ setOpportunity }) => {
         maxLength={MAX_LENGTH}
         numberOfLines={5}
         onChangeText={handleTextChange}
+        value={text}
       />
       <HelperText style={styles.helper} visible={true} type="info">
         {localization.t(

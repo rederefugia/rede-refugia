@@ -12,8 +12,12 @@ import localization from "../../utils/localization";
 const CreateOpportunityModal = ({ visible, setVisible }) => {
   let [opportunity, setOpportunity] = React.useReducer(
     (state, newState) => ({ ...state, ...newState }),
-    {}
+    { type: "", title: "", category: "", link: "", zipCode: "", description: "" }
   );
+
+  const handleFinish = () => {
+    console.log(opportunity);
+  };
 
   const steps = [
     {
@@ -59,7 +63,12 @@ const CreateOpportunityModal = ({ visible, setVisible }) => {
   ];
 
   return (
-    <StepperModal steps={steps} visible={visible} setVisible={setVisible} />
+    <StepperModal
+      steps={steps}
+      visible={visible}
+      setVisible={setVisible}
+      handleFinish={handleFinish}
+    />
   );
 };
 

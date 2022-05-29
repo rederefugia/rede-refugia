@@ -8,13 +8,18 @@ import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 
 const OpportunityLink = ({ setOpportunity }) => {
+  const [text, setText] = React.useState("");
   return (
     <TextInput
       style={styles.inputText}
       placeholder={localization.t(
         "screens.opportunities.create_opportunity_modal.opportunity_link.link_input_text_label"
       )}
-      onChangeText={(value) => setOpportunity({ link: value })}
+      onChangeText={(value) => {
+        setText(value);
+        setOpportunity({ link: value });
+      }}
+      value={text}
     />
   );
 };

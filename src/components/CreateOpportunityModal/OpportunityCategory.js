@@ -9,6 +9,7 @@ import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 
 const OpportunityCategory = ({ setOpportunity }) => {
+  const [text, setText] = React.useState("");
   const opts = [
     "living",
     "food",
@@ -32,15 +33,19 @@ const OpportunityCategory = ({ setOpportunity }) => {
       <TextInput
         style={styles.inputText}
         placeholder={localization.t(
-            "screens.opportunities.create_opportunity_modal.opportunity_category.title_input_text_label"
-          )}
-        onChangeText={(value) => setOpportunity({ title: value })}
+          "screens.opportunities.create_opportunity_modal.opportunity_category.title_input_text_label"
+        )}
+        onChangeText={(value) => {
+          setText(value);
+          setOpportunity({ title: value });
+        }}
+        value={text}
       />
       <ComboBox
         label={localization.t(
           "screens.opportunities.create_opportunity_modal.opportunity_category.combo_box_label"
         )}
-        options={opts}
+        options={[{ value: "", label: "" }].concat(opts)}
         setSelection={(value) => setOpportunity({ category: value })}
       />
     </View>
