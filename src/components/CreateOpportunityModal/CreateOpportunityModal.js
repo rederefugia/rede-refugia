@@ -5,6 +5,7 @@ import { Text } from "react-native-paper";
 import StepperModal from "../StepperModal";
 import OpportunityType from "./OpportunityType";
 import OpportunityCategory from "./OpportunityCategory";
+import OpportunityLink from "./OpportunityLink";
 
 import localization from "../../utils/localization";
 
@@ -32,7 +33,12 @@ const CreateOpportunityModal = ({ visible, setVisible }) => {
             ),
       content: <OpportunityCategory setOpportunity={setOpportunity} />,
     },
-    { title: "Step 3", content: <Text>Content 3</Text> },
+    {
+      title: localization.t(
+        "screens.opportunities.create_opportunity_modal.opportunity_link.title"
+      ),
+      content: <OpportunityLink setOpportunity={setOpportunity} />,
+    },
   ];
 
   return (

@@ -38,6 +38,10 @@
                         "training_option": "Trainamento",
                         "other_option": "Outro"
                     }
+                },
+                "opportunity_link": {
+                    "title": "Insira o link de contato. (ex: rede social)",
+                    "link_input_text_label": "Link:"
                 }
             }
         },

@@ -36,8 +36,12 @@
                         "trade_option": "Trade",
                         "communication_option": "Communication",
                         "training_option": "Training",
-                        "other_option": "Outher"
+                        "other_option": "Other"
                     }
+                },
+                "opportunity_link": {
+                    "title": "Insert the contact link. (ex: social network)",
+                    "link_input_text_label": "Link:"
                 }
             }
         },
