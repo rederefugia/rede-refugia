@@ -24,7 +24,20 @@
                 },
                 "opportunity_category": {
                     "offer_title": "What will be offered?",
-                    "request_title": "What will be requested?"
+                    "request_title": "What will be requested?",
+                    "title_input_text_label": "Title:",
+                    "combo_box_label": "Category",
+                    "combo_box_options": {
+                        "living_option": "Living",
+                        "food_option": "Food",
+                        "documentation_option": "Documentation",
+                        "job_option": "Job",
+                        "transport_option": "Transport",
+                        "trade_option": "Trade",
+                        "communication_option": "Communication",
+                        "training_option": "Training",
+                        "other_option": "Outher"
+                    }
                 }
             }
         },

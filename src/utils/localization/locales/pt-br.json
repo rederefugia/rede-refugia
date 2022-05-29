@@ -24,7 +24,20 @@
                 },
                 "opportunity_category": {
                     "offer_title": "O que será ofertado?",
-                    "request_title": "O que será buscado?"
+                    "request_title": "O que será buscado?",
+                    "title_input_text_label": "Título:",
+                    "combo_box_label": "Categoria",
+                    "combo_box_options": {
+                        "living_option": "Moradia",
+                        "food_option": "Alimentação",
+                        "documentation_option": "Documentação",
+                        "job_option": "Emprego",
+                        "transport_option": "Transporte",
+                        "trade_option": "Trocas",
+                        "communication_option": "Communicação",
+                        "training_option": "Trainamento",
+                        "other_option": "Outro"
+                    }
                 }
             }
         },
