@@ -12,16 +12,17 @@ const OpportunityType = ({ setOpportunity }) => {
 
   return (
     <RadioButton.Group
-      onValueChange={(value) =>
-        setValue(value) && setOpportunity({ type: value })
-      }
+      onValueChange={(value) => {
+        setValue(value);
+        setOpportunity({ type: value });
+      }}
       value={value}
     >
       <RadioButton.Item
         labelStyle={styles.label}
         position="leading"
         label={localization.t(
-          "screens.opportunities.create_opportunity_modal.step_1.request_option"
+          "screens.opportunities.create_opportunity_modal.opportunity_type.request_option"
         )}
         value="request"
       />
@@ -29,7 +30,7 @@ const OpportunityType = ({ setOpportunity }) => {
         labelStyle={styles.label}
         position="leading"
         label={localization.t(
-          "screens.opportunities.create_opportunity_modal.step_1.offer_option"
+          "screens.opportunities.create_opportunity_modal.opportunity_type.offer_option"
         )}
         value="offer"
       />

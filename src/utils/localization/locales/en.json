@@ -17,10 +17,14 @@
             "name": "Opportunities",
             "create_header_button_label": "Create",
             "create_opportunity_modal": {
-                "step_1": {
+                "opportunity_type": {
                     "title": "What do you want to create?",
                     "request_option": "It is an opportunity request",
                     "offer_option": "It is an opportunity offering"
+                },
+                "opportunity_category": {
+                    "offer_title": "What will be offered?",
+                    "request_title": "What will be requested?"
                 }
             }
         },

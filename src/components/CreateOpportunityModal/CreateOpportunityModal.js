@@ -16,11 +16,21 @@ const CreateOpportunityModal = ({ visible, setVisible }) => {
   const steps = [
     {
       title: localization.t(
-        "screens.opportunities.create_opportunity_modal.step_1.title"
+        "screens.opportunities.create_opportunity_modal.opportunity_type.title"
       ),
-      content: <OpportunityType setOpportunity={setOpportunity}/>,
+      content: <OpportunityType setOpportunity={setOpportunity} />,
     },
-    { title: "Step 2", content: <Text>Content 2</Text> },
+    {
+      title:
+        opportunity.type == "request"
+          ? localization.t(
+              "screens.opportunities.create_opportunity_modal.opportunity_category.request_title"
+            )
+          : localization.t(
+              "screens.opportunities.create_opportunity_modal.opportunity_category.offer_title"
+            ),
+      content: <Text>Content 2</Text>,
+    },
     { title: "Step 3", content: <Text>Content 3</Text> },
   ];
 

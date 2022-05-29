@@ -19,7 +19,10 @@ const StepperModal = ({ visible, setVisible, steps }) => {
       animationType="fade"
       transparent={true}
       visible={visible}
-      onRequestClose={() => setVisible(false)}
+      onRequestClose={() => {
+        setVisible(false);
+        setCurrentStep(0);
+      }}
     >
       <View style={styles.view}>
         <Card style={styles.cardView}>
@@ -39,7 +42,10 @@ const StepperModal = ({ visible, setVisible, steps }) => {
                 }}
                 icon="close"
                 size={14}
-                onPress={() => setVisible(false)}
+                onPress={() => {
+                  setVisible(false);
+                  setCurrentStep(0);
+                }}
               />
             )}
           />
