@@ -42,6 +42,11 @@
                 "opportunity_link": {
                     "title": "Insira o link de contato. (ex: rede social)",
                     "link_input_text_label": "Link:"
+                },
+                "opportunity_location": {
+                    "offer_title": "Onde será ofertado?",
+                    "request_title": "Onde será boscado?",
+                    "zip_code_input_text_label": "CEP:"
                 }
             }
         },

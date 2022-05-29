@@ -42,6 +42,11 @@
                 "opportunity_link": {
                     "title": "Insert the contact link. (ex: social network)",
                     "link_input_text_label": "Link:"
+                },
+                "opportunity_location": {
+                    "offer_title": "Where is the offer?",
+                    "request_title": "Where is the request?",
+                    "zip_code_input_text_label": "ZipCode:"
                 }
             }
         },

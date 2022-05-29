@@ -1,11 +1,10 @@
 import * as React from "react";
 
-import { Text } from "react-native-paper";
-
 import StepperModal from "../StepperModal";
 import OpportunityType from "./OpportunityType";
 import OpportunityCategory from "./OpportunityCategory";
 import OpportunityLink from "./OpportunityLink";
+import OpportunityLocation from "./OpportunityLocation";
 
 import localization from "../../utils/localization";
 
@@ -38,6 +37,17 @@ const CreateOpportunityModal = ({ visible, setVisible }) => {
         "screens.opportunities.create_opportunity_modal.opportunity_link.title"
       ),
       content: <OpportunityLink setOpportunity={setOpportunity} />,
+    },
+    {
+      title:
+        opportunity.type == "request"
+          ? localization.t(
+              "screens.opportunities.create_opportunity_modal.opportunity_location.request_title"
+            )
+          : localization.t(
+              "screens.opportunities.create_opportunity_modal.opportunity_location.offer_title"
+            ),
+      content: <OpportunityLocation setOpportunity={setOpportunity} />,
     },
   ];
 
