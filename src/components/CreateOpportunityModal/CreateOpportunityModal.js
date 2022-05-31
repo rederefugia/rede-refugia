@@ -10,6 +10,7 @@ import OpportunityDescription from "./OpportunityDescription";
 import localization from "../../utils/localization";
 
 const CreateOpportunityModal = ({ visible, setVisible }) => {
+  const [canGoNext, setCanGoNext] = React.useState(false);
   let [opportunity, setOpportunity] = React.useReducer(
     (state, newState) => ({ ...state, ...newState }),
     { type: "", title: "", category: "", link: "", zipCode: "", description: "" }
@@ -24,7 +25,7 @@ const CreateOpportunityModal = ({ visible, setVisible }) => {
       title: localization.t(
         "screens.opportunities.create_opportunity_modal.opportunity_type.title"
       ),
-      content: <OpportunityType setOpportunity={setOpportunity} />,
+      content: <OpportunityType setOpportunity={setOpportunity} setCanGoNext={setCanGoNext} />,
     },
     {
       title:
@@ -68,6 +69,8 @@ const CreateOpportunityModal = ({ visible, setVisible }) => {
       visible={visible}
       setVisible={setVisible}
       handleFinish={handleFinish}
+      canGoNext={canGoNext}
+      setCanGoNext={setCanGoNext}
     />
   );
 };
