@@ -12,7 +12,7 @@ const OpportunityLink = ({ setOpportunity, setCanGoNext }) => {
 
   React.useEffect(() => {
     setCanGoNext(true);
-  });
+  }, [text]);
 
   return (
     <TextInput
