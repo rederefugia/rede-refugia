@@ -42,7 +42,7 @@ const CreateOpportunityModal = ({ visible, setVisible }) => {
       title: localization.t(
         "screens.opportunities.create_opportunity_modal.opportunity_link.title"
       ),
-      content: <OpportunityLink setOpportunity={setOpportunity} />,
+      content: <OpportunityLink setOpportunity={setOpportunity} setCanGoNext={setCanGoNext} />,
     },
     {
       title:

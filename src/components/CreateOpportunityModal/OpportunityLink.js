@@ -7,8 +7,13 @@ import { TextInput } from "react-native-paper";
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 
-const OpportunityLink = ({ setOpportunity }) => {
+const OpportunityLink = ({ setOpportunity, setCanGoNext }) => {
   const [text, setText] = React.useState("");
+
+  React.useEffect(() => {
+    setCanGoNext(true);
+  });
+
   return (
     <TextInput
       style={styles.inputText}
