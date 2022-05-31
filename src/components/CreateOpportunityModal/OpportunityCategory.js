@@ -8,8 +8,10 @@ import ComboBox from "../ComboBox";
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 
-const OpportunityCategory = ({ setOpportunity }) => {
+const OpportunityCategory = ({ setOpportunity, setCanGoNext }) => {
   const [text, setText] = React.useState("");
+  const [category, setCategory] = React.useState("");
+
   const opts = [
     "living",
     "food",
@@ -28,6 +30,17 @@ const OpportunityCategory = ({ setOpportunity }) => {
       ),
     };
   });
+
+  const checkCompleteness = () => {
+    if (text.length > 0 && category.length > 0) {
+      setCanGoNext(true);
+    } else setCanGoNext(false);
+  };
+
+  React.useEffect(() => {
+    checkCompleteness();
+  }, [text, category]);
+
   return (
     <View>
       <TextInput
@@ -46,7 +59,10 @@ const OpportunityCategory = ({ setOpportunity }) => {
           "screens.opportunities.create_opportunity_modal.opportunity_category.combo_box_label"
         )}
         options={[{ value: "", label: "" }].concat(opts)}
-        setSelection={(value) => setOpportunity({ category: value })}
+        setSelection={(value) => {
+          setCategory(value);
+          setOpportunity({ category: value });
+        }}
       />
     </View>
   );
