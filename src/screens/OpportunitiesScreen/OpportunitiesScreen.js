@@ -28,8 +28,13 @@ const OpportunitiesScreen = ({ navigation }) => {
 
   const fetchData = React.useCallback(async () => {
     let data = await firestore.find("opportunities");
+    data = await Promise.all(
+      data.map(async (d) => {
+        const owner = await firestore.getById("users", d.owner);
+        return { ...d, ...owner };
+      })
+    );
     setOpportunities(data);
-    console.log(data)
   });
 
   const isFetchRef = React.useRef(false);
