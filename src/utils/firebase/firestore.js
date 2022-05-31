@@ -14,13 +14,18 @@ import firebase from "./firebase";
 
 const find = async (
   collectionName,
-  parameterName,
-  condition,
-  parameterValue
+  parameterName = null,
+  condition = null,
+  parameterValue = null
 ) => {
   const ref = collection(firebase.firestore(), collectionName);
-  const q = query(ref, where(parameterName, condition, parameterValue));
-  const snapshot = await getDocs(q);
+  let snapshot;
+  if (parameterName == null || condition == null || parameterValue == null)
+    snapshot = await getDocs(ref);
+  else {
+    const q = query(ref, where(parameterName, condition, parameterValue));
+    snapshot = await getDocs(q);
+  }
   let data = [];
   snapshot.forEach((doc) => data.push(doc.data()));
   return data;
