@@ -7,14 +7,16 @@ import { HelperText, TextInput } from "react-native-paper";
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 
-const OpportunityDescription = ({ setOpportunity }) => {
+const OpportunityDescription = ({ setOpportunity, setCanGoNext }) => {
   const [text, setText] = React.useState("");
   const MAX_LENGTH = 280;
 
   const handleTextChange = (value) => {
+    if (value.length === 0) setCanGoNext(false);
     if (value.length < MAX_LENGTH) {
       setText(value);
       setOpportunity({ description: value });
+      setCanGoNext(true);
     }
   };
 
