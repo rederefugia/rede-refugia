@@ -6,7 +6,7 @@ import { Button, Card, IconButton } from "react-native-paper";
 import theme from "../../utils/theme";
 import localization from "../../utils/localization";
 
-const StepperModal = ({ visible, setVisible, steps, handleFinish, canGoNext, setCanGoNext }) => {
+const StepperModal = ({ visible, setVisible, steps, handleFinish, canGoNext, setCanGoNext, loading }) => {
   let [currentStep, setCurrentStep] = React.useState(0);
 
   const isLastStep = currentStep == steps.length - 1;
@@ -69,6 +69,7 @@ const StepperModal = ({ visible, setVisible, steps, handleFinish, canGoNext, set
               mode="contained"
               onPress={nextStep}
               disabled={!canGoNext}
+              loading={loading}
             >
               {isLastStep
                 ? localization.t("components.stepper_modal.finish_button_label")

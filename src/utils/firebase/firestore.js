@@ -8,6 +8,7 @@ import {
   getDoc,
   updateDoc,
 } from "firebase/firestore";
+import { v4 as uuidv4 } from "uuid";
 
 import firebase from "./firebase";
 
@@ -26,6 +27,7 @@ const find = async (
 };
 
 const createWithId = async (collectionName, id, data) => {
+  if (id == undefined || id == null) id = uuidv4();
   const ref = doc(firebase.firestore(), collectionName, id);
   await setDoc(ref, data);
 };

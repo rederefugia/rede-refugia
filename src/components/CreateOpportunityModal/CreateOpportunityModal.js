@@ -7,17 +7,25 @@ import OpportunityLink from "./OpportunityLink";
 import OpportunityLocation from "./OpportunityLocation";
 import OpportunityDescription from "./OpportunityDescription";
 
+import providers from "../../providers";
 import localization from "../../utils/localization";
+import firestore from "../../utils/firebase/firestore";
 
 const CreateOpportunityModal = ({ visible, setVisible }) => {
+  const { user, setUser } = React.useContext(providers.auth.AuthContext);
   const [canGoNext, setCanGoNext] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
   let [opportunity, setOpportunity] = React.useReducer(
     (state, newState) => ({ ...state, ...newState }),
     { type: "", title: "", category: "", link: "", zipCode: "", description: "" }
   );
 
-  const handleFinish = () => {
-    console.log(opportunity);
+  const handleFinish = async () => {
+    setLoading(true);
+    opportunity.owner = user.uid;
+    opportunity.timestamp = Date.now();
+    await firestore.createWithId("opportunities", null, opportunity);
+    setLoading(false);
   };
 
   const steps = [
@@ -71,6 +79,7 @@ const CreateOpportunityModal = ({ visible, setVisible }) => {
       handleFinish={handleFinish}
       canGoNext={canGoNext}
       setCanGoNext={setCanGoNext}
+      loading={loading}
     />
   );
 };
