@@ -1,6 +1,8 @@
 import * as React from "react";
 import { StyleSheet, View, Text } from "react-native";
 
+import { FlatGrid } from "react-native-super-grid";
+
 import firestore from "../../utils/firebase/firestore";
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
@@ -46,9 +48,14 @@ const OpportunitiesScreen = ({ navigation }) => {
   }, [fetchData]);
 
   return (
-    <View style={styles.view}>
-      <Text>{localization.t("screens.opportunities.name")}</Text>
-    </View>
+    <FlatGrid
+      style={styles.gridView}
+      data={opportunities}
+      spacing={30}
+      renderItem={({ item }) => (
+        <components.OpportunityCard opportunity={item} />
+      )}
+    />
   );
 };
 
@@ -58,6 +65,7 @@ const OpportunitiesScreen = ({ navigation }) => {
  */
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
+  gridView: { flex: 1 },
 });
 
 export default OpportunitiesScreen;

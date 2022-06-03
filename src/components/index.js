@@ -3,6 +3,7 @@ import AddressInputGroup from "./AddressInputGroup";
 import ContactInputGroup from "./ContactInputGroup";
 import UserInfoInputGroup from "./UserInfoInputGroup";
 import CreateOpportunityButton from "./CreateOpportunityButton";
+import OpportunityCard from "./OpportunityCard";
 
 export default {
   InputGroupTitle,
@@ -10,4 +11,5 @@ export default {
   ContactInputGroup,
   UserInfoInputGroup,
   CreateOpportunityButton,
+  OpportunityCard,
 };
