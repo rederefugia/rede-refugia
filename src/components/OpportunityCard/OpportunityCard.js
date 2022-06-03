@@ -1,22 +1,31 @@
 import * as React from "react";
 import { StyleSheet, View } from "react-native";
 
-import { Text } from "react-native-paper";
+import { Text, Paragraph } from "react-native-paper";
 
 import theme from "../../utils/theme";
 
 const OpportunityCard = ({ opportunity }) => {
-  return <Text style={styles.title}>{opportunity.title}</Text>;
+  return (
+    <View style={styles.card}>
+      <View>
+        <Text style={styles.title}>{opportunity.title}</Text>
+        <Paragraph>{opportunity.description}</Paragraph>
+      </View>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
-  title: {
-    alignSelf: "flex-start",
+  card: {
     padding: theme.DefaultTheme.space,
     borderRadius: theme.DefaultTheme.roundness,
-    color: theme.DefaultTheme.colors.white,
-    backgroundColor: theme.DefaultTheme.colors.purpleDark,
-    marginBottom: theme.DefaultTheme.spaceLarge,
+    backgroundColor: theme.DefaultTheme.colors.gray,
+  },
+  title: {
+    color: theme.DefaultTheme.colors.purple,
+    fontSize: "18px",
+    marginBottom: theme.DefaultTheme.space
   },
 });
 

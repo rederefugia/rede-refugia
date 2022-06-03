@@ -52,6 +52,7 @@ const OpportunitiesScreen = ({ navigation }) => {
       style={styles.gridView}
       data={opportunities}
       spacing={30}
+      itemDimension={250}
       renderItem={({ item }) => (
         <components.OpportunityCard opportunity={item} />
       )}
