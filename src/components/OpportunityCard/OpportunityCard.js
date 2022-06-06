@@ -4,6 +4,7 @@ import { StyleSheet, View } from "react-native";
 import { Text, Paragraph } from "react-native-paper";
 
 import theme from "../../utils/theme";
+import masks from "../../utils/masks";
 
 const OpportunityCard = ({ opportunity }) => {
   return (
@@ -23,7 +24,7 @@ const OpportunityCard = ({ opportunity }) => {
         </View>
         <View style={styles.row}>
           <Text style={styles.text}>{opportunity.email}</Text>
-          <Text style={styles.text}>{opportunity.phoneNumber}</Text>
+          <Text style={styles.text}>{masks.parsePhoneNumber(opportunity.phoneNumber)}</Text>
         </View>
       </View>
     </View>
