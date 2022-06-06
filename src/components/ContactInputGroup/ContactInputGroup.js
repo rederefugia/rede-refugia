@@ -1,12 +1,12 @@
 import * as React from "react";
 
-import { mask } from "react-native-mask-text";
 import { TextInput } from "react-native-paper";
 
 import InputGroupSkeleton from "../InputGroupSkeleton";
 import InputGroupTitle from "../InputGroupTitle";
 
 import localization from "../../utils/localization";
+import masks from "../../utils/masks";
 
 const ContactInputGroup = ({ userData, setUserData, styles }) => {
   return (
@@ -28,13 +28,13 @@ const ContactInputGroup = ({ userData, setUserData, styles }) => {
         <>
           <TextInput
             label={localization.t("screens.profile.cellphone_text_input_label")}
-            value={mask(userData.phoneNumber, "(21) 99999-9999")}
+            value={masks.parsePhoneNumber(userData.phoneNumber)}
             onChangeText={(value) => setUserData({ phoneNumber: value })}
             style={styles.inputText}
           />
           <TextInput
             label={localization.t("screens.profile.land_line_text_input_label")}
-            value={mask(userData.landLine, "(21) 9999-9999")}
+            value={masks.parseLandLine(userData.landLine)}
             onChangeText={(value) => setUserData({ landLine: value })}
             style={styles.inputText}
           />
