@@ -4,10 +4,9 @@ import { StyleSheet } from "react-native";
 
 import { TextInput } from "react-native-paper";
 
-import { mask } from "react-native-mask-text";
-
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
+import masks from "../../utils/masks";
 
 const OpportunityLocation = ({ setOpportunity, setCanGoNext }) => {
   const [text, setText] = React.useState("");
@@ -20,10 +19,10 @@ const OpportunityLocation = ({ setOpportunity, setCanGoNext }) => {
       onChangeText={(value) => {
         setText(value);
         setOpportunity({ zipCode: value });
-        if(value.length == 9) setCanGoNext(true);
+        if (value.length == 9) setCanGoNext(true);
         else setCanGoNext(false);
       }}
-      value={mask(text, "99999-999")}
+      value={masks.parseZipCode(text)}
     />
   );
 };
