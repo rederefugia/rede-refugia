@@ -23,6 +23,7 @@ const PrivateNavigation = () => {
       drawerContent={(props) => <DrawerCustomContent {...props} />}
       screenOptions={{
         drawerType: isLargeScreen ? "permanent" : "front",
+        headerTintColor: theme.DefaultTheme.colors.white,
         drawerActiveTintColor: theme.DefaultTheme.colors.white,
         drawerInactiveTintColor: theme.DefaultTheme.colors.white,
         drawerStyle: {
@@ -30,12 +31,12 @@ const PrivateNavigation = () => {
           borderRightWidth: theme.DefaultTheme.noSpace,
         },
         headerStyle: {
-          backgroundColor: theme.DefaultTheme.colors.light_pink,
+          backgroundColor: theme.DefaultTheme.colors.primary,
           borderBottomLeftRadius: theme.DefaultTheme.roundnessLarge,
-          borderBottomColor: theme.DefaultTheme.colors.light_pink,
+          borderBottomColor: theme.DefaultTheme.colors.purpleDark,
         },
         headerTitleStyle: {
-          color: theme.DefaultTheme.colors.purpleDark,
+          color: theme.DefaultTheme.colors.white,
           fontSize: theme.DefaultTheme.fontSizeLarge,
           fontWeight: theme.DefaultTheme.fontWeightLarge,
           fontFamily: theme.DefaultTheme.fontFamily,
