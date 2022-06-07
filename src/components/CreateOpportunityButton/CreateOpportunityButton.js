@@ -12,15 +12,13 @@ const CreateOpportunityButton = ({ label }) => {
 
   return (
     <>
-      <CreateOpportunityModal
-        visible={visible}
-        setVisible={setVisible}
-      />
+      <CreateOpportunityModal visible={visible} setVisible={setVisible} />
       <Button
         mode="contained"
         uppercase={false}
         icon="plus"
         style={styles.button}
+        contentStyle={{ backgroundColor: theme.DefaultTheme.colors.purple }}
         onPress={() => setVisible(true)}
       >
         {label}
