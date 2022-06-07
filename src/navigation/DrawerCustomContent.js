@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   ...theme.DefaultStyle,
   header: {
     flex: 0.25,
-    backgroundColor: theme.DefaultTheme.colors.light_pink,
+    backgroundColor: theme.DefaultTheme.colors.gray,
     borderBottomRightRadius: theme.DefaultTheme.roundnessLarge,
   },
   logo: {
