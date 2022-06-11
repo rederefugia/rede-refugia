@@ -1,15 +1,12 @@
 import * as React from "react";
 import { StyleSheet, View } from "react-native";
 
-import { Text } from "react-native-paper";
-
 import theme from "../../utils/theme";
 
-const OpportunityCategoryFilter = () => {
+const SubHeader = ({ children }) => {
   return (
     <View style={styles.view}>
-      <Text>Moradia</Text>
-      <Text>Moradia</Text>
+      {children}
     </View>
   );
 };
@@ -25,4 +22,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OpportunityCategoryFilter;
+export default SubHeader;

@@ -49,7 +49,10 @@ const OpportunitiesScreen = ({ navigation }) => {
 
   return (
     <>
-      <components.SubHeader />
+      <components.SubHeader>
+        <components.SubHeaderItem label="Moradia" />
+        <components.SubHeaderItem label="Saúde" />
+      </components.SubHeader>
       <FlatGrid
         style={styles.gridView}
         data={opportunities}
