@@ -3,6 +3,8 @@ import { StyleSheet, View } from "react-native";
 
 import { Text, Paragraph } from "react-native-paper";
 
+import ButtonLink from "../ButtonLink";
+
 import theme from "../../utils/theme";
 import masks from "../../utils/masks";
 
@@ -16,15 +18,29 @@ const OpportunityCard = ({ opportunity }) => {
       <View style={styles.cardInfo}>
         <View style={styles.row}>
           <Text style={styles.text}>{opportunity.name}</Text>
-          <Text style={styles.text}>{opportunity.link}</Text>
+          <ButtonLink address={opportunity.link} style={styles.link}>
+            {opportunity.link}
+          </ButtonLink>
         </View>
         <View style={styles.row}>
           <Text style={styles.text}>{opportunity.city}</Text>
           <Text style={styles.text}>15km</Text>
         </View>
         <View style={styles.row}>
-          <Text style={styles.text}>{opportunity.email}</Text>
-          <Text style={styles.text}>{masks.parsePhoneNumber(opportunity.phoneNumber)}</Text>
+          <ButtonLink
+            address={opportunity.email}
+            style={styles.link}
+            type={ButtonLink.EMAIL_TYPE}
+          >
+            {opportunity.email}
+          </ButtonLink>
+          <ButtonLink
+            address={opportunity.phoneNumber}
+            style={styles.link}
+            type={ButtonLink.PHONE_TYPE}
+          >
+            {masks.parsePhoneNumber(opportunity.phoneNumber)}
+          </ButtonLink>
         </View>
       </View>
     </View>
@@ -60,7 +76,14 @@ const styles = StyleSheet.create({
     color: theme.DefaultTheme.colors.black,
     opacity: "56%",
     fontSize: theme.DefaultTheme.fontSizeSmall,
-  }
+  },
+  link: {
+    color: theme.DefaultTheme.colors.black,
+    opacity: "56%",
+    fontSize: theme.DefaultTheme.fontSizeSmall,
+    marginHorizontal: theme.DefaultTheme.noSpace,
+    marginVertical: theme.DefaultTheme.noSpace,
+  },
 });
 
 export default OpportunityCard;
