@@ -7,29 +7,11 @@ import { TextInput } from "react-native-paper";
 import ComboBox from "../ComboBox";
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
+import categories from "../../utils/categories";
 
 const OpportunityCategory = ({ setOpportunity, setCanGoNext }) => {
   const [text, setText] = React.useState("");
   const [category, setCategory] = React.useState("");
-
-  const opts = [
-    "living",
-    "food",
-    "documentation",
-    "job",
-    "transport",
-    "trade",
-    "communication",
-    "training",
-    "other",
-  ].map((opt) => {
-    return {
-      value: opt,
-      label: localization.t(
-        `screens.opportunities.create_opportunity_modal.opportunity_category.combo_box_options.${opt}_option`
-      ),
-    };
-  });
 
   const checkCompleteness = () => {
     if (text.length > 0 && category.length > 0) {
@@ -58,7 +40,7 @@ const OpportunityCategory = ({ setOpportunity, setCanGoNext }) => {
         label={localization.t(
           "screens.opportunities.create_opportunity_modal.opportunity_category.combo_box_label"
         )}
-        options={[{ value: "", label: "" }].concat(opts)}
+        options={[{ value: "", label: "" }].concat(categories)}
         setSelection={(value) => {
           setCategory(value);
           setOpportunity({ category: value });

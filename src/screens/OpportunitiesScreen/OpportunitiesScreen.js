@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet } from "react-native";
 
 import { FlatGrid } from "react-native-super-grid";
 
@@ -7,6 +7,7 @@ import firestore from "../../utils/firebase/firestore";
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 import components from "../../components";
+import categories from "../../utils/categories";
 
 /**
  * @memberof Screens
@@ -50,8 +51,9 @@ const OpportunitiesScreen = ({ navigation }) => {
   return (
     <>
       <components.SubHeader>
-        <components.SubHeaderItem label="Moradia" />
-        <components.SubHeaderItem label="Saúde" />
+        {categories.map(({ value, label }) => (
+          <components.SubHeaderItem label={label} />
+        ))}
       </components.SubHeader>
       <FlatGrid
         style={styles.gridView}
