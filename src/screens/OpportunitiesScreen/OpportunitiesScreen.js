@@ -16,6 +16,13 @@ import categories from "../../utils/categories";
  */
 const OpportunitiesScreen = ({ navigation }) => {
   const [opportunities, setOpportunities] = React.useState([]);
+  const [categoryFilter, setCategoryFilter] = React.useState([]);
+
+  const updateCategoryFilter = (label, value) => {
+    if (categoryFilter.includes(value))
+      setCategoryFilter(categoryFilter.filter((item) => item !== value));
+    else setCategoryFilter(categoryFilter.concat([value]));
+  };
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
@@ -30,7 +37,16 @@ const OpportunitiesScreen = ({ navigation }) => {
   }, [navigation]);
 
   const fetchData = React.useCallback(async () => {
-    let data = await firestore.find("opportunities");
+    let data = [];
+    if (categoryFilter.length == 0)
+      data = await firestore.find("opportunities");
+    else
+      data = await firestore.find(
+        "opportunities",
+        "category",
+        "in",
+        categoryFilter
+      );
     data = await Promise.all(
       data.map(async (d) => {
         const owner = await firestore.getById("users", d.owner);
@@ -40,19 +56,20 @@ const OpportunitiesScreen = ({ navigation }) => {
     setOpportunities(data);
   });
 
-  const isFetchRef = React.useRef(false);
   React.useEffect(() => {
-    if (!isFetchRef.current) {
-      isFetchRef.current = true;
-      fetchData();
-    }
-  }, [fetchData]);
+    fetchData();
+  }, [fetchData, categoryFilter]);
 
   return (
     <>
       <components.SubHeader>
-        {categories.map(({ value, label }) => (
-          <components.SubHeaderItem label={label} value={value} />
+        {categories.map(({ value, label }, index) => (
+          <components.SubHeaderItem
+            key={index}
+            label={label}
+            value={value}
+            onPress={updateCategoryFilter}
+          />
         ))}
       </components.SubHeader>
       <FlatGrid
