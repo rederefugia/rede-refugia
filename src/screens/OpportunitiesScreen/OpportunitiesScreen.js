@@ -52,7 +52,7 @@ const OpportunitiesScreen = ({ navigation }) => {
     <>
       <components.SubHeader>
         {categories.map(({ value, label }) => (
-          <components.SubHeaderItem label={label} />
+          <components.SubHeaderItem label={label} value={value} />
         ))}
       </components.SubHeader>
       <FlatGrid
