@@ -4,6 +4,7 @@ import ContactInputGroup from "./ContactInputGroup";
 import UserInfoInputGroup from "./UserInfoInputGroup";
 import CreateOpportunityButton from "./CreateOpportunityButton";
 import OpportunityCard from "./OpportunityCard";
+import SubHeader from "./SubHeader";
 
 export default {
   InputGroupTitle,
@@ -12,4 +13,5 @@ export default {
   UserInfoInputGroup,
   CreateOpportunityButton,
   OpportunityCard,
+  SubHeader,
 };

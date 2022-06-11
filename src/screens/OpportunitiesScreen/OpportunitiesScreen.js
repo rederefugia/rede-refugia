@@ -48,15 +48,18 @@ const OpportunitiesScreen = ({ navigation }) => {
   }, [fetchData]);
 
   return (
-    <FlatGrid
-      style={styles.gridView}
-      data={opportunities}
-      spacing={30}
-      itemDimension={300}
-      renderItem={({ item }) => (
-        <components.OpportunityCard opportunity={item} />
-      )}
-    />
+    <>
+      <components.SubHeader />
+      <FlatGrid
+        style={styles.gridView}
+        data={opportunities}
+        spacing={30}
+        itemDimension={300}
+        renderItem={({ item }) => (
+          <components.OpportunityCard opportunity={item} />
+        )}
+      />
+    </>
   );
 };
 
