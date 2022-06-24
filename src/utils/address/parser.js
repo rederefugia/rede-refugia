@@ -12,7 +12,6 @@ const getAddress = async (zipCode) => {
 };
 
 const getDistance = async (origin, destination) => {
-  /*
   const service = new google.maps.DistanceMatrixService();
   const request = {
     origins: [origin],
@@ -22,8 +21,9 @@ const getDistance = async (origin, destination) => {
   };
 
   const resp = await service.getDistanceMatrix(request);
-  console.log(resp);
-*/
+  if (resp.rows) {
+    return resp.rows[0].elements[0].distance.text;
+  }
 };
 
 export default { getAddress, getDistance };

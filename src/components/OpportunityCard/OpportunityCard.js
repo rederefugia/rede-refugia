@@ -7,11 +7,20 @@ import ButtonLink from "../ButtonLink";
 
 import theme from "../../utils/theme";
 import masks from "../../utils/masks";
-import addressUtils from "../../utils/address";
+import address from "../../utils/address";
 
 const OpportunityCard = ({ opportunity }) => {
-  const [address, setAddress] = React.useState({});
+  const [distance, setDistance] = React.useState("");
   React.useEffect(() => {
+    const origin = {
+      lat: opportunity.address.lat,
+      lng: opportunity.address.lng,
+    };
+    const destination = opportunity.owner.zipCode;
+    address
+      .getDistance(origin, destination)
+      .then((data) => setDistance(data))
+      .catch((err) => console.error(err));
   }, []);
 
   return (
@@ -29,7 +38,7 @@ const OpportunityCard = ({ opportunity }) => {
         </View>
         <View style={styles.row}>
           <Text style={styles.text}>{opportunity.address.city}</Text>
-          <Text style={styles.text}>15km</Text>
+          <Text style={styles.text}>{distance}</Text>
         </View>
         <View style={styles.row}>
           <ButtonLink
