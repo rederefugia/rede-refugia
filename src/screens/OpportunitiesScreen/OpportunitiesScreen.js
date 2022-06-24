@@ -50,7 +50,7 @@ const OpportunitiesScreen = ({ navigation }) => {
     data = await Promise.all(
       data.map(async (d) => {
         const owner = await firestore.getById("users", d.owner);
-        return { ...d, ...owner };
+        return { ...d, owner };
       })
     );
     setOpportunities(data);
@@ -58,7 +58,7 @@ const OpportunitiesScreen = ({ navigation }) => {
 
   React.useEffect(() => {
     fetchData();
-  }, [fetchData, categoryFilter]);
+  }, [categoryFilter]);
 
   return (
     <>

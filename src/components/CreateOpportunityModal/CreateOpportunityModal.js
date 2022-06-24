@@ -10,6 +10,7 @@ import OpportunityDescription from "./OpportunityDescription";
 import providers from "../../providers";
 import localization from "../../utils/localization";
 import firestore from "../../utils/firebase/firestore";
+import address from "../../utils/address";
 
 const CreateOpportunityModal = ({ visible, setVisible }) => {
   const { user, setUser } = React.useContext(providers.auth.AuthContext);
@@ -24,6 +25,7 @@ const CreateOpportunityModal = ({ visible, setVisible }) => {
     setLoading(true);
     opportunity.owner = user.uid;
     opportunity.timestamp = Date.now();
+    opportunity.address = await address.getAddress(opportunity.zipCode);
     await firestore.createWithId("opportunities", null, opportunity);
     setLoading(false);
   };

@@ -7,8 +7,13 @@ import ButtonLink from "../ButtonLink";
 
 import theme from "../../utils/theme";
 import masks from "../../utils/masks";
+import addressUtils from "../../utils/address";
 
 const OpportunityCard = ({ opportunity }) => {
+  const [address, setAddress] = React.useState({});
+  React.useEffect(() => {
+  }, []);
+
   return (
     <View style={styles.card}>
       <View style={styles.cardMain}>
@@ -17,29 +22,29 @@ const OpportunityCard = ({ opportunity }) => {
       </View>
       <View style={styles.cardInfo}>
         <View style={styles.row}>
-          <Text style={styles.text}>{opportunity.name}</Text>
+          <Text style={styles.text}>{opportunity.owner.name}</Text>
           <ButtonLink address={opportunity.link} style={styles.link}>
             {opportunity.link}
           </ButtonLink>
         </View>
         <View style={styles.row}>
-          <Text style={styles.text}>{opportunity.city}</Text>
+          <Text style={styles.text}>{opportunity.address.city}</Text>
           <Text style={styles.text}>15km</Text>
         </View>
         <View style={styles.row}>
           <ButtonLink
-            address={opportunity.email}
+            address={opportunity.owner.email}
             style={styles.link}
             type={ButtonLink.EMAIL_TYPE}
           >
-            {opportunity.email}
+            {opportunity.owner.email}
           </ButtonLink>
           <ButtonLink
-            address={opportunity.phoneNumber}
+            address={opportunity.owner.phoneNumber}
             style={styles.link}
             type={ButtonLink.PHONE_TYPE}
           >
-            {masks.parsePhoneNumber(opportunity.phoneNumber)}
+            {masks.parsePhoneNumber(opportunity.owner.phoneNumber)}
           </ButtonLink>
         </View>
       </View>
