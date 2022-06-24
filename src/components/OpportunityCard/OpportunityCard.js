@@ -4,6 +4,7 @@ import { StyleSheet, View } from "react-native";
 import { Text, Paragraph } from "react-native-paper";
 
 import ButtonLink from "../ButtonLink";
+import FavoriteButton from "../FavoriteButton";
 
 import theme from "../../utils/theme";
 import masks from "../../utils/masks";
@@ -26,7 +27,10 @@ const OpportunityCard = ({ opportunity }) => {
   return (
     <View style={styles.card}>
       <View style={styles.cardMain}>
-        <Text style={styles.title}>{opportunity.title}</Text>
+        <View style={styles.row}>
+          <Text style={styles.title}>{opportunity.title}</Text>
+          <FavoriteButton />
+        </View>
         <Paragraph>{opportunity.description}</Paragraph>
       </View>
       <View style={styles.cardInfo}>
