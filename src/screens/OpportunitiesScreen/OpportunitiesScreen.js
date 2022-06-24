@@ -39,17 +39,20 @@ const OpportunitiesScreen = ({ navigation }) => {
   const fetchData = React.useCallback(async () => {
     let data = [];
     if (categoryFilter.length == 0)
-      data = await firestore.find("opportunities");
+      data = await firestore.find(firestore.COLLECTIONS.OPPORTUNITIES);
     else
       data = await firestore.find(
-        "opportunities",
+        firestore.COLLECTIONS.OPPORTUNITIES,
         "category",
         "in",
         categoryFilter
       );
     data = await Promise.all(
       data.map(async (d) => {
-        const owner = await firestore.getById("users", d.owner);
+        const owner = await firestore.getById(
+          firestore.COLLECTIONS.USERS,
+          d.owner
+        );
         return { ...d, owner };
       })
     );

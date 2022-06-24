@@ -12,6 +12,11 @@ import { v4 as uuidv4 } from "uuid";
 
 import firebase from "./firebase";
 
+const COLLECTIONS = {
+  USERS: "users",
+  OPPORTUNITIES: "opportunities",
+};
+
 const find = async (
   collectionName,
   parameterName = null,
@@ -27,7 +32,7 @@ const find = async (
     snapshot = await getDocs(q);
   }
   let data = [];
-  snapshot.forEach((doc) => data.push(doc.data()));
+  snapshot.forEach((doc) => data.push({ id: doc.id, ...doc.data() }));
   return data;
 };
 
@@ -48,4 +53,4 @@ const updateById = async (collectionName, id, data) => {
   await updateDoc(ref, data);
 };
 
-export default { find, createWithId, getById, updateById };
+export default { find, createWithId, getById, updateById, COLLECTIONS };
