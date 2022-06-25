@@ -11,18 +11,29 @@ const FavoriteButton = ({ id }) => {
   const { user, setUser } = React.useContext(providers.auth.AuthContext);
   const [isFavorite, setIsFavorite] = React.useState(false);
 
-  const addFavorite = async () => {
-    let favorites = user.favorites ? user.favorites : [];
-    favorites.push(id);
+  const updateFavorite = async (favorites, state) => {
     await firestore.updateById(firestore.COLLECTIONS.USERS, user.uid, {
       favorites,
     });
     await setUser({ ...user, favorites });
-    setIsFavorite(true);
+    setIsFavorite(state);
+  };
+
+  const addFavorite = async () => {
+    let favorites = user.favorites ? user.favorites : [];
+    favorites.push(id);
+    await updateFavorite(favorites, true);
+  };
+
+  const removeFavorite = async () => {
+    let favorites = user.favorites;
+    favorites = favorites.filter(item => item !== id);
+    await updateFavorite(favorites, false);
   };
 
   const update = async () => {
     if (!isFavorite) await addFavorite();
+    else await removeFavorite();
   };
 
   React.useEffect(() => {
