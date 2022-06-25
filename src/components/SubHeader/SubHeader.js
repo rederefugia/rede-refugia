@@ -1,12 +1,12 @@
 import * as React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 
 import theme from "../../utils/theme";
 
 const SubHeader = ({ children }) => {
   return (
     <View style={styles.view}>
-      {children}
+      <ScrollView horizontal={true}>{children}</ScrollView>
     </View>
   );
 };
