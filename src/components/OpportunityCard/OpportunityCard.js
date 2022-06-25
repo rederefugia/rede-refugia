@@ -12,6 +12,7 @@ import address from "../../utils/address";
 
 const OpportunityCard = ({ opportunity }) => {
   const [distance, setDistance] = React.useState("");
+
   React.useEffect(() => {
     const origin = {
       lat: opportunity.address.lat,
@@ -29,7 +30,7 @@ const OpportunityCard = ({ opportunity }) => {
       <View style={styles.cardMain}>
         <View style={styles.row}>
           <Text style={styles.title}>{opportunity.title}</Text>
-          <FavoriteButton />
+          <FavoriteButton id={opportunity.id} />
         </View>
         <Paragraph>{opportunity.description}</Paragraph>
       </View>
