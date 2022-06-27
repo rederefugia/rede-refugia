@@ -52,7 +52,8 @@
                     "title": "Descrição da oportunidade",
                     "counter_label": "Caracteres:"
                 }
-            }
+            },
+            "favorites_filter_button_label": "Salvos"
         },
         "profile": {
             "name_text_input_label": "Nome:",

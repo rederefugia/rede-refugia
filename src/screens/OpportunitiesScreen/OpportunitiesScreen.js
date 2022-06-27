@@ -1,6 +1,7 @@
 import * as React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 
+import { Button } from "react-native-paper";
 import { FlatGrid } from "react-native-super-grid";
 
 import firestore from "../../utils/firebase/firestore";
@@ -73,6 +74,13 @@ const OpportunitiesScreen = ({ navigation }) => {
           />
         ))}
       </components.SubHeader>
+      <components.HorizontalScrollList>
+        <Button mode="contained" icon="heart" uppercase={false} compact={true}>
+          {localization.t(
+            "screens.opportunities.favorites_filter_button_label"
+          )}
+        </Button>
+      </components.HorizontalScrollList>
       <FlatGrid
         style={styles.gridView}
         data={opportunities}

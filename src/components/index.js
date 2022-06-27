@@ -6,6 +6,7 @@ import CreateOpportunityButton from "./CreateOpportunityButton";
 import OpportunityCard from "./OpportunityCard";
 import SubHeader from "./SubHeader";
 import SubHeaderItem from "./SubHeaderItem";
+import HorizontalScrollList from "./HorizontalScrollList";
 
 export default {
   InputGroupTitle,
@@ -16,4 +17,5 @@ export default {
   OpportunityCard,
   SubHeader,
   SubHeaderItem,
+  HorizontalScrollList,
 };

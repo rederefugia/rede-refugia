@@ -52,7 +52,8 @@
                     "title": "Opportunity description",
                     "counter_label": "Characters:"
                 }
-            }
+            },
+            "favorites_filter_button_label": "Saved"
         },
         "profile": {
             "name_text_input_label": "Name:",
