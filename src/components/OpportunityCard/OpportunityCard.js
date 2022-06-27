@@ -5,12 +5,15 @@ import { Text, Paragraph } from "react-native-paper";
 
 import ButtonLink from "../ButtonLink";
 import FavoriteButton from "../FavoriteButton";
+import DeleteButton from "../DeleteButton";
 
+import providers from "../../providers";
 import theme from "../../utils/theme";
 import masks from "../../utils/masks";
 import address from "../../utils/address";
 
-const OpportunityCard = ({ opportunity }) => {
+const OpportunityCard = ({ opportunity, updateScreen }) => {
+  const { user, setUser } = React.useContext(providers.auth.AuthContext);
   const [distance, setDistance] = React.useState("");
 
   const bgColor =
@@ -35,7 +38,11 @@ const OpportunityCard = ({ opportunity }) => {
       <View style={styles.cardMain}>
         <View style={styles.row}>
           <Text style={styles.title}>{opportunity.title}</Text>
-          <FavoriteButton id={opportunity.id} />
+          {opportunity.owner.uid == user.uid ? (
+            <DeleteButton id={opportunity.id} updateScreen={updateScreen} />
+          ) : (
+            <FavoriteButton id={opportunity.id} />
+          )}
         </View>
         <Paragraph>{opportunity.description}</Paragraph>
       </View>

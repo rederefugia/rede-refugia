@@ -82,7 +82,7 @@ const OpportunitiesScreen = ({ navigation }) => {
         spacing={30}
         itemDimension={300}
         renderItem={({ item }) => (
-          <components.OpportunityCard opportunity={item} />
+          <components.OpportunityCard opportunity={item} updateScreen={fetchData} />
         )}
       />
     </>

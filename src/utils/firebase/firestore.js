@@ -7,6 +7,7 @@ import {
   setDoc,
   getDoc,
   updateDoc,
+  deleteDoc,
 } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 
@@ -48,4 +49,8 @@ const updateById = async (collectionName, id, data) => {
   await updateDoc(ref, data);
 };
 
-export default { find, createWithId, getById, updateById, filter, COLLECTIONS };
+const deleteById = async (collectionName, id) => {
+  const ref = doc(firebase.firestore(), collectionName, id);
+  await deleteDoc(ref);
+}
+export default { find, createWithId, getById, updateById, deleteById, filter, COLLECTIONS };
