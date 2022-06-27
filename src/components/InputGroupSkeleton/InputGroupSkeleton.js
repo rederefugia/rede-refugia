@@ -1,28 +1,35 @@
 import * as React from "react";
 import { StyleSheet, View } from "react-native";
 
+import { FlatGrid } from "react-native-super-grid";
+
 import theme from "../../utils/theme";
 
-const InputGroupSkeleton = (props) => {
-  const { left, right } = props;
-
+const InputGroupSkeleton = ({ children }) => {
   return (
-    <View style={styles.group}>
-      <View style={styles.column}>{left}</View>
-      <View style={styles.column}>{right}</View>
-    </View>
+    <FlatGrid
+      adjustGridToStyles={true}
+      contentContainerStyle={styles.container}
+      additionalRowStyle={styles.row}
+      itemContainerStyle={styles.item}
+      maxItemsPerRow={2}
+      itemDimension={150}
+      spacing={16}
+      data={children}
+      renderItem={({ item }) => item}
+    />
   );
 };
 
 const styles = StyleSheet.create({
-  group: {
-    flexDirection: "row",
+  container: {
+    paddingTop: theme.DefaultTheme.space,
+    marginBottom: theme.DefaultTheme.noSpace,
     backgroundColor: theme.DefaultTheme.colors.gray,
     borderRadius: theme.DefaultTheme.roundness,
-    padding: theme.DefaultTheme.space,
-    margin: theme.DefaultTheme.space,
   },
-  column: { flex: 1, margin: theme.DefaultTheme.space },
+  row: { marginBottom: theme.DefaultTheme.noSpace },
+  item: { flex: 1 },
 });
 
 export default InputGroupSkeleton;

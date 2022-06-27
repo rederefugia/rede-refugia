@@ -8,7 +8,7 @@ import theme from "../../utils/theme";
 
 const ComboBox = ({ label, options, selection, setSelection }) => {
   return (
-    <View style={styles.view}>
+    <View>
       <Text style={styles.label}>{label}</Text>
       <Picker
         style={styles.picker}
@@ -24,9 +24,6 @@ const ComboBox = ({ label, options, selection, setSelection }) => {
 };
 
 const styles = StyleSheet.create({
-  view: {
-    marginVertical: theme.DefaultTheme.space,
-  },
   label: {
     padding: theme.DefaultTheme.spaceSmall,
   },

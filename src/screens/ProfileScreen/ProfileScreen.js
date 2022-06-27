@@ -68,20 +68,19 @@ const styles = StyleSheet.create({
   ...theme.DefaultStyle,
   button: {
     ...theme.DefaultStyle.button,
-    marginLeft: theme.DefaultTheme.spaceLarge,
+    marginTop: theme.DefaultTheme.space,
+    alignSelf: "center",
+    minWidth: "30%",
   },
   inputText: {
     backgroundColor: theme.DefaultTheme.colors.white,
     borderRadius: theme.DefaultTheme.roundness,
-    marginVertical: theme.DefaultTheme.spaceSmall,
   },
   inputTextLarge: {
     backgroundColor: theme.DefaultTheme.colors.white,
     borderRadius: theme.DefaultTheme.roundness,
-    marginBottom: theme.DefaultTheme.spaceSmall,
-    marginTop: "38px",
+    marginTop: "24px",
   },
-  button: { alignSelf: "center", minWidth: "30%" },
 });
 
 export default ProfileScreen;
