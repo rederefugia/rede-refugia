@@ -43,9 +43,7 @@ const OpportunitiesScreen = ({ navigation }) => {
     else
       data = await firestore.find(
         firestore.COLLECTIONS.OPPORTUNITIES,
-        "category",
-        "in",
-        categoryFilter
+        firestore.filter("category", "in", categoryFilter)
       );
     data = await Promise.all(
       data.map(async (d) => {

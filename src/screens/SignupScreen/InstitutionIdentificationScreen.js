@@ -3,7 +3,6 @@ import { StyleSheet, View, ImageBackground } from "react-native";
 import {
   Button,
   Card,
-  Headline,
   HelperText,
   TextInput,
 } from "react-native-paper";
@@ -21,7 +20,10 @@ const InstitutionIdentificationScreen = ({ navigation }) => {
   const next = async () => {
     setIsLoading(true);
     try {
-      const data = await firestore.find("users", "cnpj", "==", cnpj);
+      const data = await firestore.find(
+        firestore.COLLECTIONS.USERS,
+        firestore.filter("cnpj", "==", cnpj)
+      );
       if (data.length > 0) {
         setError(
           localization.t(

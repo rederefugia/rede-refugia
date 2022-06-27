@@ -17,20 +17,15 @@ const COLLECTIONS = {
   OPPORTUNITIES: "opportunities",
 };
 
-const find = async (
-  collectionName,
-  parameterName = null,
-  condition = null,
-  parameterValue = null
-) => {
+const filter = (parameterName, condition, parameterValue) => {
+  return where(parameterName, condition, parameterValue);
+};
+
+async function find(collectionName) {
   const ref = collection(firebase.firestore(), collectionName);
-  let snapshot;
-  if (parameterName == null || condition == null || parameterValue == null)
-    snapshot = await getDocs(ref);
-  else {
-    const q = query(ref, where(parameterName, condition, parameterValue));
-    snapshot = await getDocs(q);
-  }
+  let args = Array.prototype.slice.call(arguments, 1);  
+  const q = args.length > 0 ? query(ref, ...args) : query(ref);
+  const snapshot = await getDocs(q);
   let data = [];
   snapshot.forEach((doc) => data.push({ id: doc.id, ...doc.data() }));
   return data;
@@ -53,4 +48,4 @@ const updateById = async (collectionName, id, data) => {
   await updateDoc(ref, data);
 };
 
-export default { find, createWithId, getById, updateById, COLLECTIONS };
+export default { find, createWithId, getById, updateById, filter, COLLECTIONS };
