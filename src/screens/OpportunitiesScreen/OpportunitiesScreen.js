@@ -10,11 +10,6 @@ import theme from "../../utils/theme";
 import components from "../../components";
 import categories from "../../utils/categories";
 
-/**
- * @memberof Screens
- * @name OpportunitiesScreen
- * @description It implemets the Home Screen page
- */
 const OpportunitiesScreen = ({ navigation }) => {
   const [opportunities, setOpportunities] = React.useState([]);
   const [categoryFilter, setCategoryFilter] = React.useState([]);
@@ -94,10 +89,6 @@ const OpportunitiesScreen = ({ navigation }) => {
   );
 };
 
-/**
- * @name styles
- * @description it implements the home screen page' style grouped by component view
- */
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
   gridView: { flex: 1 },

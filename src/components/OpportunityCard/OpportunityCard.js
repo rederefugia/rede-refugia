@@ -13,6 +13,11 @@ import address from "../../utils/address";
 const OpportunityCard = ({ opportunity }) => {
   const [distance, setDistance] = React.useState("");
 
+  const bgColor =
+    opportunity.type == "request"
+      ? theme.DefaultTheme.colors.gray
+      : theme.DefaultTheme.colors.grayF3F0F3;
+
   React.useEffect(() => {
     const origin = {
       lat: opportunity.address.lat,
@@ -26,7 +31,7 @@ const OpportunityCard = ({ opportunity }) => {
   }, []);
 
   return (
-    <View style={styles.card}>
+    <View style={[styles.card, { backgroundColor: bgColor }]}>
       <View style={styles.cardMain}>
         <View style={styles.row}>
           <Text style={styles.title}>{opportunity.title}</Text>
@@ -70,7 +75,6 @@ const styles = StyleSheet.create({
   card: {
     padding: theme.DefaultTheme.space,
     borderRadius: theme.DefaultTheme.roundness,
-    backgroundColor: theme.DefaultTheme.colors.gray,
   },
   cardMain: {
     paddingBottom: theme.DefaultTheme.space,
