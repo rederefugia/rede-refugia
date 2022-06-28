@@ -33,7 +33,7 @@ const LoginForm = ({ navigation }) => {
     <ImageBackground
       resizeMode="cover"
       source={require("../../../assets/login-background.png")}
-      style={{ flex: 1, backgroundColor: theme.DefaultTheme.colors.accent }}
+      style={{ flex: 1, backgroundColor: theme.DefaultTheme.colors.grayLight }}
     >
       <View style={styles.view}>
         <Card style={styles.cardView}>
