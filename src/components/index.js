@@ -8,6 +8,7 @@ import SubHeader from "./SubHeader";
 import SubHeaderItem from "./SubHeaderItem";
 import HorizontalScrollList from "./HorizontalScrollList";
 import LoginForm from "./LoginForm";
+import ButtonLink from "./ButtonLink";
 
 export default {
   InputGroupTitle,
@@ -20,4 +21,5 @@ export default {
   SubHeaderItem,
   HorizontalScrollList,
   LoginForm,
+  ButtonLink,
 };

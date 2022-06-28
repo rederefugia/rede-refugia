@@ -98,7 +98,12 @@
             "email_invalid_message": "Email address is invalid!",
             "password_placeholder": "Enter your password",
             "enter_button_label": "Login",
-            "signup_button_label": "Sign-up"
+            "signup_button_label": "Sign-up",
+            "header": {
+                "about_menu_label": "about",
+                "how_it_works_menu_label": "how it works?",
+                "login_menu_label": "login"
+            }
         },
         "auth_data": {
             "title": "Signup",
