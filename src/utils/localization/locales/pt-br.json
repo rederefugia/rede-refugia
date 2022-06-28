@@ -103,6 +103,9 @@
                 "about_menu_label": "sobre",
                 "how_it_works_menu_label": "como funciona?",
                 "login_menu_label": "acesse sua conta"
+            },
+            "top_container": {
+                "paragraph": "Colaboração mútua entre pessoas refugiadas, migrantes e organizações."
             }
         },
         "signup": {

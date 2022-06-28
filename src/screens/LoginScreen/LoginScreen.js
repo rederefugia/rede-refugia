@@ -1,7 +1,7 @@
 import * as React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, ScrollView, View, Image } from "react-native";
 
-import { Button, Avatar } from "react-native-paper";
+import { Button, Avatar, Paragraph } from "react-native-paper";
 
 import components from "../../components";
 
@@ -53,14 +53,27 @@ const LoginScreen = ({ navigation }) => {
     });
   }, [navigation]);
 
-  return <components.LoginForm navigation={navigation} />;
+  return (
+    <ScrollView style={styles.scrollview}>
+      <View style={styles.container}>
+        <Image
+          source={require("../../../assets/logo-rede-refugia.png")}
+          style={styles.topLogoImage}
+        />
+        <Paragraph style={styles.topContainerParagraph}>
+          {localization.t("screens.login.top_container.paragraph")}
+        </Paragraph>
+      </View>
+      <components.LoginForm navigation={navigation} />
+    </ScrollView>
+  );
 };
 
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
   headerLogo: {
     margin: "auto",
-    marginLeft: theme.DefaultTheme.space
+    marginLeft: theme.DefaultTheme.space,
   },
   headerLink: {
     borderRadius: theme.DefaultTheme.noSpace,
@@ -70,6 +83,23 @@ const styles = StyleSheet.create({
   headerLinkLabel: {
     fontSize: theme.DefaultTheme.fontSize,
     color: theme.DefaultTheme.colors.white,
+  },
+  scrollview: {
+    backgroundColor: theme.DefaultTheme.colors.grayLight,
+  },
+  container: {
+    padding: theme.DefaultTheme.spaceLarge,
+  },
+  topLogoImage: {
+    resizeMode: "contain",
+    height: "180px",
+  },
+  topContainerParagraph: {
+    alignSelf: "center",
+    textAlign: "center",
+    maxWidth: "40%",
+    fontSize: theme.DefaultTheme.fontSizeLarge,
+    color: theme.DefaultTheme.colors.purple491C4C,
   },
 });
 

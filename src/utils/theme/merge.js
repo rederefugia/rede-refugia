@@ -27,6 +27,7 @@ const theme = {
     light_pink: "#FEE2FF",
     purpleDark: "#5E205D",
     purple: "#9E76CF",
+    purple491C4C: "#491C4C",
     white: "#FAFAFA",
     grayF3F0F3: "#F3F0F3",
     grayLight: "#C4C3C3",

@@ -103,6 +103,9 @@
                 "about_menu_label": "about",
                 "how_it_works_menu_label": "how it works?",
                 "login_menu_label": "login"
+            },
+            "top_container": {
+                "paragraph": "Collaboration among refugees, migrants, and organizations."
             }
         },
         "auth_data": {
