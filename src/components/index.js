@@ -7,6 +7,7 @@ import OpportunityCard from "./OpportunityCard";
 import SubHeader from "./SubHeader";
 import SubHeaderItem from "./SubHeaderItem";
 import HorizontalScrollList from "./HorizontalScrollList";
+import LoginForm from "./LoginForm";
 
 export default {
   InputGroupTitle,
@@ -18,4 +19,5 @@ export default {
   SubHeader,
   SubHeaderItem,
   HorizontalScrollList,
+  LoginForm,
 };
