@@ -3,6 +3,8 @@ import { StyleSheet, ScrollView, View, Image } from "react-native";
 
 import { Button, Avatar, Paragraph } from "react-native-paper";
 
+import AboutRegion from "./AboutRegion.js";
+
 import components from "../../components";
 
 import localization from "../../utils/localization";
@@ -64,6 +66,7 @@ const LoginScreen = ({ navigation }) => {
           {localization.t("screens.login.top_container.paragraph")}
         </Paragraph>
       </View>
+      <AboutRegion navigation={navigation} />
       <components.LoginForm navigation={navigation} />
     </ScrollView>
   );

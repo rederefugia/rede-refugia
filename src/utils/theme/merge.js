@@ -28,11 +28,13 @@ const theme = {
     purpleDark: "#5E205D",
     purple: "#9E76CF",
     purple491C4C: "#491C4C",
+    purpleA984D7: "#A984D7",
     white: "#FAFAFA",
     grayF3F0F3: "#F3F0F3",
     grayLight: "#C4C3C3",
     gray: "#E1E0E0",
-    black: "#000000"
+    black: "#000000",
+    yellowFFD62C: "#FFD62C"
   },
 };
 
