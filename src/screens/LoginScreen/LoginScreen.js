@@ -4,6 +4,7 @@ import { StyleSheet, ScrollView, View, Image } from "react-native";
 import { Button, Avatar, Paragraph } from "react-native-paper";
 
 import AboutRegion from "./AboutRegion.js";
+import HowItWorksRegion from "./HowItWorksRegion";
 
 import components from "../../components";
 
@@ -67,7 +68,7 @@ const LoginScreen = ({ navigation }) => {
         </Paragraph>
       </View>
       <AboutRegion navigation={navigation} />
-      <components.LoginForm navigation={navigation} />
+      <HowItWorksRegion navigation={navigation} />
     </ScrollView>
   );
 };

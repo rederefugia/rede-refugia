@@ -10,7 +10,7 @@ const AboutRegion = ({ navigation }) => {
   const handlePress = () => navigation.navigate("user-type");
 
   return (
-    <View style={{ flex: 1 }}>
+    <View>
       <ImageBackground
         resizeMode="cover"
         source={require("../../../assets/bg-about.png")}
