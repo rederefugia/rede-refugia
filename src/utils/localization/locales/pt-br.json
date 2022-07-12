@@ -94,11 +94,13 @@
         },
         "login": {
             "title": "Benvindo a Rede Refugia",
+            "subtitle": "Faça login na sua conta ou cadastre-se",
             "email_placeholder": "Digite seu email",
             "email_invalid_message": "Endereço de email inválido!",
             "password_placeholder": "Digite sua senha",
             "enter_button_label": "Login",
-            "signup_button_label": "Cadastre-se",
+            "signup_button_label": "Criar conta",
+            "signup_question": "Não possui uma conta?",
             "header": {
                 "about_menu_label": "sobre",
                 "how_it_works_menu_label": "como funciona?",

@@ -69,6 +69,7 @@ const LoginScreen = ({ navigation }) => {
       </View>
       <AboutRegion navigation={navigation} />
       <HowItWorksRegion navigation={navigation} />
+      <components.LoginForm navigation={navigation} />
     </ScrollView>
   );
 };

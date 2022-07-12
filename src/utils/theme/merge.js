@@ -34,7 +34,7 @@ const theme = {
     grayLight: "#C4C3C3",
     gray: "#E1E0E0",
     black: "#000000",
-    yellowFFD62C: "#FFD62C"
+    yellowFFD62C: "#FFD62C",
   },
 };
 
@@ -52,7 +52,6 @@ const styles = {
   cardHeaderTitle: {
     color: theme.colors.background,
     fontFamily: theme.fontFamily,
-    fontSize: theme.fontSizeLarge,
   },
   cardInput: {
     borderRadius: theme.roundness,
@@ -81,7 +80,7 @@ const styles = {
     fontFamily: theme.fontFamily,
     fontSize: theme.fontSize,
     fontWeight: "700",
-    paddingHorizontal: theme.spaceSmall
+    paddingHorizontal: theme.spaceSmall,
   },
 };
 

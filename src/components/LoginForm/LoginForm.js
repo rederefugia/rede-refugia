@@ -1,12 +1,6 @@
 import * as React from "react";
 import { StyleSheet, View, ImageBackground } from "react-native";
-import {
-  TextInput,
-  Button,
-  HelperText,
-  Card,
-  Avatar,
-} from "react-native-paper";
+import { Text, TextInput, Button, HelperText, Card } from "react-native-paper";
 
 import theme from "../../utils/theme";
 import localization from "../../utils/localization";
@@ -33,20 +27,19 @@ const LoginForm = ({ navigation }) => {
     <ImageBackground
       resizeMode="cover"
       source={require("../../../assets/login-background.png")}
-      style={{ flex: 1, backgroundColor: theme.DefaultTheme.colors.grayLight }}
+      style={{ backgroundColor: theme.DefaultTheme.colors.grayLight }}
     >
-      <View style={styles.view}>
-        <Card style={styles.cardView}>
+      <View
+        style={[styles.view, { marginVertical: theme.DefaultTheme.spaceLarge }]}
+      >
+        <Card>
           <Card.Title
-            style={styles.cardHeader}
             title={localization.t("screens.login.title")}
-            titleStyle={{ ...theme.DefaultStyle.cardHeaderTitle }}
+            subtitle={localization.t("screens.login.subtitle")}
+            subtitleStyle={styles.title}
+            titleStyle={styles.title}
           />
-          <Card.Content>
-            <Avatar.Image
-              source={require("../../../assets/logo.png")}
-              style={styles.logo}
-            />
+          <Card.Content style={styles.content}>
             <HelperText type="error" visible={authError}>
               {authError}
             </HelperText>
@@ -71,7 +64,7 @@ const LoginForm = ({ navigation }) => {
           </Card.Content>
           <Card.Actions style={styles.cardActions}>
             <Button
-              style={styles.cardActionsButton}
+              style={[styles.button, { width: "100%" }]}
               uppercase={false}
               mode="contained"
               onPress={handleLogin}
@@ -79,16 +72,19 @@ const LoginForm = ({ navigation }) => {
             >
               {localization.t("screens.login.enter_button_label")}
             </Button>
-            <Button
-              style={styles.cardActionsButton}
-              uppercase={false}
-              mode="contained"
-              onPress={() => {
-                navigation.navigate("user-type");
-              }}
-            >
-              {localization.t("screens.login.signup_button_label")}
-            </Button>
+            <View style={{ flexDirection: "row" }}>
+              <Text style={styles.signupText}>
+                {localization.t("screens.login.signup_question")}
+              </Text>
+              <Button
+                mode="text"
+                compact={true}
+                uppercase={false}
+                onPress={() => navigation.navigate("user-type")}
+              >
+                {localization.t("screens.login.signup_button_label")}
+              </Button>
+            </View>
           </Card.Actions>
         </Card>
       </View>
@@ -101,6 +97,22 @@ const styles = StyleSheet.create({
   logo: {
     margin: "auto",
     marginVertical: theme.DefaultTheme.spaceSmall,
+  },
+  title: {
+    ...theme.DefaultStyle.cardHeaderTitle,
+    alignSelf: "center",
+  },
+  content: {
+    marginVertical: theme.DefaultTheme.space,
+  },
+  cardActions: {
+    ...theme.DefaultStyle.cardActions,
+    flexDirection: "column",
+    justifyContent: "center",
+  },
+  signupText: {
+    paddingVertical: theme.DefaultTheme.spaceSmall,
+    color: theme.DefaultTheme.colors.white,
   },
 });
 
