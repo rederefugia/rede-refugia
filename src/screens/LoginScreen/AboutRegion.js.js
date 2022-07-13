@@ -6,11 +6,11 @@ import { Title, Paragraph, Button } from "react-native-paper";
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 
-const AboutRegion = ({ navigation }) => {
+const AboutRegion = React.forwardRef(({ navigation }, ref) => {
   const handlePress = () => navigation.navigate("user-type");
 
   return (
-    <View>
+    <View ref={ref}>
       <ImageBackground
         resizeMode="cover"
         source={require("../../../assets/bg-about.png")}
@@ -39,7 +39,7 @@ const AboutRegion = ({ navigation }) => {
       </ImageBackground>
     </View>
   );
-};
+});
 
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,

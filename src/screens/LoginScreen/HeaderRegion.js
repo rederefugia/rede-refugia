@@ -7,7 +7,8 @@ import components from "../../components";
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 
-const HeaderRegion = () => {
+const HeaderRegion = ({ handleScroll }) => {
+  
   return (
     <components.HorizontalScrollList>
       <Button
@@ -16,6 +17,7 @@ const HeaderRegion = () => {
         uppercase={false}
         style={styles.headerLink}
         labelStyle={styles.headerLinkLabel}
+        onPress={() => handleScroll("about")}
       >
         {localization.t("screens.login.header.about_menu_label")}
       </Button>
@@ -25,6 +27,7 @@ const HeaderRegion = () => {
         uppercase={false}
         style={styles.headerLink}
         labelStyle={styles.headerLinkLabel}
+        onPress={() => handleScroll("howto")}
       >
         {localization.t("screens.login.header.how_it_works_menu_label")}
       </Button>
@@ -37,6 +40,7 @@ const HeaderRegion = () => {
           { borderRightWidth: theme.DefaultTheme.noSpace },
         ]}
         labelStyle={styles.headerLinkLabel}
+        onPress={() => handleScroll("login")}
       >
         {localization.t("screens.login.header.login_menu_label")}
       </Button>

@@ -6,7 +6,7 @@ import theme from "../../utils/theme";
 import localization from "../../utils/localization";
 import providers from "../../providers";
 
-const LoginForm = ({ navigation }) => {
+const LoginForm = React.forwardRef(({ navigation }, ref) => {
   const { authError, login } = React.useContext(providers.auth.AuthContext);
 
   const [username, setUsername] = React.useState("");
@@ -31,6 +31,7 @@ const LoginForm = ({ navigation }) => {
     >
       <View
         style={[styles.view, { marginVertical: theme.DefaultTheme.spaceLarge }]}
+        ref={ref}
       >
         <Card>
           <Card.Title
@@ -90,7 +91,7 @@ const LoginForm = ({ navigation }) => {
       </View>
     </ImageBackground>
   );
-};
+});
 
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,

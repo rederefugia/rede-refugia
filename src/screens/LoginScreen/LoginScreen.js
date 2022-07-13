@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StyleSheet, ScrollView, View, Image } from "react-native";
 
-import { Button, Avatar, Paragraph } from "react-native-paper";
+import { Paragraph } from "react-native-paper";
 
 import HeaderRegion from "./HeaderRegion";
 import AboutRegion from "./AboutRegion.js";
@@ -13,9 +13,18 @@ import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 
 const LoginScreen = ({ navigation }) => {
+  const viewRefs = {
+    login: React.useRef(null),
+    about: React.useRef(null),
+    howto: React.useRef(null),
+  };
+  const handleScroll = (componentName) => {
+    viewRefs[componentName].current.scrollIntoView({ behavior: "smooth" });
+  };
+
   React.useLayoutEffect(() => {
     navigation.setOptions({
-      headerRight: () => <HeaderRegion />
+      headerRight: () => <HeaderRegion handleScroll={handleScroll} />,
     });
   }, [navigation]);
 
@@ -30,9 +39,9 @@ const LoginScreen = ({ navigation }) => {
           {localization.t("screens.login.top_container.paragraph")}
         </Paragraph>
       </View>
-      <AboutRegion navigation={navigation} />
-      <HowItWorksRegion navigation={navigation} />
-      <components.LoginForm navigation={navigation} />
+      <AboutRegion navigation={navigation} ref={viewRefs.about}/>
+      <HowItWorksRegion navigation={navigation} ref={viewRefs.howto} />
+      <components.LoginForm navigation={navigation} ref={viewRefs.login} />
     </ScrollView>
   );
 };

@@ -7,13 +7,13 @@ import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 
 const window = Dimensions.get("window");
-const imageRatio = 1278/1363;
+const imageRatio = 1278 / 1363;
 
-const HowItWorksRegion = ({ navigation }) => {
+const HowItWorksRegion = React.forwardRef(({ navigation }, ref) => {
   const handlePress = () => navigation.navigate("user-type");
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} ref={ref}>
       <Image
         style={styles.image}
         source={require("../../../assets/howto.png")}
@@ -28,7 +28,7 @@ const HowItWorksRegion = ({ navigation }) => {
       </Button>
     </View>
   );
-};
+});
 
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: window.width * 0.8,
-    height: window.width * 0.8 / imageRatio,
+    height: (window.width * 0.8) / imageRatio,
     resizeMode: "contain",
   },
   button: {
