@@ -49,7 +49,11 @@ const OpportunityCard = ({ opportunity, updateScreen }) => {
       <View style={styles.cardInfo}>
         <View style={styles.row}>
           <Text style={styles.text}>{opportunity.owner.name}</Text>
-          <ButtonLink address={opportunity.link} style={styles.link}>
+          <ButtonLink
+            address={opportunity.link}
+            labelStyle={styles.link}
+            buttonStyle={styles.buttonLink}
+          >
             {opportunity.link}
           </ButtonLink>
         </View>
@@ -60,14 +64,16 @@ const OpportunityCard = ({ opportunity, updateScreen }) => {
         <View style={styles.row}>
           <ButtonLink
             address={opportunity.owner.email}
-            style={styles.link}
+            buttonStyle={styles.buttonLink}
+            labelStyle={styles.link}
             type={ButtonLink.EMAIL_TYPE}
           >
             {opportunity.owner.email}
           </ButtonLink>
           <ButtonLink
             address={opportunity.owner.phoneNumber}
-            style={styles.link}
+            buttonStyle={styles.buttonLink}
+            labelStyle={styles.link}
             type={ButtonLink.PHONE_TYPE}
           >
             {masks.parsePhoneNumber(opportunity.owner.phoneNumber)}
@@ -113,6 +119,9 @@ const styles = StyleSheet.create({
     fontSize: theme.DefaultTheme.fontSizeSmall,
     marginHorizontal: theme.DefaultTheme.noSpace,
     marginVertical: theme.DefaultTheme.noSpace,
+  },
+  buttonLink: {
+    maxWidth: "45%",
   },
 });
 

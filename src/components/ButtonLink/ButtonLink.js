@@ -5,7 +5,7 @@ import { Button } from "react-native-paper";
 
 import theme from "../../utils/theme";
 
-let ButtonLink = ({ address, style, children, type }) => {
+let ButtonLink = ({ address, labelStyle, buttonStyle, children, type }) => {
   const [url, setUrl] = React.useState("");
   const handlePress = React.useCallback(async () => {
     const url_formatted = type + url;
@@ -15,11 +15,11 @@ let ButtonLink = ({ address, style, children, type }) => {
 
   return (
     <Button
-      style={styles.button}
+      style={[styles.button, buttonStyle]}
       mode="text"
       compact={true}
       uppercase={false}
-      labelStyle={style ? style : styles.label}
+      labelStyle={[styles.label, labelStyle]}
       onPress={() => {
         setUrl(address);
         handlePress();
