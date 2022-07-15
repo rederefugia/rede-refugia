@@ -20,6 +20,8 @@ const SubHeaderItem = ({ icon, label, value, onPress }) => {
       mode={enabled ? "contained" : "outlined"}
       icon={icon}
       onPress={handlePress}
+      labelStyle={styles.label}
+      style={styles.container}
     >
       {label}
     </Button>
@@ -27,6 +29,9 @@ const SubHeaderItem = ({ icon, label, value, onPress }) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    marginRight: theme.DefaultTheme.spaceSmall,
+  },
   label: {
     fontSize: theme.DefaultTheme.fontSizeSmall,
   },

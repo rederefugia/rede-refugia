@@ -15,6 +15,7 @@ const OpportunitiesScreen = ({ navigation }) => {
   const [opportunities, setOpportunities] = React.useState([]);
   const [categoryFilter, setCategoryFilter] = React.useState([]);
   const [isOnlyFavorite, showOnlyFavorites] = React.useState(false);
+  const [isOwner, showOnlyOwned] = React.useState(false);
 
   const updateCategoryFilter = (label, value) => {
     if (categoryFilter.includes(value))
@@ -41,7 +42,10 @@ const OpportunitiesScreen = ({ navigation }) => {
       categoryFilter.length > 0
         ? firestore.filter("category", "in", categoryFilter)
         : undefined,
-      isOnlyFavorite ? firestore.filter("id", "in", user.favorites, true) : undefined
+      isOnlyFavorite
+        ? firestore.filter("id", "in", user.favorites, true)
+        : undefined,
+      isOwner ? firestore.filter("owner", "==", user.uid) : undefined
     );
     data = await Promise.all(
       data.map(async (d) => {
@@ -57,7 +61,7 @@ const OpportunitiesScreen = ({ navigation }) => {
 
   React.useEffect(() => {
     fetchData();
-  }, [categoryFilter, isOnlyFavorite]);
+  }, [categoryFilter, isOnlyFavorite, isOwner]);
 
   return (
     <>
@@ -78,6 +82,12 @@ const OpportunitiesScreen = ({ navigation }) => {
             "screens.opportunities.favorites_filter_button_label"
           )}
           onPress={() => showOnlyFavorites(!isOnlyFavorite)}
+        />
+        <components.SwitchButton
+          label={localization.t(
+            "screens.opportunities.owner_filter_button_label"
+          )}
+          onPress={() => showOnlyOwned(!isOwner)}
         />
       </components.HorizontalScrollList>
       <FlatGrid

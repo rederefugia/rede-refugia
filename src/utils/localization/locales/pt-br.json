@@ -53,7 +53,8 @@
                     "counter_label": "Caracteres:"
                 }
             },
-            "favorites_filter_button_label": "Salvos"
+            "favorites_filter_button_label": "Salvos",
+            "owner_filter_button_label": "Criado por mim"
         },
         "profile": {
             "name_text_input_label": "Nome:",
