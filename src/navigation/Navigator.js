@@ -22,7 +22,7 @@ const Navigator = ({ theme }) => {
   }
 
   return (
-    <NavigationContainer theme={theme}>
+    <NavigationContainer theme={theme} linking={true}>
       {!authenticated ? <PublicNavigation /> : <PrivateNavigation />}
     </NavigationContainer>
   );
