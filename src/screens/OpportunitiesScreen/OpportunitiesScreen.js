@@ -1,9 +1,9 @@
 import * as React from "react";
-import { StyleSheet, ScrollView } from "react-native";
+import { StyleSheet } from "react-native";
 
-import { Button } from "react-native-paper";
 import { FlatGrid } from "react-native-super-grid";
 
+import providers from "../../providers";
 import firestore from "../../utils/firebase/firestore";
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
@@ -11,8 +11,10 @@ import components from "../../components";
 import categories from "../../utils/categories";
 
 const OpportunitiesScreen = ({ navigation }) => {
+  const { user, setUser } = React.useContext(providers.auth.AuthContext);
   const [opportunities, setOpportunities] = React.useState([]);
   const [categoryFilter, setCategoryFilter] = React.useState([]);
+  const [isOnlyFavorite, showOnlyFavorites] = React.useState(false);
 
   const updateCategoryFilter = (label, value) => {
     if (categoryFilter.includes(value))
@@ -34,13 +36,13 @@ const OpportunitiesScreen = ({ navigation }) => {
 
   const fetchData = React.useCallback(async () => {
     let data = [];
-    if (categoryFilter.length == 0)
-      data = await firestore.find(firestore.COLLECTIONS.OPPORTUNITIES);
-    else
-      data = await firestore.find(
-        firestore.COLLECTIONS.OPPORTUNITIES,
-        firestore.filter("category", "in", categoryFilter)
-      );
+    data = await firestore.find(
+      firestore.COLLECTIONS.OPPORTUNITIES,
+      categoryFilter.length > 0
+        ? firestore.filter("category", "in", categoryFilter)
+        : undefined,
+      isOnlyFavorite ? firestore.filter("id", "in", user.favorites, true) : undefined
+    );
     data = await Promise.all(
       data.map(async (d) => {
         const owner = await firestore.getById(
@@ -55,7 +57,7 @@ const OpportunitiesScreen = ({ navigation }) => {
 
   React.useEffect(() => {
     fetchData();
-  }, [categoryFilter]);
+  }, [categoryFilter, isOnlyFavorite]);
 
   return (
     <>
@@ -70,11 +72,13 @@ const OpportunitiesScreen = ({ navigation }) => {
         ))}
       </components.SubHeader>
       <components.HorizontalScrollList>
-        <Button mode="contained" icon="heart" uppercase={false} compact={true}>
-          {localization.t(
+        <components.SwitchButton
+          icon="heart"
+          label={localization.t(
             "screens.opportunities.favorites_filter_button_label"
           )}
-        </Button>
+          onPress={() => showOnlyFavorites(!isOnlyFavorite)}
+        />
       </components.HorizontalScrollList>
       <FlatGrid
         style={styles.gridView}
@@ -82,7 +86,10 @@ const OpportunitiesScreen = ({ navigation }) => {
         spacing={30}
         itemDimension={300}
         renderItem={({ item }) => (
-          <components.OpportunityCard opportunity={item} updateScreen={fetchData} />
+          <components.OpportunityCard
+            opportunity={item}
+            updateScreen={fetchData}
+          />
         )}
       />
     </>

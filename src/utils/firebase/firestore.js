@@ -8,6 +8,7 @@ import {
   getDoc,
   updateDoc,
   deleteDoc,
+  documentId,
 } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 
@@ -18,19 +19,21 @@ const COLLECTIONS = {
   OPPORTUNITIES: "opportunities",
 };
 
-const filter = (parameterName, condition, parameterValue) => {
-  return where(parameterName, condition, parameterValue);
+const filter = (parameterName, condition, parameterValue, byId=false) => {
+  return where(byId ? documentId() : parameterName, condition, parameterValue);
 };
 
 async function find(collectionName) {
   const ref = collection(firebase.firestore(), collectionName);
-  let args = Array.prototype.slice.call(arguments, 1);  
+  let args = Array.prototype.slice
+    .call(arguments, 1)
+    .filter((value) => value != null || value != undefined);
   const q = args.length > 0 ? query(ref, ...args) : query(ref);
   const snapshot = await getDocs(q);
   let data = [];
   snapshot.forEach((doc) => data.push({ id: doc.id, ...doc.data() }));
   return data;
-};
+}
 
 const createWithId = async (collectionName, id, data) => {
   if (id == undefined || id == null) id = uuidv4();
@@ -52,5 +55,13 @@ const updateById = async (collectionName, id, data) => {
 const deleteById = async (collectionName, id) => {
   const ref = doc(firebase.firestore(), collectionName, id);
   await deleteDoc(ref);
-}
-export default { find, createWithId, getById, updateById, deleteById, filter, COLLECTIONS };
+};
+export default {
+  find,
+  createWithId,
+  getById,
+  updateById,
+  deleteById,
+  filter,
+  COLLECTIONS,
+};

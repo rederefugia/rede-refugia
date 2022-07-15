@@ -9,6 +9,7 @@ import SubHeaderItem from "./SubHeaderItem";
 import HorizontalScrollList from "./HorizontalScrollList";
 import LoginForm from "./LoginForm";
 import ButtonLink from "./ButtonLink";
+import SwitchButton from "./SwitchButton";
 
 export default {
   InputGroupTitle,
@@ -22,4 +23,5 @@ export default {
   HorizontalScrollList,
   LoginForm,
   ButtonLink,
+  SwitchButton,
 };
