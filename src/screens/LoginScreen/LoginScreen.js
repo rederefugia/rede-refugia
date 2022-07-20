@@ -49,7 +49,7 @@ const LoginScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
   scrollview: {
-    backgroundColor: theme.DefaultTheme.colors.grayLight,
+    backgroundColor: theme.DefaultTheme.colors.grayE5E5E5,
   },
   container: {
     padding: theme.DefaultTheme.spaceLarge,

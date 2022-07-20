@@ -27,7 +27,6 @@ const LoginForm = React.forwardRef(({ navigation }, ref) => {
     <ImageBackground
       resizeMode="cover"
       source={require("../../../assets/login-background.png")}
-      style={{ backgroundColor: theme.DefaultTheme.colors.grayLight }}
     >
       <View
         style={[styles.view, { marginVertical: theme.DefaultTheme.spaceLarge }]}
