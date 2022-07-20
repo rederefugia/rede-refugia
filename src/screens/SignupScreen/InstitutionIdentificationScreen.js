@@ -40,7 +40,7 @@ const InstitutionIdentificationScreen = ({ navigation }) => {
     <ImageBackground
       resizeMode="cover"
       source={require("../../../assets/login-background.png")}
-      style={{ flex: 1, backgroundColor: theme.DefaultTheme.colors.accent }}
+      style={{ flex: 1, backgroundColor: theme.DefaultTheme.colors.grayE5E5E5 }}
     >
       <View style={styles.view}>
         <View>
