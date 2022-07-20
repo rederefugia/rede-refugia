@@ -1,16 +1,12 @@
 import * as React from "react";
 import { StyleSheet, View, ImageBackground } from "react-native";
-import {
-  Button,
-  Card,
-  HelperText,
-  TextInput,
-} from "react-native-paper";
+import { Button, Card, HelperText, TextInput } from "react-native-paper";
 
 import theme from "../../utils/theme";
 import providers from "../../providers";
 import localization from "../../utils/localization";
 import firestore from "../../utils/firebase/firestore";
+import masks from "../../utils/masks";
 
 const InstitutionIdentificationScreen = ({ navigation }) => {
   const { cnpj, setCnpj } = React.useContext(providers.auth.AuthContext);
@@ -61,8 +57,10 @@ const InstitutionIdentificationScreen = ({ navigation }) => {
                 {error}
               </HelperText>
               <TextInput
-                value={cnpj}
-                onChangeText={setCnpj}
+                value={masks.parseCNPJ(cnpj)}
+                onChangeText={(value) => {
+                  if (value.length <= 18) setCnpj(value);
+                }}
                 style={styles.cardInput}
               />
             </Card.Content>
