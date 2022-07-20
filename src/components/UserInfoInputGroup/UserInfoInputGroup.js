@@ -79,7 +79,7 @@ const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
       />
       <TextInput
         label={localization.t("screens.profile.country_text_input_label")}
-        value={userData.name}
+        value={userData.country}
         onChangeText={(value) => setUserData({ country: value })}
         style={styles.inputTextLarge}
       />
