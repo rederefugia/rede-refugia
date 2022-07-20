@@ -15,7 +15,7 @@
     "screens": {
         "opportunities": {
             "name": "Nossa Rede",
-            "create_header_button_label": "Criar",
+            "create_header_button_label": "Cadastrar",
             "create_opportunity_modal": {
                 "opportunity_type": {
                     "title": "O que deseja criar?",

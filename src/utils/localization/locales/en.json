@@ -15,7 +15,7 @@
     "screens": {
         "opportunities": {
             "name": "Our Network",
-            "create_header_button_label": "Create",
+            "create_header_button_label": "Register",
             "create_opportunity_modal": {
                 "opportunity_type": {
                     "title": "What do you want to create?",
