@@ -17,8 +17,10 @@ const OpportunityLocation = ({ setOpportunity, setCanGoNext }) => {
         "screens.opportunities.create_opportunity_modal.opportunity_location.zip_code_input_text_label"
       )}
       onChangeText={(value) => {
-        setText(value);
-        setOpportunity({ zipCode: value });
+        if (value.length <= 9) {
+          setText(value);
+          setOpportunity({ zipCode: value });
+        }
         if (value.length == 9) setCanGoNext(true);
         else setCanGoNext(false);
       }}
