@@ -14,7 +14,7 @@
     },
     "screens": {
         "opportunities": {
-            "name": "Oportunidades",
+            "name": "Nossa Rede",
             "create_header_button_label": "Criar",
             "create_opportunity_modal": {
                 "opportunity_type": {

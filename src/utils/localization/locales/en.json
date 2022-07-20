@@ -14,7 +14,7 @@
     },
     "screens": {
         "opportunities": {
-            "name": "Opportunities",
+            "name": "Our Network",
             "create_header_button_label": "Create",
             "create_opportunity_modal": {
                 "opportunity_type": {
