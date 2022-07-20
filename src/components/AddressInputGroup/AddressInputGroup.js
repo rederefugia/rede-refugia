@@ -6,6 +6,7 @@ import InputGroupSkeleton from "../InputGroupSkeleton";
 import InputGroupTitle from "../InputGroupTitle";
 
 import localization from "../../utils/localization";
+import masks from "../../utils/masks";
 
 const AddressInputGroup = ({ userData, setUserData, styles }) => {
   return (
@@ -21,8 +22,10 @@ const AddressInputGroup = ({ userData, setUserData, styles }) => {
       />
       <TextInput
         label={localization.t("screens.profile.zip_code_text_input_label")}
-        value={userData.zipCode}
-        onChangeText={(value) => setUserData({ zipCode: value })}
+        value={masks.parseZipCode(userData.zipCode)}
+        onChangeText={(value) => {
+          if (value.length <= 9) setUserData({ zipCode: value });
+        }}
         style={styles.inputText}
       />
       <TextInput
