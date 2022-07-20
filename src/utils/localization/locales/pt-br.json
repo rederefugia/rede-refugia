@@ -58,7 +58,7 @@
         },
         "profile": {
             "name_text_input_label": "Nome:",
-            "gender_combo_box_label": "Genero:",
+            "gender_combo_box_label": "Gênero:",
             "gender_combo_box": {
                 "male_option": "Homem",
                 "female_option": "Mulher",
