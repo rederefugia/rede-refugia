@@ -74,13 +74,17 @@
                 "naturalized_option": "Naturalizado",
                 "brazilian_option": "Brasileiro"
             },
-            "motive_combo_box_label": "Motivo:",
+            "motive_combo_box_label": "Motivo do deslocamento:",
             "motive_combo_box": {
                 "race_option": "Raça",
                 "religion_option": "Religião",
                 "gender_option": "Gênero",
                 "nationality_option": "Nacionalidade",
-                "social_group_option": "Grupo Social"
+                "social_group_option": "Grupo Social",
+                "human_rights_violation_option": "Grave Violação dos Direitos Humanos",
+                "politic_option": "Política",
+                "disaster_option": "Desastre",
+                "other_option": "Outros"
             },
             "country_text_input_label": "País:",
             "birthday_text_input_label": "Data de Nascimento:",

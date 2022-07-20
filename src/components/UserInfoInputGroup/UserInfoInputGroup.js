@@ -25,7 +25,17 @@ const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
     },
     {
       name: "motive",
-      values: ["race", "religion", "gender", "nationality", "social_group"],
+      values: [
+        "race",
+        "religion",
+        "gender",
+        "nationality",
+        "social_group",
+        "human_rights_violation",
+        "politic",
+        "disaster",
+        "other",
+      ],
     },
   ];
 
