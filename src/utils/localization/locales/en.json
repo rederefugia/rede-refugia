@@ -61,7 +61,7 @@
             "gender_combo_box": {
                 "male_option": "Male",
                 "female_option": "Female",
-                "other_option": "Other"
+                "other_option": "Not specified"
             },
             "status_combo_box_label": "Status:",
             "status_combo_box": {

@@ -62,7 +62,7 @@
             "gender_combo_box": {
                 "male_option": "Homem",
                 "female_option": "Mulher",
-                "other_option": "Outro"
+                "other_option": "Não especifico"
             },
             "status_combo_box_label": "Situação:",
             "status_combo_box": {
