@@ -121,13 +121,30 @@
                 "guide_button_label": "Veja mais aqui no guia de uso da Rede Refugia"
             }
         },
-        "signup": {
-            "title": "Cadastre-se na Rede Refugia",
+        "auth_data": {
+            "title": "Nova Conta",
+            "headline": "Insira seus dados de acesso",
+            "name_placeholder": "Digite seu nome",
             "email_placeholder": "Digite seu email",
-            "email_invalid_message": "Endereço de email inválido!",
+            "email_invalid_message": "Este email é inválido!",
             "password_placeholder": "Digite sua senha",
-            "enter_button_label": "Criar",
-            "cancel_button_label":"Cancelar"
+            "enter_button_label": "Criar Conta",
+            "cancel_button_label": "Cancelar"
+        },
+        "user_type": {
+            "title": "Nova Conta",
+            "question_text": "Você é representante de uma instituição?",
+            "switch_text": "Sim, eu sou!!!",
+            "info_message": "Esta ação não poderá ser alterada depois do cadastro finalizado.",
+            "next_button_label": "Próximo",
+            "cancel_button_label": "Cancelar"
+        },
+        "institution_identification": {
+            "title": "Nova Conta",
+            "headline": "Qual é o seu CNPJ?",
+            "cnpj_error_message": "Estes CNPJ já existe no sistema. Apenas uma conta por CNPJ é permitido.",
+            "next_button_label": "Próximo",
+            "cancel_button_label": "Cancelar"
         }
     }
 }
