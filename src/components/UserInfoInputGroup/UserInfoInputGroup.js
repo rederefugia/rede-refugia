@@ -18,6 +18,9 @@ const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
         "refugee_requester",
         "stateless",
         "humanitarian_visa_holder",
+        "immigrant",
+        "naturalized",
+        "brazilian",
       ],
     },
     {

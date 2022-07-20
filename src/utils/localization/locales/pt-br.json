@@ -66,10 +66,13 @@
             },
             "status_combo_box_label": "Situação:",
             "status_combo_box": {
-                "refugee_option": "Refugiário",
+                "refugee_option": "Refugiado",
                 "refugee_requester_option": "Solicitante de Refúgio",
-                "stateless_option": "Apatrida",
-                "humanitarian_visa_holder_option": "Portador de Visto Humanitário"
+                "stateless_option": "Apátrida",
+                "humanitarian_visa_holder_option": "Portador de Visto Humanitário",
+                "immigrant_option": "Imigrante",
+                "naturalized_option": "Naturalizado",
+                "brazilian_option": "Brasileiro"
             },
             "motive_combo_box_label": "Motivo:",
             "motive_combo_box": {
