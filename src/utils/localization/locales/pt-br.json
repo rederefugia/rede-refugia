@@ -141,7 +141,7 @@
         "user_type": {
             "title": "Nova Conta",
             "question_text": "Você é representante de uma instituição?",
-            "switch_text": "Sim, eu sou!!!",
+            "switch_text": "Sim, eu sou",
             "info_message": "Esta ação não poderá ser alterada depois do cadastro finalizado.",
             "next_button_label": "Próximo",
             "cancel_button_label": "Cancelar"

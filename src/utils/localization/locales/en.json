@@ -121,7 +121,7 @@
         "user_type": {
             "title": "Signup",
             "question_text": "Are you an institution representative?",
-            "switch_text": "Yes, I am!!!",
+            "switch_text": "Yes, I am",
             "info_message": "This action can't be changed after the signup",
             "next_button_label": "Next",
             "cancel_button_label": "Cancel"
