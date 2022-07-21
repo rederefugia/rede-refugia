@@ -9,19 +9,16 @@ import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 import categories from "../../utils/categories";
 
-const OpportunityCategory = ({ setOpportunity, setCanGoNext }) => {
-  const [text, setText] = React.useState("");
-  const [category, setCategory] = React.useState("");
-
+const OpportunityCategory = ({ opportunity, setOpportunity, setCanGoNext }) => {
   const checkCompleteness = () => {
-    if (text.length > 0 && category.length > 0) {
+    if (opportunity.title.length > 0 && opportunity.category.length > 0) {
       setCanGoNext(true);
     } else setCanGoNext(false);
   };
 
   React.useEffect(() => {
     checkCompleteness();
-  }, [text, category]);
+  }, [opportunity]);
 
   return (
     <View>
@@ -31,10 +28,9 @@ const OpportunityCategory = ({ setOpportunity, setCanGoNext }) => {
           "screens.opportunities.create_opportunity_modal.opportunity_category.title_input_text_label"
         )}
         onChangeText={(value) => {
-          setText(value);
           setOpportunity({ title: value });
         }}
-        value={text}
+        value={opportunity.title}
       />
       <ComboBox
         label={localization.t(
@@ -42,9 +38,9 @@ const OpportunityCategory = ({ setOpportunity, setCanGoNext }) => {
         )}
         options={[{ value: "", label: "" }].concat(categories)}
         setSelection={(value) => {
-          setCategory(value);
           setOpportunity({ category: value });
         }}
+        selection={opportunity.category}
       />
     </View>
   );

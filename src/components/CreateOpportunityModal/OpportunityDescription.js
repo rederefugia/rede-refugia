@@ -7,14 +7,12 @@ import { HelperText, TextInput } from "react-native-paper";
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 
-const OpportunityDescription = ({ setOpportunity, setCanGoNext }) => {
-  const [text, setText] = React.useState("");
+const OpportunityDescription = ({ opportunity, setOpportunity, setCanGoNext }) => {
   const MAX_LENGTH = 280;
 
   const handleTextChange = (value) => {
     if (value.length === 0) setCanGoNext(false);
     if (value.length < MAX_LENGTH) {
-      setText(value);
       setOpportunity({ description: value });
       setCanGoNext(true);
     }
@@ -28,13 +26,13 @@ const OpportunityDescription = ({ setOpportunity, setCanGoNext }) => {
         maxLength={MAX_LENGTH}
         numberOfLines={5}
         onChangeText={handleTextChange}
-        value={text}
+        value={opportunity.description}
       />
       <HelperText style={styles.helper} visible={true} type="info">
         {localization.t(
           "screens.opportunities.create_opportunity_modal.opportunity_description.counter_label"
         )}{" "}
-        {text.length}/{MAX_LENGTH}
+        {opportunity.description.length}/{MAX_LENGTH}
       </HelperText>
     </>
   );

@@ -18,7 +18,14 @@ const CreateOpportunityModal = ({ visible, setVisible }) => {
   const [loading, setLoading] = React.useState(false);
   let [opportunity, setOpportunity] = React.useReducer(
     (state, newState) => ({ ...state, ...newState }),
-    { type: "", title: "", category: "", link: "", zipCode: "", description: "" }
+    {
+      type: "",
+      title: "",
+      category: "",
+      link: "",
+      zipCode: "",
+      description: "",
+    }
   );
 
   const handleFinish = async () => {
@@ -35,7 +42,13 @@ const CreateOpportunityModal = ({ visible, setVisible }) => {
       title: localization.t(
         "screens.opportunities.create_opportunity_modal.opportunity_type.title"
       ),
-      content: <OpportunityType setOpportunity={setOpportunity} setCanGoNext={setCanGoNext} />,
+      content: (
+        <OpportunityType
+          opportunity={opportunity}
+          setOpportunity={setOpportunity}
+          setCanGoNext={setCanGoNext}
+        />
+      ),
     },
     {
       title:
@@ -46,13 +59,25 @@ const CreateOpportunityModal = ({ visible, setVisible }) => {
           : localization.t(
               "screens.opportunities.create_opportunity_modal.opportunity_category.offer_title"
             ),
-      content: <OpportunityCategory setOpportunity={setOpportunity} setCanGoNext={setCanGoNext} />,
+      content: (
+        <OpportunityCategory
+          opportunity={opportunity}
+          setOpportunity={setOpportunity}
+          setCanGoNext={setCanGoNext}
+        />
+      ),
     },
     {
       title: localization.t(
         "screens.opportunities.create_opportunity_modal.opportunity_link.title"
       ),
-      content: <OpportunityLink setOpportunity={setOpportunity} setCanGoNext={setCanGoNext} />,
+      content: (
+        <OpportunityLink
+          opportunity={opportunity}
+          setOpportunity={setOpportunity}
+          setCanGoNext={setCanGoNext}
+        />
+      ),
     },
     {
       title:
@@ -63,13 +88,25 @@ const CreateOpportunityModal = ({ visible, setVisible }) => {
           : localization.t(
               "screens.opportunities.create_opportunity_modal.opportunity_location.offer_title"
             ),
-      content: <OpportunityLocation setOpportunity={setOpportunity} setCanGoNext={setCanGoNext} />,
+      content: (
+        <OpportunityLocation
+          opportunity={opportunity}
+          setOpportunity={setOpportunity}
+          setCanGoNext={setCanGoNext}
+        />
+      ),
     },
     {
       title: localization.t(
         "screens.opportunities.create_opportunity_modal.opportunity_description.title"
       ),
-      content: <OpportunityDescription setOpportunity={setOpportunity} setCanGoNext={setCanGoNext} />,
+      content: (
+        <OpportunityDescription
+          opportunity={opportunity}
+          setOpportunity={setOpportunity}
+          setCanGoNext={setCanGoNext}
+        />
+      ),
     },
   ];
 

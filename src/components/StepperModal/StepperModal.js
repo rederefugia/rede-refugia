@@ -6,10 +6,22 @@ import { Button, Card, IconButton } from "react-native-paper";
 import theme from "../../utils/theme";
 import localization from "../../utils/localization";
 
-const StepperModal = ({ visible, setVisible, steps, handleFinish, canGoNext, setCanGoNext, loading }) => {
+const StepperModal = ({
+  visible,
+  setVisible,
+  steps,
+  handleFinish,
+  canGoNext,
+  setCanGoNext,
+  loading,
+}) => {
   let [currentStep, setCurrentStep] = React.useState(0);
 
   const isLastStep = currentStep == steps.length - 1;
+
+  const previousStep = () => {
+    setCurrentStep(currentStep - 1);
+  };
 
   const nextStep = () => {
     if (isLastStep) {
@@ -17,7 +29,7 @@ const StepperModal = ({ visible, setVisible, steps, handleFinish, canGoNext, set
       setVisible(false);
       setCurrentStep(0);
     } else {
-      setCanGoNext(false)
+      setCanGoNext(false);
       setCurrentStep(
         currentStep < steps.length - 1 ? (currentStep += 1) : currentStep
       );
@@ -38,7 +50,10 @@ const StepperModal = ({ visible, setVisible, steps, handleFinish, canGoNext, set
         <Card style={styles.cardView}>
           <Card.Title
             style={styles.cardHeader}
-            titleStyle={{ ...theme.DefaultStyle.cardHeaderTitle }}
+            titleStyle={[
+              theme.DefaultStyle.cardHeaderTitle,
+              { alignSelf: "center" },
+            ]}
             title={steps[currentStep].title}
             rightStyle={{
               marginHorizontal: theme.DefaultTheme.spaceSmall,
@@ -58,6 +73,20 @@ const StepperModal = ({ visible, setVisible, steps, handleFinish, canGoNext, set
                 }}
               />
             )}
+            left={(props) => {
+              if (currentStep > 0)
+                return (
+                  <IconButton
+                    {...props}
+                    style={{
+                      backgroundColor: theme.DefaultTheme.colors.white,
+                    }}
+                    icon="chevron-left"
+                    size={14}
+                    onPress={previousStep}
+                  />
+                );
+            }}
           />
           <Card.Content style={styles.cardContent}>
             {steps[currentStep].content}

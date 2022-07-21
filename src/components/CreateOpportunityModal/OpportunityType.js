@@ -7,17 +7,15 @@ import { RadioButton } from "react-native-paper";
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 
-const OpportunityType = ({ setOpportunity, setCanGoNext }) => {
-  const [value, setValue] = React.useState("");
+const OpportunityType = ({ opportunity, setOpportunity, setCanGoNext }) => {
 
   return (
     <RadioButton.Group
       onValueChange={(value) => {
-        setValue(value);
         setOpportunity({ type: value });
         setCanGoNext(true)
       }}
-      value={value}
+      value={opportunity.type}
     >
       <RadioButton.Item
         labelStyle={styles.label}

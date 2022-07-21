@@ -7,12 +7,10 @@ import { TextInput } from "react-native-paper";
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 
-const OpportunityLink = ({ setOpportunity, setCanGoNext }) => {
-  const [text, setText] = React.useState("");
-
+const OpportunityLink = ({ opportunity, setOpportunity, setCanGoNext }) => {
   React.useEffect(() => {
     setCanGoNext(true);
-  }, [text]);
+  }, [opportunity]);
 
   return (
     <TextInput
@@ -21,10 +19,9 @@ const OpportunityLink = ({ setOpportunity, setCanGoNext }) => {
         "screens.opportunities.create_opportunity_modal.opportunity_link.link_input_text_label"
       )}
       onChangeText={(value) => {
-        setText(value);
         setOpportunity({ link: value });
       }}
-      value={text}
+      value={opportunity.link}
     />
   );
 };

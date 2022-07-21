@@ -8,8 +8,7 @@ import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 import masks from "../../utils/masks";
 
-const OpportunityLocation = ({ setOpportunity, setCanGoNext }) => {
-  const [text, setText] = React.useState("");
+const OpportunityLocation = ({ opportunity, setOpportunity, setCanGoNext }) => {
   return (
     <TextInput
       style={styles.inputText}
@@ -17,14 +16,11 @@ const OpportunityLocation = ({ setOpportunity, setCanGoNext }) => {
         "screens.opportunities.create_opportunity_modal.opportunity_location.zip_code_input_text_label"
       )}
       onChangeText={(value) => {
-        if (value.length <= 9) {
-          setText(value);
-          setOpportunity({ zipCode: value });
-        }
+        if (value.length <= 9) setOpportunity({ zipCode: value });
         if (value.length == 9) setCanGoNext(true);
         else setCanGoNext(false);
       }}
-      value={masks.parseZipCode(text)}
+      value={masks.parseZipCode(opportunity.zipCode)}
     />
   );
 };
