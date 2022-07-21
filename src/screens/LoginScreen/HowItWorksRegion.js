@@ -7,7 +7,7 @@ import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 
 const window = Dimensions.get("window");
-const imageRatio = 1278 / 1363;
+const imageRatio = 1278 / 1355;
 
 const HowItWorksRegion = React.forwardRef(({ navigation }, ref) => {
   const handlePress = () => navigation.navigate("user-type");
