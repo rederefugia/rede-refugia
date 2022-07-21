@@ -45,7 +45,7 @@
                 },
                 "opportunity_location": {
                     "offer_title": "Where is the offer?",
-                    "request_title": "Where is the request?",
+                    "request_title": "Where is the request/help to?",
                     "zip_code_input_text_label": "ZipCode:"
                 },
                 "opportunity_description": {
