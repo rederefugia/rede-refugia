@@ -12,10 +12,12 @@ const InputGroupTitle = ({ title }) => {
 const styles = StyleSheet.create({
   title: {
     alignSelf: "flex-start",
-    padding: theme.DefaultTheme.space,
-    borderRadius: theme.DefaultTheme.roundness,
-    color: theme.DefaultTheme.colors.white,
-    backgroundColor: theme.DefaultTheme.colors.purpleDark,
+    paddingVertical: theme.DefaultTheme.spaceSmall,
+    paddingHorizontal: theme.DefaultTheme.space,
+    borderRadius: theme.DefaultTheme.roundnessLarge,
+    borderWidth: "1px",
+    borderColor: theme.DefaultTheme.colors.purpleDark,
+    color: theme.DefaultTheme.colors.purpleDark,
     marginBottom: theme.DefaultTheme.spaceLarge,
   },
 });
