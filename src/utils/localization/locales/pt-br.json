@@ -24,7 +24,7 @@
                 },
                 "opportunity_category": {
                     "offer_title": "O que será ofertado?",
-                    "request_title": "O que será buscado?",
+                    "request_title": "O que você precisa?",
                     "title_input_text_label": "Título:",
                     "combo_box_label": "Categoria",
                     "combo_box_options": {
