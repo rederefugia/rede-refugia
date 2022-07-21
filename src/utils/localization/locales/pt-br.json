@@ -19,7 +19,7 @@
             "create_opportunity_modal": {
                 "opportunity_type": {
                     "title": "O que deseja criar?",
-                    "request_option": "Uma busca de oportunidade",
+                    "request_option": "Uma demanda de oportunidade",
                     "offer_option": "Uma oferta por oportunidade"
                 },
                 "opportunity_category": {
