@@ -118,11 +118,11 @@
                 "paragraph": "Colaboração mútua entre pessoas refugiadas, migrantes e organizações."
             },
             "about": {
-                "title": "Sobre a Rede",
+                "start_title": "Sobre a Rede",
                 "paragraph_1": "A Rede Refugia é uma comunidade de colaboração mútua, entre pessoas com status de refugiados, solicitantes de refúgio, apátridas, portadores de visto humanitário e outras pessoas em processo de migração internacional forçada.",
                 "paragraph_2": "Aqui pessoas e organizações que atuam ou desejam atuar na crise humanitária de refugiados podem colaborar entre si, de forma financeira ou não, com alimentação, moradia, oportunidades de emprego e renda, regularização de documentos entre outras demandas.",
                 "paragraph_3": "Nosso propósito é facilitar os encontros e fortalecer a rede de acolhimento, proteção e integração de pessoas em deslocamento internacional forçado, produzindo novos significados para o território.",
-                "button": "Você vem com a gente?"
+                "end_title": "Você vem com a gente?"
             },
             "how_to": {
                 "guide_button_label": "Veja mais aqui no guia de uso da Rede Refugia"

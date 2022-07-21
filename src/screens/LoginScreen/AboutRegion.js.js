@@ -17,7 +17,7 @@ const AboutRegion = React.forwardRef(({ navigation }, ref) => {
         style={styles.container}
       >
         <Title style={styles.title}>
-          {localization.t("screens.login.about.title")}
+          {localization.t("screens.login.about.start_title")}
         </Title>
         <Paragraph style={styles.paragraph}>
           {localization.t("screens.login.about.paragraph_1")}
@@ -28,14 +28,9 @@ const AboutRegion = React.forwardRef(({ navigation }, ref) => {
         <Paragraph style={styles.paragraph}>
           {localization.t("screens.login.about.paragraph_3")}
         </Paragraph>
-        <Button
-          mode="outlined"
-          color={theme.DefaultTheme.colors.yellowFFD62C}
-          style={styles.button}
-          onPress={handlePress}
-        >
-          {localization.t("screens.login.about.button")}
-        </Button>
+        <Title style={styles.title}>
+          {localization.t("screens.login.about.end_title")}
+        </Title>
       </ImageBackground>
     </View>
   );
@@ -55,10 +50,6 @@ const styles = StyleSheet.create({
     marginVertical: theme.DefaultTheme.spaceSmall,
     color: theme.DefaultTheme.colors.white,
     textAlign: "center",
-  },
-  button: {
-    borderColor: theme.DefaultTheme.colors.purpleA984D7,
-    marginVertical: theme.DefaultTheme.space,
   },
 });
 
