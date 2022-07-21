@@ -1,11 +1,69 @@
 import { DefaultTheme as NavigationDefaultTheme } from "@react-navigation/native";
-import { DefaultTheme as PaperDefaultTheme } from "react-native-paper";
+import { configureFonts, DefaultTheme as PaperDefaultTheme } from "react-native-paper";
 import merge from "deepmerge";
 
 const MergedTheme = merge(PaperDefaultTheme, NavigationDefaultTheme);
 
+const fontConfig = {
+  web: {
+    regular: {
+      fontFamily: "Inter",
+      fontWeight: 'normal',
+    },
+    medium: {
+      fontFamily: "Inter",
+      fontWeight: 'normal',
+    },
+    light: {
+      fontFamily: "Inter",
+      fontWeight: 'normal',
+    },
+    thin: {
+      fontFamily: "Inter",
+      fontWeight: 'normal',
+    },
+  },
+  ios: {
+    regular: {
+      fontFamily: "Inter",
+      fontWeight: 'normal',
+    },
+    medium: {
+      fontFamily: "Inter",
+      fontWeight: 'normal',
+    },
+    light: {
+      fontFamily: "Inter",
+      fontWeight: 'normal',
+    },
+    thin: {
+      fontFamily: "Inter",
+      fontWeight: 'normal',
+    },
+  },
+  android: {
+    regular: {
+      fontFamily: "Inter",
+      fontWeight: 'normal',
+    },
+    medium: {
+      fontFamily: "Inter",
+      fontWeight: 'normal',
+    },
+    light: {
+      fontFamily: "Inter",
+      fontWeight: 'normal',
+    },
+    thin: {
+      fontFamily: "Inter",
+      fontWeight: 'normal',
+    },
+  }
+};
+
 const theme = {
   ...MergedTheme,
+  fonts: configureFonts(fontConfig),
   roundness: "12px",
   roundnessLarge: "36px",
   noSpace: "0px",
@@ -71,14 +129,12 @@ const styles = {
     borderBottomWidth: theme.space,
   },
   menuItem: {
-    fontFamily: theme.fontFamily,
     fontWeight: theme.fontWeight,
     margin: theme.noSpace,
     marginVertical: theme.spaceSmall,
     paddingLeft: theme.space,
   },
   button: {
-    fontFamily: theme.fontFamily,
     fontSize: theme.fontSize,
     fontWeight: "700",
     paddingHorizontal: theme.spaceSmall,
