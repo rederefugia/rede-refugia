@@ -9,6 +9,7 @@ const categories = [
   "trade",
   "communication",
   "training",
+  "health",
   "other",
 ];
 

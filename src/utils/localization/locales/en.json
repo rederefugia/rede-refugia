@@ -36,6 +36,7 @@
                         "trade_option": "Trade",
                         "communication_option": "Communication",
                         "training_option": "Training",
+                        "health_option": "Health",
                         "other_option": "Other"
                     }
                 },
