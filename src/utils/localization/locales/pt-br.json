@@ -101,7 +101,7 @@
             "update_button": "Atualizar meus dados"
         },
         "login": {
-            "title": "Benvindo a Rede Refugia",
+            "title": "Bem-vindo a Rede Refugia",
             "subtitle": "Faça login na sua conta ou cadastre-se",
             "email_placeholder": "Digite seu email",
             "email_invalid_message": "Endereço de email inválido!",
