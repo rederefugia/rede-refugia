@@ -10,6 +10,7 @@ import HorizontalScrollList from "./HorizontalScrollList";
 import LoginForm from "./LoginForm";
 import ButtonLink from "./ButtonLink";
 import SwitchButton from "./SwitchButton";
+import DeleteModal from "./DeleteModal";
 
 export default {
   InputGroupTitle,
@@ -24,4 +25,5 @@ export default {
   LoginForm,
   ButtonLink,
   SwitchButton,
+  DeleteModal,
 };

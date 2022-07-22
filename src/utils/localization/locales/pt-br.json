@@ -13,6 +13,17 @@
         }
     },
     "screens": {
+        "settings": {
+            "name": "Configurações",
+            "account_remove": {
+                "title": "Deletar Conta",
+                "description": "Deseja excluir permanentemente sua conta?",
+                "modal": {
+                    "text": "Esta ação não poderá ser desfeita.",
+                    "delete_button_label": "Deletar"
+                }
+            }
+        },
         "opportunities": {
             "name": "Nossa Rede",
             "create_header_button_label": "Cadastrar",

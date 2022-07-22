@@ -1,27 +1,62 @@
-import * as React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import * as React from "react";
+import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
 
+import { List } from "react-native-paper";
+
+import components from "../../components";
+import theme from "../../utils/theme";
 import localization from "../../utils/localization";
 
-/**
- * @memberof Screens
- * @name SettingsScreen
- * @description It implemets the Settings Screen page
- */
 const SettingsScreen = () => {
-    return (
-        <View style={styles.view}>
-            <Text>{localization.t('settings')}</Text>
-        </View>
-    );
+
+    const handleDeletAccount = async () => {};
+
+  return (
+    <SafeAreaView>
+      <ScrollView style={styles.mainContent}>
+        <components.DeleteModal handleDelete={handleDeletAccount} deleteMessage={localization.t(
+              "screens.settings.account_remove.modal.text"
+            )} deleteButtonLabel={localization.t(
+                "screens.settings.account_remove.modal.delete_button_label"
+              )} >
+          <List.Item
+            titleStyle={[styles.text, { fontWeight: "bold" }]}
+            descriptionStyle={styles.text}
+            title={localization.t("screens.settings.account_remove.title")}
+            description={localization.t(
+              "screens.settings.account_remove.description"
+            )}
+            left={(props) => (
+              <List.Icon
+                {...props}
+                color={theme.DefaultTheme.colors.purpleA984D7}
+                icon="account-remove"
+              />
+            )}
+            right={(props) => (
+              <List.Icon
+                {...props}
+                color={theme.DefaultTheme.colors.purpleA984D7}
+                icon="chevron-right"
+              />
+            )}
+          />
+        </components.DeleteModal>
+      </ScrollView>
+    </SafeAreaView>
+  );
 };
 
-/**
- * @name styles
- * @description it implements the Settings screen page' style grouped by component view
- */
 const styles = StyleSheet.create({
-    view: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  ...theme.DefaultStyle,
+  mainContent: {
+    ...theme.DefaultStyle.mainContent,
+    backgroundColor: theme.DefaultTheme.colors.gray,
+    borderRadius: theme.DefaultTheme.roundness,
+  },
+  text: {
+    color: theme.DefaultTheme.colors.purpleA984D7,
+  },
 });
 
 export default SettingsScreen;
