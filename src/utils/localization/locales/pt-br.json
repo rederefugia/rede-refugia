@@ -54,6 +54,10 @@
                     "counter_label": "Caracteres:"
                 }
             },
+            "delete_opportunity_modal": {
+                "delete_text": "Deseja excluir esta opportunidade?",
+                "delete_button": "Deletar"
+            },
             "favorites_filter_button_label": "Salvos",
             "owner_filter_button_label": "Criado por mim"
         },

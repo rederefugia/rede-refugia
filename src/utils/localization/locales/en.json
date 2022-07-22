@@ -54,6 +54,10 @@
                     "counter_label": "Characters:"
                 }
             },
+            "delete_opportunity_modal": {
+                "delete_text": "Would you like to delete this opportunity?",
+                "delete_button": "Delete"
+            },
             "favorites_filter_button_label": "Saved"
         },
         "profile": {
