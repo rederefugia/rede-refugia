@@ -43,7 +43,12 @@ const OpportunitiesScreen = ({ navigation }) => {
         ? firestore.filter("category", "in", categoryFilter)
         : undefined,
       isOnlyFavorite
-        ? firestore.filter("id", "in", user.favorites, true)
+        ? firestore.filter(
+            "id",
+            "in",
+            user.favorites ? user.favorites : ["none"],
+            true
+          )
         : undefined,
       isOwner ? firestore.filter("owner", "==", user.uid) : undefined
     );
