@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StyleSheet, View, Modal } from "react-native";
 
-import { Card, Button, Title } from "react-native-paper";
+import { Card, Button, Title, IconButton } from "react-native-paper";
 
 import theme from "../../utils/theme";
 
@@ -36,6 +36,12 @@ const DeleteModal = ({
         <View style={styles.view}>
           <Card style={styles.cardView}>
             <Card.Content>
+              <IconButton
+                style={styles.icon}
+                size={14}
+                icon="close"
+                onPress={hideModal}
+              />
               <Title style={styles.cardText}>{deleteMessage}</Title>
             </Card.Content>
             <Card.Actions style={styles.cardActions}>
@@ -79,8 +85,9 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   icon: {
+    alignSelf: "flex-end",
+    backgroundColor: theme.DefaultTheme.colors.white,
     margin: theme.DefaultTheme.noSpace,
-    justifyContent: "flex-start",
   },
   cardActionsButton: {
     paddingHorizontal: theme.DefaultTheme.space,
