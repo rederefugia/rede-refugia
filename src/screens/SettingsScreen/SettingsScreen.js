@@ -8,18 +8,22 @@ import theme from "../../utils/theme";
 import localization from "../../utils/localization";
 
 const SettingsScreen = () => {
-
-    const handleDeletAccount = async () => {};
+  const handleDeleteAccount = async () => {};
 
   return (
     <SafeAreaView>
       <ScrollView style={styles.mainContent}>
-        <components.DeleteModal handleDelete={handleDeletAccount} deleteMessage={localization.t(
-              "screens.settings.account_remove.modal.text"
-            )} deleteButtonLabel={localization.t(
-                "screens.settings.account_remove.modal.delete_button_label"
-              )} >
+        <components.DeleteModal
+          handleDelete={handleDeleteAccount}
+          deleteMessage={localization.t(
+            "screens.settings.account_remove.modal.text"
+          )}
+          deleteButtonLabel={localization.t(
+            "screens.settings.account_remove.modal.delete_button_label"
+          )}
+        >
           <List.Item
+            accessibilityRole="button"
             titleStyle={[styles.text, { fontWeight: "bold" }]}
             descriptionStyle={styles.text}
             title={localization.t("screens.settings.account_remove.title")}

@@ -8,7 +8,7 @@ import {
   getDoc,
   updateDoc,
   deleteDoc,
-  documentId,
+  documentId,  
 } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 
@@ -19,7 +19,7 @@ const COLLECTIONS = {
   OPPORTUNITIES: "opportunities",
 };
 
-const filter = (parameterName, condition, parameterValue, byId=false) => {
+const filter = (parameterName, condition, parameterValue, byId = false) => {
   return where(byId ? documentId() : parameterName, condition, parameterValue);
 };
 
@@ -56,6 +56,7 @@ const deleteById = async (collectionName, id) => {
   const ref = doc(firebase.firestore(), collectionName, id);
   await deleteDoc(ref);
 };
+
 export default {
   find,
   createWithId,
