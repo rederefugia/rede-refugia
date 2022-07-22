@@ -3,18 +3,19 @@ import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
 
 import { List } from "react-native-paper";
 
+import providers from "../../providers";
 import components from "../../components";
 import theme from "../../utils/theme";
 import localization from "../../utils/localization";
 
 const SettingsScreen = () => {
-  const handleDeleteAccount = async () => {};
+  const { user, deleteAccount } = React.useContext(providers.auth.AuthContext);
 
   return (
     <SafeAreaView>
       <ScrollView style={styles.mainContent}>
         <components.DeleteModal
-          handleDelete={handleDeleteAccount}
+          handleDelete={deleteAccount}
           deleteMessage={localization.t(
             "screens.settings.account_remove.modal.text"
           )}

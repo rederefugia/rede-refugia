@@ -10,9 +10,25 @@ export const AuthProvider = ({ children }) => {
   const [loadingAuthState, setLoadingAuthState] = useState(true);
   const [authError, setAuthError] = useState(null);
 
+  const deleteUserOpportunities = async () => {
+    const opts = await firestore.find(
+      firestore.COLLECTIONS.OPPORTUNITIES,
+      firestore.filter("owner", "==", user.uid)
+    );
+    await Promise.all(
+      opts.map(
+        async (opportunity) =>
+          await firestore.deleteById(
+            firestore.COLLECTIONS.OPPORTUNITIES,
+            opportunity.id
+          )
+      )
+    );
+  };
+
   const mergeUserData = (authData, userData) => {
-    if(authData.phoneNumber) userData.phoneNumber = authData.phoneNumber;
-    else if(!userData.phoneNumber) userData.phoneNumber = "";
+    if (authData.phoneNumber) userData.phoneNumber = authData.phoneNumber;
+    else if (!userData.phoneNumber) userData.phoneNumber = "";
     userData.photoURL = authData.photoURL ? authData.photoURL : "";
     userData.uid = authData.uid ? authData.uid : "";
     userData.email = authData.email ? authData.email : "";
@@ -35,7 +51,10 @@ export const AuthProvider = ({ children }) => {
       .auth()
       .onAuthStateChanged(async (user) => {
         if (user) {
-          let userData = await firestore.getById("users", user.uid);
+          let userData = await firestore.getById(
+            firestore.COLLECTIONS.USERS,
+            user.uid
+          );
           userData = mergeUserData(user, userData);
           setUser(userData);
         } else setUser(user);
@@ -88,6 +107,9 @@ export const AuthProvider = ({ children }) => {
             console.error(e);
             setAuthError(e.message);
           }
+        },
+        deleteAccount: async () => {
+          await deleteUserOpportunities();
         },
       }}
     >
