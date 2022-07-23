@@ -9,10 +9,13 @@ import theme from "../../utils/theme";
 import localization from "../../utils/localization";
 
 const SettingsScreen = () => {
-  const { user, deleteAccount } = React.useContext(providers.auth.AuthContext);
+  const { authError, deleteAccount } = React.useContext(
+    providers.auth.AuthContext
+  );
   const [password, setPassword] = React.useState("");
 
   const hasPassword = () => password.length > 0;
+  const hasError = () => authError?.length > 0;
 
   return (
     <SafeAreaView>
@@ -50,6 +53,13 @@ const SettingsScreen = () => {
             )}
           />
           <components.CardModal.Body>
+            <HelperText
+              style={{ color: "red", opacity: 1 }}
+              type="error"
+              visible={hasError()}
+            >
+              {authError}
+            </HelperText>
             <TextInput
               placeholder={localization.t("screens.login.password_placeholder")}
               value={password}
@@ -69,7 +79,7 @@ const SettingsScreen = () => {
               )}
               onPress={async () => await deleteAccount(password)}
               disabled={!hasPassword()}
-              shouldClose={false}
+              shouldClose={hasError()}
             />
           </components.CardModal.Actions>
         </components.CardModal>

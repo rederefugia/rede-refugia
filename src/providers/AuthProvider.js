@@ -37,10 +37,10 @@ export const AuthProvider = ({ children }) => {
   };
 
   const deleteUserData = async (password) => {
-    await firestore.deleteById(firestore.COLLECTIONS.USERS, user.uid);
     const userCredentials = EmailAuthProvider.credential(user.email, password);
     await reauthenticateWithCredential(getAuth().currentUser, userCredentials);
     await deleteUser(getAuth().currentUser);
+    await firestore.deleteById(firestore.COLLECTIONS.USERS, user.uid);
   };
 
   const mergeUserData = (authData, userData) => {
