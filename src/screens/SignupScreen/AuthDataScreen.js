@@ -1,21 +1,11 @@
 import * as React from "react";
 import { StyleSheet, View, ImageBackground } from "react-native";
-import {
-  TextInput,
-  Button,
-  HelperText,
-  Card,
-} from "react-native-paper";
+import { TextInput, Button, HelperText, Card } from "react-native-paper";
 
 import theme from "../../utils/theme";
 import localization from "../../utils/localization";
 import providers from "../../providers";
 
-/**
- * @memberof Screens
- * @name AuthDataScreen
- * @description It implemets the AuthData Screen page
- */
 const AuthDataScreen = ({ navigation }) => {
   const { authError, signup } = React.useContext(providers.auth.AuthContext);
 
@@ -37,7 +27,7 @@ const AuthDataScreen = ({ navigation }) => {
   const handleSignup = async () => {
     setIsLoading(true);
     await signup(userData, password);
-    setIsLoading(false);
+    if (authError?.length > 0) setIsLoading(false);
   };
 
   return (
@@ -113,10 +103,6 @@ const AuthDataScreen = ({ navigation }) => {
   );
 };
 
-/**
- * @name styles
- * @description it implements the AuthData screen page' style grouped by component view
- */
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
   logo: {

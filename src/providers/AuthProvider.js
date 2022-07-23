@@ -38,10 +38,7 @@ export const AuthProvider = ({ children }) => {
 
   const deleteUserData = async (password) => {
     await firestore.deleteById(firestore.COLLECTIONS.USERS, user.uid);
-    const userCredentials = EmailAuthProvider.credential(
-      user.email,
-      password
-    );
+    const userCredentials = EmailAuthProvider.credential(user.email, password);
     await reauthenticateWithCredential(getAuth().currentUser, userCredentials);
     await deleteUser(getAuth().currentUser);
   };
@@ -97,6 +94,7 @@ export const AuthProvider = ({ children }) => {
         setCnpj,
         login: async (email, password) => {
           try {
+            setAuthError("");
             setCredentials(
               await signInWithEmailAndPassword(getAuth(), email, password)
             );
@@ -114,6 +112,7 @@ export const AuthProvider = ({ children }) => {
         },
         signup: async (userData, password) => {
           try {
+            setAuthError("");
             const userCredentials = await createUserWithEmailAndPassword(
               getAuth(),
               userData.email,
@@ -136,8 +135,14 @@ export const AuthProvider = ({ children }) => {
           }
         },
         deleteAccount: async (password) => {
-          await deleteUserOpportunities();
-          await deleteUserData(password);
+          try {
+            setAuthError("");
+            await deleteUserOpportunities();
+            await deleteUserData(password);
+          } catch (e) {
+            console.error(e);
+            setAuthError(e.message);
+          }
         },
       }}
     >
