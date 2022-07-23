@@ -5,6 +5,7 @@ import { Card } from "react-native-paper";
 
 import Header from "./Header";
 import Body from "./Body";
+import Actions from "./Actions";
 
 import theme from "../../utils/theme";
 
@@ -19,7 +20,7 @@ const CardModal = ({ trigger, children }) => {
   let subComponents = subComponentList.map((key) => {
     return React.Children.map(children, (child) =>
       child.type.name === key ? child : null
-    );
+    )[0];
   });
 
   return (
@@ -34,9 +35,9 @@ const CardModal = ({ trigger, children }) => {
         <View style={styles.view}>
           <Card style={styles.cardView}>
             {subComponents.map((component) => {
-              if (component.key === "Header")
+              if (component.type.name === "Header")
                 return React.cloneElement(component, {
-                  onPress: () => hideModal(),
+                  onClose: hideModal,
                 });
               else return component;
             })}
@@ -60,10 +61,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: theme.DefaultTheme.roundnessLarge,
     elevation: 5,
+    padding: theme.DefaultTheme.spaceSmall,
   },
 });
 
 CardModal.Header = Header;
 CardModal.Body = Body;
+CardModal.Actions = Actions;
 
 export default CardModal;

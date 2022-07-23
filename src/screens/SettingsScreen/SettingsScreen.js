@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
 
-import { List, Text } from "react-native-paper";
+import { List, Text, Button } from "react-native-paper";
 
 import providers from "../../providers";
 import components from "../../components";
@@ -51,6 +51,17 @@ const SettingsScreen = () => {
               {localization.t("screens.settings.account_remove.modal.text")}
             </Text>
           </components.CardModal.Body>
+          <components.CardModal.Actions>
+            <Button
+              style={styles.cardActionsButton}
+              uppercase={false}
+              mode="contained"
+            >
+              {localization.t(
+                "screens.settings.account_remove.modal.delete_button_label"
+              )}
+            </Button>
+          </components.CardModal.Actions>
         </components.CardModal>
       </ScrollView>
     </SafeAreaView>
