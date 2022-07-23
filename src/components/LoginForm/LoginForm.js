@@ -47,7 +47,7 @@ const LoginForm = React.forwardRef(({ navigation }, ref) => {
               placeholder={localization.t("screens.login.email_placeholder")}
               value={username}
               onChangeText={setUsername}
-              left={<TextInput.Icon name="account" />}
+              left={<TextInput.Icon disabled name="account" />}
               style={styles.cardInput}
             />
             <HelperText type="error" visible={hasErrors()}>
@@ -58,7 +58,7 @@ const LoginForm = React.forwardRef(({ navigation }, ref) => {
               value={password}
               onChangeText={setPassword}
               secureTextEntry
-              left={<TextInput.Icon name="key-variant" />}
+              left={<TextInput.Icon disabled name="key-variant" />}
               style={styles.cardInput}
             />
           </Card.Content>
