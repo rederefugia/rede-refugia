@@ -62,7 +62,7 @@ const AuthDataScreen = ({ navigation }) => {
               value={userData.name}
               onChangeText={(data) => handleInputTextChange("name", data)}
               style={styles.cardInput}
-              left={<TextInput.Icon name="account" />}
+              left={<TextInput.Icon disabled name="account" />}
             />
             <br />
             <TextInput
@@ -72,7 +72,7 @@ const AuthDataScreen = ({ navigation }) => {
               value={userData.email}
               onChangeText={(data) => handleInputTextChange("email", data)}
               style={styles.cardInput}
-              left={<TextInput.Icon name="email" />}
+              left={<TextInput.Icon disabled name="email" />}
             />
             <HelperText type="error" visible={hasErrors()}>
               {localization.t("screens.auth_data.email_invalid_message")}
@@ -85,7 +85,7 @@ const AuthDataScreen = ({ navigation }) => {
               onChangeText={setPassword}
               secureTextEntry
               style={styles.cardInput}
-              left={<TextInput.Icon name="key-variant" />}
+              left={<TextInput.Icon disabled name="key-variant" />}
             />
           </Card.Content>
           <Card.Actions style={styles.cardActions}>
