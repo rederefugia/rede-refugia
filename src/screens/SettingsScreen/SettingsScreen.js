@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
 
-import { List, Text, Button } from "react-native-paper";
+import { List, HelperText, TextInput } from "react-native-paper";
 
 import providers from "../../providers";
 import components from "../../components";
@@ -10,6 +10,9 @@ import localization from "../../utils/localization";
 
 const SettingsScreen = () => {
   const { user, deleteAccount } = React.useContext(providers.auth.AuthContext);
+  const [password, setPassword] = React.useState("");
+
+  const hasPassword = () => password.length > 0;
 
   return (
     <SafeAreaView>
@@ -47,15 +50,24 @@ const SettingsScreen = () => {
             )}
           />
           <components.CardModal.Body>
-            <Text>
+            <TextInput
+              placeholder={localization.t("screens.login.password_placeholder")}
+              value={password}
+              onChangeText={setPassword}
+              secureTextEntry
+              left={<TextInput.Icon disabled name="key-variant" />}
+              style={styles.cardInput}
+            />
+            <HelperText type="info" visible={hasPassword()}>
               {localization.t("screens.settings.account_remove.modal.text")}
-            </Text>
+            </HelperText>
           </components.CardModal.Body>
           <components.CardModal.Actions>
             <components.CardModal.DismissButton
               label={localization.t(
                 "screens.settings.account_remove.modal.delete_button_label"
               )}
+              disabled={!hasPassword()}
             />
           </components.CardModal.Actions>
         </components.CardModal>

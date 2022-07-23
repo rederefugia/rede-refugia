@@ -5,7 +5,7 @@ import { Button } from "react-native-paper";
 
 import theme from "../../utils/theme";
 
-const DismissButton = ({ label, onClose, onPress }) => {
+const DismissButton = ({ label, onClose, onPress, disabled = false }) => {
   const [loading, setLoading] = React.useState(false);
 
   return (
@@ -14,6 +14,7 @@ const DismissButton = ({ label, onClose, onPress }) => {
       uppercase={false}
       mode="contained"
       loading={loading}
+      disabled={disabled}
       onPress={async () => {
         setLoading(true);
         if (onPress) await onPress();
