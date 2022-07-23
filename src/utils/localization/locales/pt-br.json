@@ -19,6 +19,7 @@
                 "title": "Deletar Conta",
                 "description": "Deseja excluir permanentemente sua conta?",
                 "modal": {
+                    "title": "Deletar Conta",
                     "text": "Esta ação não poderá ser desfeita.",
                     "delete_button_label": "Deletar"
                 }

@@ -8,6 +8,7 @@ import theme from "../../utils/theme";
 const Header = ({ title, left, onClose }) => {
   return (
     <Card.Title
+      titleStyle={styles.title}
       title={title}
       left={left}
       right={(props) => (
@@ -27,7 +28,7 @@ const Header = ({ title, left, onClose }) => {
 
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
-  cardText: {
+  title: {
     color: theme.DefaultTheme.colors.white,
     alignSelf: "center",
   },

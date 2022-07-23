@@ -4,6 +4,7 @@ import { StyleSheet, View, Modal } from "react-native";
 import { Card } from "react-native-paper";
 
 import Header from "./Header";
+import Body from "./Body";
 
 import theme from "../../utils/theme";
 
@@ -63,5 +64,6 @@ const styles = StyleSheet.create({
 });
 
 CardModal.Header = Header;
+CardModal.Body = Body;
 
 export default CardModal;

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
 
-import { List } from "react-native-paper";
+import { List, Text } from "react-native-paper";
 
 import providers from "../../providers";
 import components from "../../components";
@@ -15,31 +15,42 @@ const SettingsScreen = () => {
     <SafeAreaView>
       <ScrollView style={styles.mainContent}>
         <components.CardModal
-          trigger={<List.Item
-            accessibilityRole="button"
-            titleStyle={[styles.text, { fontWeight: "bold" }]}
-            descriptionStyle={styles.text}
-            title={localization.t("screens.settings.account_remove.title")}
-            description={localization.t(
-              "screens.settings.account_remove.description"
-            )}
-            left={(props) => (
-              <List.Icon
-                {...props}
-                color={theme.DefaultTheme.colors.purpleA984D7}
-                icon="account-remove"
-              />
-            )}
-            right={(props) => (
-              <List.Icon
-                {...props}
-                color={theme.DefaultTheme.colors.purpleA984D7}
-                icon="chevron-right"
-              />
-            )}
-          />}
+          trigger={
+            <List.Item
+              accessibilityRole="button"
+              titleStyle={[styles.text, { fontWeight: "bold" }]}
+              descriptionStyle={styles.text}
+              title={localization.t("screens.settings.account_remove.title")}
+              description={localization.t(
+                "screens.settings.account_remove.description"
+              )}
+              left={(props) => (
+                <List.Icon
+                  {...props}
+                  color={theme.DefaultTheme.colors.purpleA984D7}
+                  icon="account-remove"
+                />
+              )}
+              right={(props) => (
+                <List.Icon
+                  {...props}
+                  color={theme.DefaultTheme.colors.purpleA984D7}
+                  icon="chevron-right"
+                />
+              )}
+            />
+          }
         >
-          <components.CardModal.Header />
+          <components.CardModal.Header
+            title={localization.t(
+              "screens.settings.account_remove.modal.title"
+            )}
+          />
+          <components.CardModal.Body>
+            <Text>
+              {localization.t("screens.settings.account_remove.modal.text")}
+            </Text>
+          </components.CardModal.Body>
         </components.CardModal>
       </ScrollView>
     </SafeAreaView>
