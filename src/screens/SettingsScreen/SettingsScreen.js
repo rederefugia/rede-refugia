@@ -14,16 +14,8 @@ const SettingsScreen = () => {
   return (
     <SafeAreaView>
       <ScrollView style={styles.mainContent}>
-        <components.DeleteModal
-          handleDelete={deleteAccount}
-          deleteMessage={localization.t(
-            "screens.settings.account_remove.modal.text"
-          )}
-          deleteButtonLabel={localization.t(
-            "screens.settings.account_remove.modal.delete_button_label"
-          )}
-        >
-          <List.Item
+        <components.CardModal
+          trigger={<List.Item
             accessibilityRole="button"
             titleStyle={[styles.text, { fontWeight: "bold" }]}
             descriptionStyle={styles.text}
@@ -45,8 +37,10 @@ const SettingsScreen = () => {
                 icon="chevron-right"
               />
             )}
-          />
-        </components.DeleteModal>
+          />}
+        >
+          <components.CardModal.Header />
+        </components.CardModal>
       </ScrollView>
     </SafeAreaView>
   );

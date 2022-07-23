@@ -11,6 +11,7 @@ import LoginForm from "./LoginForm";
 import ButtonLink from "./ButtonLink";
 import SwitchButton from "./SwitchButton";
 import DeleteModal from "./DeleteModal";
+import CardModal from "./CardModal";
 
 export default {
   InputGroupTitle,
@@ -26,4 +27,5 @@ export default {
   ButtonLink,
   SwitchButton,
   DeleteModal,
+  CardModal,
 };
