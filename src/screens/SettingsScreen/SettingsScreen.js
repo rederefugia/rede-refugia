@@ -52,15 +52,11 @@ const SettingsScreen = () => {
             </Text>
           </components.CardModal.Body>
           <components.CardModal.Actions>
-            <Button
-              style={styles.cardActionsButton}
-              uppercase={false}
-              mode="contained"
-            >
-              {localization.t(
+            <components.CardModal.DismissButton
+              label={localization.t(
                 "screens.settings.account_remove.modal.delete_button_label"
               )}
-            </Button>
+            />
           </components.CardModal.Actions>
         </components.CardModal>
       </ScrollView>

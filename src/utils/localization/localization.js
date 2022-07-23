@@ -13,5 +13,5 @@ i18n.translations = {
 
 i18n.locale = Localization.locale;
 i18n.fallbacks = true;
-console.log(i18n.locale)
+
 export default i18n;

@@ -3,10 +3,20 @@ import { StyleSheet } from "react-native";
 
 import { Card } from "react-native-paper";
 
+import DismissButton from "./DismissButton";
+
 import theme from "../../utils/theme";
 
-const Actions = ({ children }) => {
-  return <Card.Actions style={styles.content}>{children}</Card.Actions>;
+const Actions = ({ onClose, children }) => {
+  return (
+    <Card.Actions style={styles.content}>
+      {React.Children.map(children, (child) => {
+        if (child?.type.name === DismissButton.name)
+          return React.cloneElement(child, { onClose });
+        else child;
+      })}
+    </Card.Actions>
+  );
 };
 
 const styles = StyleSheet.create({

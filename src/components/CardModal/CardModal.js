@@ -6,6 +6,7 @@ import { Card } from "react-native-paper";
 import Header from "./Header";
 import Body from "./Body";
 import Actions from "./Actions";
+import DismissButton from "./DismissButton";
 
 import theme from "../../utils/theme";
 
@@ -35,7 +36,10 @@ const CardModal = ({ trigger, children }) => {
         <View style={styles.view}>
           <Card style={styles.cardView}>
             {subComponents.map((component) => {
-              if (component.type.name === "Header")
+              if (
+                component?.type.name === Header.name ||
+                component?.type.name === Actions.name
+              )
                 return React.cloneElement(component, {
                   onClose: hideModal,
                 });
@@ -68,5 +72,6 @@ const styles = StyleSheet.create({
 CardModal.Header = Header;
 CardModal.Body = Body;
 CardModal.Actions = Actions;
+CardModal.DismissButton = DismissButton;
 
 export default CardModal;
