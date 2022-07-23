@@ -8,11 +8,12 @@ import {
   getDoc,
   updateDoc,
   deleteDoc,
-  documentId,  
+  documentId,
+  getFirestore,
 } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 
-import firebase from "./firebase";
+import { app } from "./firebase";
 
 const COLLECTIONS = {
   USERS: "users",
@@ -24,7 +25,7 @@ const filter = (parameterName, condition, parameterValue, byId = false) => {
 };
 
 async function find(collectionName) {
-  const ref = collection(firebase.firestore(), collectionName);
+  const ref = collection(getFirestore(app), collectionName);
   let args = Array.prototype.slice
     .call(arguments, 1)
     .filter((value) => value != null || value != undefined);
@@ -37,23 +38,23 @@ async function find(collectionName) {
 
 const createWithId = async (collectionName, id, data) => {
   if (id == undefined || id == null) id = uuidv4();
-  const ref = doc(firebase.firestore(), collectionName, id);
+  const ref = doc(getFirestore(app), collectionName, id);
   await setDoc(ref, data);
 };
 
 const getById = async (collectionName, id) => {
-  const ref = doc(firebase.firestore(), collectionName, id);
+  const ref = doc(getFirestore(app), collectionName, id);
   const snapshot = await getDoc(ref);
   return snapshot.data();
 };
 
 const updateById = async (collectionName, id, data) => {
-  const ref = doc(firebase.firestore(), collectionName, id);
+  const ref = doc(getFirestore(app), collectionName, id);
   await updateDoc(ref, data);
 };
 
 const deleteById = async (collectionName, id) => {
-  const ref = doc(firebase.firestore(), collectionName, id);
+  const ref = doc(getFirestore(app), collectionName, id);
   await deleteDoc(ref);
 };
 
