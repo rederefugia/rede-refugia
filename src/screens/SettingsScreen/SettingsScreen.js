@@ -67,7 +67,9 @@ const SettingsScreen = () => {
               label={localization.t(
                 "screens.settings.account_remove.modal.delete_button_label"
               )}
+              onPress={async () => await deleteAccount(password)}
               disabled={!hasPassword()}
+              shouldClose={false}
             />
           </components.CardModal.Actions>
         </components.CardModal>

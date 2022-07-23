@@ -5,7 +5,13 @@ import { Button } from "react-native-paper";
 
 import theme from "../../utils/theme";
 
-const DismissButton = ({ label, onClose, onPress, disabled = false }) => {
+const DismissButton = ({
+  label,
+  onClose,
+  onPress,
+  shouldClose = true,
+  disabled = false,
+}) => {
   const [loading, setLoading] = React.useState(false);
 
   return (
@@ -18,8 +24,7 @@ const DismissButton = ({ label, onClose, onPress, disabled = false }) => {
       onPress={async () => {
         setLoading(true);
         if (onPress) await onPress();
-        setLoading(false);
-        onClose();
+        if (shouldClose) setLoading(false) && onClose();
       }}
     >
       {label}

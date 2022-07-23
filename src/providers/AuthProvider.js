@@ -36,6 +36,16 @@ export const AuthProvider = ({ children }) => {
     );
   };
 
+  const deleteUserData = async (password) => {
+    await firestore.deleteById(firestore.COLLECTIONS.USERS, user.uid);
+    const userCredentials = EmailAuthProvider.credential(
+      user.email,
+      password
+    );
+    await reauthenticateWithCredential(getAuth().currentUser, userCredentials);
+    await deleteUser(getAuth().currentUser);
+  };
+
   const mergeUserData = (authData, userData) => {
     if (authData.phoneNumber) userData.phoneNumber = authData.phoneNumber;
     else if (!userData.phoneNumber) userData.phoneNumber = "";
@@ -125,8 +135,9 @@ export const AuthProvider = ({ children }) => {
             setAuthError(e.message);
           }
         },
-        deleteAccount: async () => {
+        deleteAccount: async (password) => {
           await deleteUserOpportunities();
+          await deleteUserData(password);
         },
       }}
     >
