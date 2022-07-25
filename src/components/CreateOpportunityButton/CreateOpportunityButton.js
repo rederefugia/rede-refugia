@@ -7,7 +7,7 @@ import CreateOpportunityModal from "../CreateOpportunityModal";
 
 import theme from "../../utils/theme";
 
-const CreateOpportunityButton = ({ label }) => {
+const CreateOpportunityButton = ({ label, updateScreen }) => {
   return (
     <CreateOpportunityModal
       trigger={
@@ -21,6 +21,7 @@ const CreateOpportunityButton = ({ label }) => {
           {label}
         </Button>
       }
+      updateScreen={updateScreen}
     />
   );
 };

@@ -27,6 +27,7 @@ const OpportunitiesScreen = ({ navigation }) => {
     navigation.setOptions({
       headerRight: () => (
         <components.CreateOpportunityButton
+          updateScreen={fetchData}
           label={localization.t(
             "screens.opportunities.create_header_button_label"
           )}

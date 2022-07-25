@@ -12,7 +12,7 @@ import localization from "../../utils/localization";
 import firestore from "../../utils/firebase/firestore";
 import address from "../../utils/address";
 
-const CreateOpportunityModal = ({ trigger }) => {
+const CreateOpportunityModal = ({ trigger, updateScreen }) => {
   const { user } = React.useContext(providers.auth.AuthContext);
   const [canGoNext, setCanGoNext] = React.useState(false);
   let [opportunity, setOpportunity] = React.useReducer(
@@ -32,6 +32,7 @@ const CreateOpportunityModal = ({ trigger }) => {
     opportunity.timestamp = Date.now();
     opportunity.address = await address.getAddress(opportunity.zipCode);
     await firestore.createWithId("opportunities", null, opportunity);
+    updateScreen();
   };
 
   const steps = [
