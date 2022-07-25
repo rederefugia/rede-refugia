@@ -67,7 +67,7 @@
                 }
             },
             "delete_opportunity_modal": {
-                "delete_text": "Deseja excluir esta opportunidade?",
+                "delete_text": "Deseja excluir esta oportunidade?",
                 "delete_button": "Deletar"
             },
             "favorites_filter_button_label": "Salvos",
