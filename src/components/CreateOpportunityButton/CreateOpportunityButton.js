@@ -8,22 +8,20 @@ import CreateOpportunityModal from "../CreateOpportunityModal";
 import theme from "../../utils/theme";
 
 const CreateOpportunityButton = ({ label }) => {
-  const [visible, setVisible] = React.useState(false);
-
   return (
-    <>
-      <CreateOpportunityModal visible={visible} setVisible={setVisible} />
-      <Button
-        mode="contained"
-        uppercase={false}
-        icon="plus"
-        style={styles.button}
-        contentStyle={{ backgroundColor: theme.DefaultTheme.colors.purple }}
-        onPress={() => setVisible(true)}
-      >
-        {label}
-      </Button>
-    </>
+    <CreateOpportunityModal
+      trigger={
+        <Button
+          mode="contained"
+          uppercase={false}
+          icon="plus"
+          style={styles.button}
+          contentStyle={{ backgroundColor: theme.DefaultTheme.colors.purple }}
+        >
+          {label}
+        </Button>
+      }
+    />
   );
 };
 

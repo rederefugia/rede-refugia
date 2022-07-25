@@ -23,8 +23,14 @@ const DismissButton = ({
       disabled={disabled}
       onPress={async () => {
         setLoading(true);
-        if (onPress) await onPress();
-        if (shouldClose) setLoading(false) && onClose();
+        if (onPress) {
+          await onPress();
+          setLoading(false);
+        }
+        if (shouldClose) {
+          setLoading(false);
+          onClose();
+        }
       }}
     >
       {label}

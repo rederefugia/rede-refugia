@@ -12,10 +12,9 @@ import localization from "../../utils/localization";
 import firestore from "../../utils/firebase/firestore";
 import address from "../../utils/address";
 
-const CreateOpportunityModal = ({ visible, setVisible }) => {
-  const { user, setUser } = React.useContext(providers.auth.AuthContext);
+const CreateOpportunityModal = ({ trigger }) => {
+  const { user } = React.useContext(providers.auth.AuthContext);
   const [canGoNext, setCanGoNext] = React.useState(false);
-  const [loading, setLoading] = React.useState(false);
   let [opportunity, setOpportunity] = React.useReducer(
     (state, newState) => ({ ...state, ...newState }),
     {
@@ -29,12 +28,10 @@ const CreateOpportunityModal = ({ visible, setVisible }) => {
   );
 
   const handleFinish = async () => {
-    setLoading(true);
     opportunity.owner = user.uid;
     opportunity.timestamp = Date.now();
     opportunity.address = await address.getAddress(opportunity.zipCode);
     await firestore.createWithId("opportunities", null, opportunity);
-    setLoading(false);
   };
 
   const steps = [
@@ -113,12 +110,10 @@ const CreateOpportunityModal = ({ visible, setVisible }) => {
   return (
     <StepperModal
       steps={steps}
-      visible={visible}
-      setVisible={setVisible}
       handleFinish={handleFinish}
       canGoNext={canGoNext}
       setCanGoNext={setCanGoNext}
-      loading={loading}
+      trigger={trigger}
     />
   );
 };
