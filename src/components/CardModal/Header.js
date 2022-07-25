@@ -8,7 +8,8 @@ import theme from "../../utils/theme";
 const Header = ({ title, left, onClose }) => {
   return (
     <Card.Title
-      titleStyle={styles.title}
+      style={styles.cardHeader}
+      titleStyle={styles.cardHeaderTitle}
       title={title}
       left={left}
       right={(props) => (
@@ -28,10 +29,6 @@ const Header = ({ title, left, onClose }) => {
 
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
-  title: {
-    color: theme.DefaultTheme.colors.white,
-    alignSelf: "center",
-  },
   closeIcon: {
     backgroundColor: theme.DefaultTheme.colors.white,
     marginVertical: theme.DefaultTheme.noSpace,

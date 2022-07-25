@@ -104,13 +104,14 @@ const styles = {
     margin: theme.spaceLarge,
   },
   cardHeader: {
-    backgroundColor: theme.colors.purpleDark,
+    minHeight: null,
     borderTopStartRadius: theme.roundness,
     borderTopEndRadius: theme.roundness,
   },
   cardHeaderTitle: {
     color: theme.colors.background,
     fontFamily: theme.fontFamily,
+    alignSelf: "center"
   },
   cardInput: {
     borderRadius: theme.roundness,
@@ -124,10 +125,7 @@ const styles = {
     fontWeight: "normal",
     padding: theme.spaceSmall,
   },
-  cardView: {
-    borderBottomColor: theme.colors.purpleDark,
-    borderBottomWidth: theme.space,
-  },
+  cardView: {},
   menuItem: {
     fontWeight: theme.fontWeight,
     margin: theme.noSpace,
