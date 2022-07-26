@@ -11,16 +11,14 @@ import components from "../../components";
 import categories from "../../utils/categories";
 
 const OpportunitiesScreen = ({ navigation }) => {
-  const { user, setUser } = React.useContext(providers.auth.AuthContext);
+  const { user } = React.useContext(providers.auth.AuthContext);
   const [opportunities, setOpportunities] = React.useState([]);
-  const [categoryFilter, setCategoryFilter] = React.useState([]);
+  const [categoryFilter, setCategoryFilter] = React.useState("");
   const [isOnlyFavorite, showOnlyFavorites] = React.useState(false);
   const [isOwner, showOnlyOwned] = React.useState(false);
 
   const updateCategoryFilter = (label, value) => {
-    if (categoryFilter.includes(value))
-      setCategoryFilter(categoryFilter.filter((item) => item !== value));
-    else setCategoryFilter(categoryFilter.concat([value]));
+    setCategoryFilter(categoryFilter == value ? "" : value);
   };
 
   React.useLayoutEffect(() => {
@@ -41,7 +39,7 @@ const OpportunitiesScreen = ({ navigation }) => {
     data = await firestore.find(
       firestore.COLLECTIONS.OPPORTUNITIES,
       categoryFilter.length > 0
-        ? firestore.filter("category", "in", categoryFilter)
+        ? firestore.filter("category", "==", categoryFilter)
         : undefined,
       isOnlyFavorite
         ? firestore.filter(
@@ -77,6 +75,7 @@ const OpportunitiesScreen = ({ navigation }) => {
             key={index}
             label={label}
             value={value}
+            active={categoryFilter == value}
             onPress={updateCategoryFilter}
           />
         ))}

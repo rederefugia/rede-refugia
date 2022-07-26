@@ -8,11 +8,6 @@ import localization from "../../utils/localization";
 import firestore from "../../utils/firebase/firestore";
 import theme from "../../utils/theme";
 
-/**
- * @memberof Screens
- * @name ProfileScreen
- * @description It implemets the Profile Screen page
- */
 const ProfileScreen = () => {
   const { user, setUser } = React.useContext(providers.auth.AuthContext);
   const [isUpdating, setIsUpdating] = React.useState(false);
@@ -60,10 +55,6 @@ const ProfileScreen = () => {
   );
 };
 
-/**
- * @name styles
- * @description it implements the profile screen page' style grouped by component view
- */
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
   button: {

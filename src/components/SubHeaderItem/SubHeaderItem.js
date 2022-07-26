@@ -1,15 +1,12 @@
 import * as React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
 
 import { Button } from "react-native-paper";
 
 import theme from "../../utils/theme";
 
-const SubHeaderItem = ({ label, value, onPress }) => {
-  const [enabled, seEnabled] = React.useState(false);
-
+const SubHeaderItem = ({ label, value, active, onPress }) => {
   const handlePress = () => {
-    seEnabled(!enabled);
     if (onPress) onPress(label, value);
   };
 
@@ -20,7 +17,7 @@ const SubHeaderItem = ({ label, value, onPress }) => {
       compact={true}
       labelStyle={styles.label}
       style={{
-        opacity: !enabled ? 0.5 : 1,
+        opacity: !active ? 0.5 : 1,
         borderRightColor: theme.DefaultTheme.colors.white,
         borderRightWidth: "1px",
         borderRadius: theme.DefaultTheme.noSpace,
