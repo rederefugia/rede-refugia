@@ -1,31 +1,18 @@
 import * as React from "react";
 import { Dimensions, StyleSheet, View, Image } from "react-native";
 
-import { Button } from "react-native-paper";
-
-import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 
 const window = Dimensions.get("window");
 const imageRatio = 1278 / 1355;
 
-const HowItWorksRegion = React.forwardRef(({ navigation }, ref) => {
-  const handlePress = () => navigation.navigate("user-type");
-
+const HowItWorksRegion = React.forwardRef(({}, ref) => {
   return (
     <View style={styles.container} ref={ref}>
       <Image
         style={styles.image}
         source={require("../../../assets/howto.png")}
       />
-      <Button
-        mode="contained"
-        uppercase={false}
-        compact={true}
-        onPress={handlePress}
-      >
-        {localization.t("screens.login.how_to.guide_button_label")}
-      </Button>
     </View>
   );
 });
