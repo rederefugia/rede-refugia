@@ -19,12 +19,19 @@ const ProfileScreen = () => {
 
   const handleUpdate = async () => {
     setIsUpdating(true);
-    await firestore
-      .updateById("users", user.uid, userData)
-      .then(() => setUser(userData))
-      .catch((error) => console.error(error));
-    setIsUpdating(false);
-    showMessage(true);
+    try {
+      await firestore.updateById(
+        firestore.COLLECTIONS.USERS,
+        user.uid,
+        userData
+      );
+      setUser(userData);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsUpdating(false);
+      showMessage(true);
+    }
   };
 
   return (
