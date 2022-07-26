@@ -30,7 +30,14 @@ const CardModal = ({ trigger, children }) => {
                 child?.type.name === CardHeader.name ||
                 child?.type.name === CardActions.name
               )
-                return React.cloneElement(child, { onClose: hideModal });
+                return React.cloneElement(child, {
+                  onClose: () => {
+                    if (child.props.onClose) {
+                      child.props.onClose();
+                    }
+                    hideModal();
+                  },
+                });
               else return child;
             })}
           </Card>
