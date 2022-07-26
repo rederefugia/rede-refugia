@@ -5,7 +5,7 @@ import { Card, IconButton } from "react-native-paper";
 
 import theme from "../../utils/theme";
 
-const Header = ({ title, left, onClose }) => {
+const CardHeader = ({ title, left, onClose }) => {
   return (
     <Card.Title
       style={styles.cardHeader}
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Header;
+export default CardHeader;

@@ -3,10 +3,8 @@ import { StyleSheet, View, Modal } from "react-native";
 
 import { Card } from "react-native-paper";
 
-import Header from "./Header";
-import Body from "./Body";
-import Actions from "./Actions";
-import DismissButton from "./DismissButton";
+import CardHeader from "./CardHeader";
+import CardActions from "./CardActions";
 
 import theme from "../../utils/theme";
 
@@ -37,8 +35,8 @@ const CardModal = ({ trigger, children }) => {
           <Card style={styles.cardView}>
             {subComponents.map((component) => {
               if (
-                component?.type.name === Header.name ||
-                component?.type.name === Actions.name
+                component?.type.name === CardHeader.name ||
+                component?.type.name === CardActions.name
               )
                 return React.cloneElement(component, {
                   onClose: hideModal,
@@ -69,9 +67,5 @@ const styles = StyleSheet.create({
   },
 });
 
-CardModal.Header = Header;
-CardModal.Body = Body;
-CardModal.Actions = Actions;
-CardModal.DismissButton = DismissButton;
 
 export default CardModal;

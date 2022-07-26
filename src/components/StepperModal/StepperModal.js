@@ -3,7 +3,12 @@ import { StyleSheet } from "react-native";
 
 import { IconButton } from "react-native-paper";
 
-import CardModal from "../CardModal";
+import CardModal, {
+  CardActions,
+  CardBody,
+  CardDismissButton,
+  CardHeader,
+} from "../CardModal";
 
 import theme from "../../utils/theme";
 import localization from "../../utils/localization";
@@ -37,7 +42,7 @@ const StepperModal = ({
 
   return (
     <CardModal trigger={trigger}>
-      <CardModal.Header
+      <CardHeader
         title={steps[currentStep].title}
         onClose={() => {
           setCurrentStep(0);
@@ -57,9 +62,9 @@ const StepperModal = ({
             );
         }}
       />
-      <CardModal.Body>{steps[currentStep].content}</CardModal.Body>
-      <CardModal.Actions>
-        <CardModal.DismissButton
+      <CardBody>{steps[currentStep].content}</CardBody>
+      <CardActions>
+        <CardDismissButton
           label={
             isLastStep
               ? localization.t("components.stepper_modal.finish_button_label")
@@ -69,7 +74,7 @@ const StepperModal = ({
           disabled={!canGoNext}
           shouldClose={isLastStep}
         />
-      </CardModal.Actions>
+      </CardActions>
     </CardModal>
   );
 };

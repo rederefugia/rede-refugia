@@ -5,7 +5,7 @@ import { Card } from "react-native-paper";
 
 import theme from "../../utils/theme";
 
-const Body = ({ children }) => {
+const CardBody = ({ children }) => {
   return <Card.Content style={styles.content}>{children}</Card.Content>;
 };
 
@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Body;
+export default CardBody;

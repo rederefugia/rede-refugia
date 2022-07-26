@@ -5,7 +5,7 @@ import { Button } from "react-native-paper";
 
 import theme from "../../utils/theme";
 
-const DismissButton = ({
+const CardDismissButton = ({
   label,
   onClose,
   onPress,
@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
   ...theme.DefaultStyle,
 });
 
-export default DismissButton;
+export default CardDismissButton;

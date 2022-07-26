@@ -47,12 +47,12 @@ const SettingsScreen = () => {
             />
           }
         >
-          <components.CardModal.Header
+          <components.CardHeader
             title={localization.t(
               "screens.settings.account_remove.modal.title"
             )}
           />
-          <components.CardModal.Body>
+          <components.CardBody>
             <HelperText
               style={{ color: "red", opacity: 1 }}
               type="error"
@@ -71,9 +71,9 @@ const SettingsScreen = () => {
             <HelperText type="info" visible={hasPassword()}>
               {localization.t("screens.settings.account_remove.modal.text")}
             </HelperText>
-          </components.CardModal.Body>
-          <components.CardModal.Actions>
-            <components.CardModal.DismissButton
+          </components.CardBody>
+          <components.CardActions>
+            <components.CardDismissButton
               label={localization.t(
                 "screens.settings.account_remove.modal.delete_button_label"
               )}
@@ -81,7 +81,7 @@ const SettingsScreen = () => {
               disabled={!hasPassword()}
               shouldClose={hasError()}
             />
-          </components.CardModal.Actions>
+          </components.CardActions>
         </components.CardModal>
       </ScrollView>
     </SafeAreaView>

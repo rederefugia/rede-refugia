@@ -3,11 +3,11 @@ import { StyleSheet } from "react-native";
 
 import { Card } from "react-native-paper";
 
-import DismissButton from "./DismissButton";
+import DismissButton from "./CardDismissButton";
 
 import theme from "../../utils/theme";
 
-const Actions = ({ onClose, children }) => {
+const CardActions = ({ onClose, children }) => {
   return (
     <Card.Actions style={styles.content}>
       {React.Children.map(children, (child) => {
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Actions;
+export default CardActions;
