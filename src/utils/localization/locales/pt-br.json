@@ -115,7 +115,9 @@
             "cellphone_text_input_label": "Celular:",
             "land_line_text_input_label": "Telefone:",
             "email_text_input_label": "Email:",
-            "update_button": "Atualizar meus dados"
+            "update_button": "Atualizar meus dados",
+            "success_update_snackbar_text": "Dados atualizados com sucesso",
+            "error_update_snackbar_text": "Algo deu errado. Por favor tente mais tarde"
         },
         "login": {
             "title": "Bem-vindo a Rede Refugia",

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StyleSheet, ScrollView } from "react-native";
-import { Button } from "react-native-paper";
+import { Button, Snackbar, Text } from "react-native-paper";
 
 import components from "../../components";
 import providers from "../../providers";
@@ -11,6 +11,7 @@ import theme from "../../utils/theme";
 const ProfileScreen = () => {
   const { user, setUser } = React.useContext(providers.auth.AuthContext);
   const [isUpdating, setIsUpdating] = React.useState(false);
+  const [hasMessage, showMessage] = React.useState(false);
   const [userData, setUserData] = React.useReducer(
     (state, newState) => ({ ...state, ...newState }),
     user
@@ -23,6 +24,7 @@ const ProfileScreen = () => {
       .then(() => setUser(userData))
       .catch((error) => console.error(error));
     setIsUpdating(false);
+    showMessage(true);
   };
 
   return (
@@ -51,6 +53,16 @@ const ProfileScreen = () => {
       >
         {localization.t("screens.profile.update_button")}
       </Button>
+      <Snackbar
+        style={styles.snackbar}
+        visible={hasMessage}
+        onDismiss={() => showMessage(false)}
+        duration={5000}
+      >
+        <Text style={styles.message}>
+          {localization.t("screens.profile.success_update_snackbar_text")}
+        </Text>
+      </Snackbar>
     </ScrollView>
   );
 };
@@ -71,6 +83,13 @@ const styles = StyleSheet.create({
     backgroundColor: theme.DefaultTheme.colors.white,
     borderRadius: theme.DefaultTheme.roundness,
     marginTop: "24px",
+  },
+  snackbar: {
+    backgroundColor: theme.DefaultTheme.colors.purple,
+    alignContent: "center",
+  },
+  message: {
+    color: theme.DefaultTheme.colors.white,
   },
 });
 
