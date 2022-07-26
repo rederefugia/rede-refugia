@@ -14,14 +14,6 @@ const CardModal = ({ trigger, children }) => {
   const showModal = () => setVisible(true);
   const hideModal = () => setVisible(false);
 
-  let subComponentList = Object.keys(CardModal);
-
-  let subComponents = subComponentList.map((key) => {
-    return React.Children.map(children, (child) =>
-      child.type.name === key ? child : null
-    )[0];
-  });
-
   return (
     <>
       <Modal
@@ -33,15 +25,13 @@ const CardModal = ({ trigger, children }) => {
       >
         <View style={styles.view}>
           <Card style={styles.cardView}>
-            {subComponents.map((component) => {
+            {React.Children.map(children, (child) => {
               if (
-                component?.type.name === CardHeader.name ||
-                component?.type.name === CardActions.name
+                child?.type.name === CardHeader.name ||
+                child?.type.name === CardActions.name
               )
-                return React.cloneElement(component, {
-                  onClose: hideModal,
-                });
-              else return component;
+                return React.cloneElement(child, { onClose: hideModal });
+              else return child;
             })}
           </Card>
         </View>
@@ -66,6 +56,5 @@ const styles = StyleSheet.create({
     padding: theme.DefaultTheme.spaceSmall,
   },
 });
-
 
 export default CardModal;
