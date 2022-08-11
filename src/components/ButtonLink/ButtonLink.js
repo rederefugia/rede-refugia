@@ -6,12 +6,11 @@ import { Button } from "react-native-paper";
 import theme from "../../utils/theme";
 
 let ButtonLink = ({ address, labelStyle, buttonStyle, children, type }) => {
-  const [url, setUrl] = React.useState("");
   const handlePress = React.useCallback(async () => {
-    const url_formatted = type + url;
+    const url_formatted = type ? type + address : address;
     const supported = await Linking.canOpenURL(url_formatted);
     if (supported) await Linking.openURL(url_formatted);
-  }, [url]);
+  }, [address]);
 
   return (
     <Button
@@ -20,10 +19,7 @@ let ButtonLink = ({ address, labelStyle, buttonStyle, children, type }) => {
       compact={true}
       uppercase={false}
       labelStyle={[styles.label, labelStyle]}
-      onPress={() => {
-        setUrl(address);
-        handlePress();
-      }}
+      onPress={handlePress}
     >
       {children}
     </Button>
