@@ -1,12 +1,18 @@
+const getZipCode = async ({ lat, lng }) => {
+  const geocoder = new google.maps.Geocoder();
+  const response = await geocoder.geocode({ lat, lng });
+  if (response.results) console.log(response.results);
+};
+
 const getAddress = async (zipCode) => {
   const geocoder = new google.maps.Geocoder();
   const response = await geocoder.geocode({ address: zipCode });
 
-  if(response.results) {
+  if (response.results) {
     return {
       lat: response.results[0].geometry.location.lat(),
       lng: response.results[0].geometry.location.lng(),
-      city: response.results[0].address_components[3].long_name
+      city: response.results[0].address_components[3].long_name,
     };
   }
 };
@@ -26,4 +32,4 @@ const getDistance = async (origin, destination) => {
   }
 };
 
-export default { getAddress, getDistance };
+export default { getAddress, getDistance, getZipCode };

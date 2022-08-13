@@ -59,7 +59,8 @@
                 "opportunity_location": {
                     "offer_title": "Onde será ofertado?",
                     "request_title": "Para onde é essa demanda/ajuda?",
-                    "zip_code_input_text_label": "CEP:"
+                    "zip_code_input_text_label": "CEP:",
+                    "zip_code_button_label": "Utilizar minha localização atual"
                 },
                 "opportunity_description": {
                     "title": "Descrição da oportunidade",

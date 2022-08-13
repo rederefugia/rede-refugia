@@ -38,7 +38,8 @@
     "react-native-screens": "~3.10.1",
     "react-native-super-grid": "^4.4.0",
     "react-native-web": "0.17.1",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "expo-location": "~14.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
