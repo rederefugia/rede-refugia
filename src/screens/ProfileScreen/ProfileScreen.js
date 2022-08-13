@@ -91,10 +91,6 @@ const styles = StyleSheet.create({
     borderRadius: theme.DefaultTheme.roundness,
     marginTop: "24px",
   },
-  snackbar: {
-    backgroundColor: theme.DefaultTheme.colors.purple,
-    alignContent: "center",
-  },
   message: {
     color: theme.DefaultTheme.colors.white,
   },

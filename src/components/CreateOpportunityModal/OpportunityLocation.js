@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { StyleSheet } from "react-native";
 
-import { Button, TextInput } from "react-native-paper";
+import { Button, Text, TextInput, Snackbar } from "react-native-paper";
 
 import * as Location from "expo-location";
 
@@ -12,6 +12,8 @@ import masks from "../../utils/masks";
 import address from "../../utils/address";
 
 const OpportunityLocation = ({ opportunity, setOpportunity, setCanGoNext }) => {
+  const [hasMessage, showMessage] = React.useState(false);
+
   const validate = (value) => {
     if (value.length <= 9) setOpportunity({ zipCode: value });
     if (value.length == 9) setCanGoNext(true);
@@ -21,7 +23,7 @@ const OpportunityLocation = ({ opportunity, setOpportunity, setCanGoNext }) => {
   const getCurrentLocation = async () => {
     let { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== "granted") {
-      console.error("Permission to access location was denied");
+      showMessage(true);
       return;
     }
 
@@ -54,16 +56,32 @@ const OpportunityLocation = ({ opportunity, setOpportunity, setCanGoNext }) => {
           "screens.opportunities.create_opportunity_modal.opportunity_location.zip_code_button_label"
         )}
       </Button>
+      <Snackbar
+        style={styles.snackbar}
+        visible={hasMessage}
+        onDismiss={() => showMessage(false)}
+        duration={5000}
+      >
+        <Text style={styles.message}>
+          {localization.t(
+            "screens.opportunities.create_opportunity_modal.opportunity_location.location_access_undenied_message"
+          )}
+        </Text>
+      </Snackbar>
     </>
   );
 };
 
 const styles = StyleSheet.create({
+  ...theme.DefaultStyle,
   inputText: {
     backgroundColor: theme.DefaultTheme.colors.white,
     borderRadius: theme.DefaultTheme.roundness,
     marginTop: theme.DefaultTheme.space,
     marginBottom: theme.DefaultTheme.spaceSmall,
+  },
+  message: {
+    color: theme.DefaultTheme.colors.white,
   },
 });
 

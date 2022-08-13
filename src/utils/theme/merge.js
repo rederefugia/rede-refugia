@@ -1,5 +1,8 @@
 import { DefaultTheme as NavigationDefaultTheme } from "@react-navigation/native";
-import { configureFonts, DefaultTheme as PaperDefaultTheme } from "react-native-paper";
+import {
+  configureFonts,
+  DefaultTheme as PaperDefaultTheme,
+} from "react-native-paper";
 import merge from "deepmerge";
 
 const MergedTheme = merge(PaperDefaultTheme, NavigationDefaultTheme);
@@ -8,57 +11,57 @@ const fontConfig = {
   web: {
     regular: {
       fontFamily: "Inter",
-      fontWeight: 'normal',
+      fontWeight: "normal",
     },
     medium: {
       fontFamily: "Inter",
-      fontWeight: 'normal',
+      fontWeight: "normal",
     },
     light: {
       fontFamily: "Inter",
-      fontWeight: 'normal',
+      fontWeight: "normal",
     },
     thin: {
       fontFamily: "Inter",
-      fontWeight: 'normal',
+      fontWeight: "normal",
     },
   },
   ios: {
     regular: {
       fontFamily: "Inter",
-      fontWeight: 'normal',
+      fontWeight: "normal",
     },
     medium: {
       fontFamily: "Inter",
-      fontWeight: 'normal',
+      fontWeight: "normal",
     },
     light: {
       fontFamily: "Inter",
-      fontWeight: 'normal',
+      fontWeight: "normal",
     },
     thin: {
       fontFamily: "Inter",
-      fontWeight: 'normal',
+      fontWeight: "normal",
     },
   },
   android: {
     regular: {
       fontFamily: "Inter",
-      fontWeight: 'normal',
+      fontWeight: "normal",
     },
     medium: {
       fontFamily: "Inter",
-      fontWeight: 'normal',
+      fontWeight: "normal",
     },
     light: {
       fontFamily: "Inter",
-      fontWeight: 'normal',
+      fontWeight: "normal",
     },
     thin: {
       fontFamily: "Inter",
-      fontWeight: 'normal',
+      fontWeight: "normal",
     },
-  }
+  },
 };
 
 const theme = {
@@ -111,7 +114,7 @@ const styles = {
   cardHeaderTitle: {
     color: theme.colors.background,
     fontFamily: theme.fontFamily,
-    alignSelf: "center"
+    alignSelf: "center",
   },
   cardInput: {
     borderRadius: theme.roundness,
@@ -136,6 +139,10 @@ const styles = {
     fontSize: theme.fontSize,
     fontWeight: "700",
     paddingHorizontal: theme.spaceSmall,
+  },
+  snackbar: {
+    backgroundColor: theme.colors.purple,
+    alignContent: "center",
   },
 };
 
