@@ -1,7 +1,15 @@
 const getZipCode = async ({ lat, lng }) => {
   const geocoder = new google.maps.Geocoder();
-  const response = await geocoder.geocode({ lat, lng });
-  if (response.results) console.log(response.results);
+  const response = await geocoder.geocode({ location: { lat, lng } });
+  if (response.results) {
+    const address = response.results.find((addr) =>
+      addr.types.includes("postal_code")
+    );
+    const zipCode = address.address_components.find((component) =>
+      component.types.includes("postal_code")
+    );
+    return zipCode.short_name;
+  }
 };
 
 const getAddress = async (zipCode) => {
