@@ -9,7 +9,8 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "build:web": "expo build:web",
-    "build:android": "expo build:android"
+    "build:android": "expo build:android",
+    "depcruise": "depcruise --include-only ^src --output-type dot src | dot -T svg > dependencygraph.svg"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",
@@ -21,6 +22,7 @@
     "deepmerge": "^4.2.2",
     "expo": "~44.0.0",
     "expo-localization": "~12.0.0",
+    "expo-location": "~14.0.1",
     "expo-status-bar": "~1.2.0",
     "expo-updates": "~0.11.6",
     "firebase": "^9.6.8",
@@ -38,11 +40,11 @@
     "react-native-screens": "~3.10.1",
     "react-native-super-grid": "^4.4.0",
     "react-native-web": "0.17.1",
-    "uuid": "^8.3.2",
-    "expo-location": "~14.0.1"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "dependency-cruiser": "^11.15.0"
   },
   "private": true
 }
