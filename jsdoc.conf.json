@@ -1,0 +1,48 @@
+  {
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc", "closure"]
+    },
+    "source": {
+        "include": ["./src"],
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "opts": {
+        "encoding": "utf8",
+        "destination": "docs/",
+        "readme": "README.md",
+        "recurse": true,
+        "verbose": true,
+        "template": "node_modules/better-docs"
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        "search": true,
+        "default": {
+            "includeDate": false,
+            "outputSourceFiles": false
+        },
+        "better-docs": {
+            "name": "Rede Refugia Documentation",
+            "logo": "assets/logo.png",
+            "trackingCode": "tracking-code-which-will-go-to-the-HEAD",
+    	    "hideGenerator": false,
+            "isReactNative": true,
+            "navLinks": [
+                {
+                    "label": "Github",
+                    "href": "https://github.com/rederefugia/rede-refugia"
+                },
+                {
+                    "label": "Example Application",
+                    "href": "https://rede-refugia.web.app"
+                }
+            ]
+        }
+    }
+}
