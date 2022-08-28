@@ -1,6 +1,5 @@
 import InputGroupTitle from "./InputGroupTitle";
 import InputGroupSkeleton from "./InputGroupSkeleton";
-import ContactInputGroup from "./ContactInputGroup";
 import CreateOpportunityButton from "./CreateOpportunityButton";
 import OpportunityCard from "./OpportunityCard";
 import SubHeader from "./SubHeader";
@@ -21,7 +20,6 @@ import ComboBox from "./ComboBox";
 export default {
   InputGroupTitle,
   InputGroupSkeleton,
-  ContactInputGroup,
   CreateOpportunityButton,
   OpportunityCard,
   SubHeader,

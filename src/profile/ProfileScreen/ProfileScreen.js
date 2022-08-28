@@ -6,6 +6,7 @@ import { Button, Snackbar, Text } from "react-native-paper";
 
 import UserInfoInputGroup from "../UserInfoInputGroup";
 import AddressInputGroup from "../AddressInputGroup";
+import ContactInputGroup from "../ContactInputGroup";
 
 import components from "../../components";
 import providers from "../../providers";
@@ -51,7 +52,7 @@ const ProfileScreen = () => {
         setUserData={setUserData}
         styles={styles}
       />
-      <components.ContactInputGroup
+      <ContactInputGroup
         userData={userData}
         setUserData={setUserData}
         styles={styles}

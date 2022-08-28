@@ -2,16 +2,14 @@ import * as React from "react";
 
 import { TextInput } from "react-native-paper";
 
-import InputGroupSkeleton from "../InputGroupSkeleton";
-import InputGroupTitle from "../InputGroupTitle";
-
+import components from "../../components";
 import localization from "../../utils/localization";
 import masks from "../../utils/masks";
 
 const ContactInputGroup = ({ userData, setUserData, styles }) => {
   return (
-    <InputGroupSkeleton>
-      <InputGroupTitle
+    <components.InputGroupSkeleton>
+      <components.InputGroupTitle
         title={localization.t("screens.profile.contact_group_title")}
       />
       <TextInput
@@ -32,7 +30,7 @@ const ContactInputGroup = ({ userData, setUserData, styles }) => {
         onChangeText={(value) => setUserData({ landLine: value })}
         style={styles.inputText}
       />
-    </InputGroupSkeleton>
+    </components.InputGroupSkeleton>
   );
 };
 
