@@ -3,9 +3,7 @@ import * as React from "react";
 import { TextInput } from "react-native-paper";
 import { mask } from "react-native-mask-text";
 
-import InputGroupSkeleton from "../InputGroupSkeleton";
-import ComboBox from "../ComboBox";
-
+import components from "../../components";
 import localization from "../../utils/localization";
 
 const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
@@ -52,7 +50,7 @@ const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
   });
 
   return (
-    <InputGroupSkeleton>
+    <components.InputGroupSkeleton>
       <TextInput
         label={localization.t("screens.profile.name_text_input_label")}
         value={userData.name}
@@ -65,13 +63,13 @@ const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
         onChangeText={(value) => setUserData({ birthday: value })}
         style={styles.inputText}
       />
-      <ComboBox
+      <components.ComboBox
         label={localization.t("screens.profile.status_combo_box_label")}
         options={options[1]}
         selection={userData.status}
         setSelection={(value) => setUserData({ status: value })}
       />
-      <ComboBox
+      <components.ComboBox
         label={localization.t("screens.profile.gender_combo_box_label")}
         options={options[0]}
         selection={userData.gender}
@@ -83,13 +81,13 @@ const UserInfoInputGroup = ({ userData, setUserData, styles }) => {
         onChangeText={(value) => setUserData({ country: value })}
         style={styles.inputTextLarge}
       />
-      <ComboBox
+      <components.ComboBox
         label={localization.t("screens.profile.motive_combo_box_label")}
         options={options[2]}
         selection={userData.motive}
         setSelection={(value) => setUserData({ motive: value })}
       />
-    </InputGroupSkeleton>
+    </components.InputGroupSkeleton>
   );
 };
 

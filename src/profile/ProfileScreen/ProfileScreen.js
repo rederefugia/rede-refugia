@@ -4,6 +4,8 @@ import * as React from "react";
 import { StyleSheet, ScrollView } from "react-native";
 import { Button, Snackbar, Text } from "react-native-paper";
 
+import UserInfoInputGroup from "../UserInfoInputGroup";
+
 import components from "../../components";
 import providers from "../../providers";
 import localization from "../../utils/localization";
@@ -38,7 +40,7 @@ const ProfileScreen = () => {
 
   return (
     <ScrollView style={styles.mainContent}>
-      <components.UserInfoInputGroup
+      <UserInfoInputGroup
         userData={userData}
         setUserData={setUserData}
         styles={styles}

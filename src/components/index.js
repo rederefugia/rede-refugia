@@ -1,7 +1,7 @@
 import InputGroupTitle from "./InputGroupTitle";
+import InputGroupSkeleton from "./InputGroupSkeleton";
 import AddressInputGroup from "./AddressInputGroup";
 import ContactInputGroup from "./ContactInputGroup";
-import UserInfoInputGroup from "./UserInfoInputGroup";
 import CreateOpportunityButton from "./CreateOpportunityButton";
 import OpportunityCard from "./OpportunityCard";
 import SubHeader from "./SubHeader";
@@ -17,12 +17,13 @@ import CardModal, {
   CardDismissButton,
   CardHeader,
 } from "./CardModal";
+import ComboBox from "./ComboBox";
 
 export default {
   InputGroupTitle,
+  InputGroupSkeleton,
   AddressInputGroup,
   ContactInputGroup,
-  UserInfoInputGroup,
   CreateOpportunityButton,
   OpportunityCard,
   SubHeader,
@@ -37,4 +38,5 @@ export default {
   CardBody,
   CardDismissButton,
   CardHeader,
+  ComboBox,
 };
