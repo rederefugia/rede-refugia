@@ -5,6 +5,7 @@ import { StyleSheet, ScrollView } from "react-native";
 import { Button, Snackbar, Text } from "react-native-paper";
 
 import UserInfoInputGroup from "../UserInfoInputGroup";
+import AddressInputGroup from "../AddressInputGroup";
 
 import components from "../../components";
 import providers from "../../providers";
@@ -45,7 +46,7 @@ const ProfileScreen = () => {
         setUserData={setUserData}
         styles={styles}
       />
-      <components.AddressInputGroup
+      <AddressInputGroup
         userData={userData}
         setUserData={setUserData}
         styles={styles}
