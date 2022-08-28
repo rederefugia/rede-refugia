@@ -3,6 +3,8 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import { DrawerCustomContent } from "./DrawerCustomContent";
 
+import { settings } from "../settings";
+
 import screens from "../screens";
 import theme from "../utils/theme";
 import localization from "../utils/localization";
@@ -62,7 +64,7 @@ const PrivateNavigation = () => {
       />
       <Drawer.Screen
         name={localization.t("settings")}
-        component={screens.SettingsScreen}
+        component={settings.SettingsScreen}
         options={{
           drawerLabel: localization.t("settings"),
         }}

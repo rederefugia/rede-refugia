@@ -1,3 +1,5 @@
+'use strict'
+
 import * as React from "react";
 import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
 
@@ -8,13 +10,39 @@ import components from "../../components";
 import theme from "../../utils/theme";
 import localization from "../../utils/localization";
 
+/**
+ * @component
+ * @name SettingsScreen
+ * @description It builds the Settings screen view
+ * @returns {React.ReactElement} SettingsScreen
+ */
 const SettingsScreen = () => {
   const { authError, deleteAccount } = React.useContext(
     providers.auth.AuthContext
   );
+
+
+  /**
+   * @typedef PasswordState
+   * @property {string} password
+   * @property {React.Dispatch} setPassword
+   */
   const [password, setPassword] = React.useState("");
 
+  /**
+   * @function
+   * @name hasPassword
+   * @description It checks if the password state is not empty
+   * @returns {boolean} 
+   */
   const hasPassword = () => password.length > 0;
+
+  /**
+   * @function
+   * @name hasError
+   * @description It checks if some authentication error happens
+   * @returns {boolean} 
+   */
   const hasError = () => authError?.length > 0;
 
   return (
@@ -88,6 +116,9 @@ const SettingsScreen = () => {
   );
 };
 
+/**
+ * Styles definitions for the Settings Screen
+ */
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
   mainContent: {
@@ -100,4 +131,7 @@ const styles = StyleSheet.create({
   },
 });
 
+/**
+ * @module
+ */
 export default SettingsScreen;
