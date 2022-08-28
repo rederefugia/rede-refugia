@@ -4,6 +4,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { DrawerCustomContent } from "./DrawerCustomContent";
 
 import { settings } from "../settings";
+import { profile } from "../profile";
 
 import screens from "../screens";
 import theme from "../utils/theme";
@@ -57,7 +58,7 @@ const PrivateNavigation = () => {
       />
       <Drawer.Screen
         name={localization.t("profile")}
-        component={screens.ProfileScreen}
+        component={profile.ProfileScreen}
         options={{
           drawerLabel: localization.t("profile"),
         }}

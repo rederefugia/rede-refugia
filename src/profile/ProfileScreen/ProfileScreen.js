@@ -1,3 +1,5 @@
+'use strict'
+
 import * as React from "react";
 import { StyleSheet, ScrollView } from "react-native";
 import { Button, Snackbar, Text } from "react-native-paper";
