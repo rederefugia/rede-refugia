@@ -1,6 +1,5 @@
 import InputGroupTitle from "./InputGroupTitle";
 import InputGroupSkeleton from "./InputGroupSkeleton";
-import CreateOpportunityButton from "./CreateOpportunityButton";
 import SubHeader from "./SubHeader";
 import SubHeaderItem from "./SubHeaderItem";
 import HorizontalScrollList from "./HorizontalScrollList";
@@ -14,11 +13,11 @@ import CardModal, {
   CardHeader,
 } from "./CardModal";
 import ComboBox from "./ComboBox";
+import StepperModal from "./StepperModal";
 
 export default {
   InputGroupTitle,
   InputGroupSkeleton,
-  CreateOpportunityButton,
   SubHeader,
   SubHeaderItem,
   HorizontalScrollList,
@@ -31,4 +30,5 @@ export default {
   CardDismissButton,
   CardHeader,
   ComboBox,
+  StepperModal,
 };

@@ -4,6 +4,7 @@ import { StyleSheet } from "react-native";
 import { FlatGrid } from "react-native-super-grid";
 
 import OpportunityCard from "../OpportunityCard";
+import CreateOpportunityButton from "../CreateOpportunityButton";
 
 import auth from "../../auth";
 
@@ -27,7 +28,7 @@ const OpportunitiesScreen = ({ navigation }) => {
   React.useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <components.CreateOpportunityButton
+        <CreateOpportunityButton
           updateScreen={fetchData}
           label={localization.t(
             "screens.opportunities.create_header_button_label"

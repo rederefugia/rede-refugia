@@ -4,7 +4,7 @@ import { View, StyleSheet } from "react-native";
 
 import { TextInput } from "react-native-paper";
 
-import ComboBox from "../ComboBox";
+import components from "../../components";
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 import categories from "../../utils/categories";
@@ -32,7 +32,7 @@ const OpportunityCategory = ({ opportunity, setOpportunity, setCanGoNext }) => {
         }}
         value={opportunity.title}
       />
-      <ComboBox
+      <components.ComboBox
         label={localization.t(
           "screens.opportunities.create_opportunity_modal.opportunity_category.combo_box_label"
         )}

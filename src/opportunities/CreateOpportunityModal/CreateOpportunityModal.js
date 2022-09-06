@@ -1,6 +1,5 @@
 import * as React from "react";
 
-import StepperModal from "../StepperModal";
 import OpportunityType from "./OpportunityType";
 import OpportunityCategory from "./OpportunityCategory";
 import OpportunityLink from "./OpportunityLink";
@@ -8,6 +7,7 @@ import OpportunityLocation from "./OpportunityLocation";
 import OpportunityDescription from "./OpportunityDescription";
 
 import auth from "../../auth";
+import components from "../../components";
 import localization from "../../utils/localization";
 import firestore from "../../utils/firebase/firestore";
 import address from "../../utils/address";
@@ -109,7 +109,7 @@ const CreateOpportunityModal = ({ trigger, updateScreen }) => {
   ];
 
   return (
-    <StepperModal
+    <components.StepperModal
       steps={steps}
       handleFinish={handleFinish}
       canGoNext={canGoNext}
