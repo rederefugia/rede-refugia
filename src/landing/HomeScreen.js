@@ -15,7 +15,8 @@ import localization from "../utils/localization";
 import theme from "../utils/theme";
 
 /**
- * @component
+ * @memberof module:landing
+ * @namespace landing.HomeScreen
  * @name HomeScreen
  * @description It builds the Home screen view
  * @returns {React.ReactElement} HomeScreen
@@ -28,8 +29,8 @@ const HomeScreen = ({ navigation }) => {
   };
 
   /**
-   * @function
-   * @name handleScroll
+   * @memberof module:landing.HomeScreen
+   * @method handleScroll
    * @description It scroll the page to the component position clicked in the header
    * @param {string} componentName
    */
@@ -38,8 +39,8 @@ const HomeScreen = ({ navigation }) => {
   };
 
   /**
-   * @function
-   * @name buildHeader
+   * @memberof module:landing.HomeScreen
+   * @method buildHeader
    * @description It creates the header region with the buttons to scroll the page
    * @returns {HeaderRegion}
    */
@@ -71,6 +72,7 @@ const HomeScreen = ({ navigation }) => {
 
 /**
  * Styles definitions for the Home Screen
+ * @memberof module:landing.HomeScreen
  */
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
@@ -93,7 +95,4 @@ const styles = StyleSheet.create({
   },
 });
 
-/**
- * @module
- */
 export default HomeScreen;

@@ -11,7 +11,8 @@ import theme from "../../utils/theme";
 import localization from "../../utils/localization";
 
 /**
- * @component
+ * @memberof module:settings
+ * @namespace settings.SettingsScreen
  * @name SettingsScreen
  * @description It builds the Settings screen view
  * @returns {React.ReactElement} SettingsScreen
@@ -19,24 +20,32 @@ import localization from "../../utils/localization";
 const SettingsScreen = () => {
   const { authError, deleteAccount } = React.useContext(auth.AuthContext);
 
-  /**
-   * @typedef PasswordState
-   * @property {string} password
-   * @property {React.Dispatch} setPassword
-   */
-  const [password, setPassword] = React.useState("");
+  const [
+    /**
+     * @name password
+     * @type {string}
+     * @memberof module:settings.SettingsScreen
+     */
+    password,
+    /**
+     * @method setPassword
+     * @type {React.Dispatch}
+     * @memberof module:settings.SettingsScreen
+     */
+    setPassword,
+  ] = React.useState("");
 
   /**
-   * @function
-   * @name hasPassword
+   * @method hasPassword
+   * @memberof module:settings.SettingsScreen
    * @description It checks if the password state is not empty
    * @returns {boolean}
    */
   const hasPassword = () => password.length > 0;
 
   /**
-   * @function
-   * @name hasError
+   * @method hasError
+   * @memberof module:settings.SettingsScreen
    * @description It checks if some authentication error happens
    * @returns {boolean}
    */
@@ -115,6 +124,7 @@ const SettingsScreen = () => {
 
 /**
  * Styles definitions for the Settings Screen
+ * @memberof module:settings.SettingsScreen
  */
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
@@ -128,7 +138,4 @@ const styles = StyleSheet.create({
   },
 });
 
-/**
- * @module
- */
 export default SettingsScreen;

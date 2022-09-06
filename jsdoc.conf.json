@@ -1,7 +1,6 @@
   {
     "tags": {
-        "allowUnknownTags": true,
-        "dictionaries": ["jsdoc", "closure"]
+        "allowUnknownTags": true
     },
     "source": {
         "include": ["./src"],
