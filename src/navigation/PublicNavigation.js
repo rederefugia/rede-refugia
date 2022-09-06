@@ -1,6 +1,7 @@
 import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+import auth from "../auth";
 import screens from "../screens";
 
 import theme from "../utils/theme";
@@ -26,15 +27,15 @@ const PublicNavigation = () => {
       <Stack.Group key="signup">
         <Stack.Screen
           name="user-type"
-          component={screens.signup.UserTypeScreen}
+          component={auth.signup.UserTypeScreen}
         />
         <Stack.Screen
           name="institution-identification"
-          component={screens.signup.InstitutionIdentificationScreen}
+          component={auth.signup.InstitutionIdentificationScreen}
         />
         <Stack.Screen
           name="auth-data"
-          component={screens.signup.AuthDataScreen}
+          component={auth.signup.AuthDataScreen}
         />
       </Stack.Group>
     </Stack.Navigator>
