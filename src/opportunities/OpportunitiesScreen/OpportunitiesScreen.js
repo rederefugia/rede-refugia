@@ -3,7 +3,10 @@ import { StyleSheet } from "react-native";
 
 import { FlatGrid } from "react-native-super-grid";
 
+import OpportunityCard from "../OpportunityCard";
+
 import auth from "../../auth";
+
 import firestore from "../../utils/firebase/firestore";
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
@@ -101,7 +104,7 @@ const OpportunitiesScreen = ({ navigation }) => {
         spacing={30}
         itemDimension={300}
         renderItem={({ item }) => (
-          <components.OpportunityCard
+          <OpportunityCard
             opportunity={item}
             updateScreen={fetchData}
           />

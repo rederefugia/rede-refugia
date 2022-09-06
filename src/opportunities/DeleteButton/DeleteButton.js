@@ -1,10 +1,9 @@
 import * as React from "react";
-import { StyleSheet, View, Modal } from "react-native";
+import { StyleSheet } from "react-native";
 
-import { IconButton, Card, Button, Title } from "react-native-paper";
+import { IconButton } from "react-native-paper";
 
-import DeleteModal from "../DeleteModal";
-
+import components from "../../components";
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
 import firestore from "../../utils/firebase/firestore";
@@ -16,7 +15,7 @@ const DeleteButton = ({ id, updateScreen }) => {
   };
 
   return (
-    <DeleteModal
+    <components.DeleteModal
       handleDelete={deleteOpportunity}
       deleteMessage={localization.t(
         "screens.opportunities.delete_opportunity_modal.delete_text"
@@ -30,7 +29,7 @@ const DeleteButton = ({ id, updateScreen }) => {
         color={theme.DefaultTheme.colors.purple}
         style={styles.icon}
       />
-    </DeleteModal>
+    </components.DeleteModal>
   );
 };
 

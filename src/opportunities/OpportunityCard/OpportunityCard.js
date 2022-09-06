@@ -3,10 +3,10 @@ import { StyleSheet, View } from "react-native";
 
 import { Text, Paragraph } from "react-native-paper";
 
-import ButtonLink from "../ButtonLink";
 import FavoriteButton from "../FavoriteButton";
 import DeleteButton from "../DeleteButton";
 
+import components from "../../components";
 import auth from "../../auth";
 import theme from "../../utils/theme";
 import masks from "../../utils/masks";
@@ -49,35 +49,35 @@ const OpportunityCard = ({ opportunity, updateScreen }) => {
       <View style={styles.cardInfo}>
         <View style={styles.row}>
           <Text style={styles.text}>{opportunity.owner.name}</Text>
-          <ButtonLink
+          <components.ButtonLink
             address={opportunity.link}
             labelStyle={styles.link}
             buttonStyle={styles.buttonLink}
           >
             {opportunity.link}
-          </ButtonLink>
+          </components.ButtonLink>
         </View>
         <View style={styles.row}>
           <Text style={styles.text}>{opportunity.address.city}</Text>
           <Text style={styles.text}>{distance}</Text>
         </View>
         <View style={styles.row}>
-          <ButtonLink
+          <components.ButtonLink
             address={opportunity.owner.email}
             buttonStyle={styles.buttonLink}
             labelStyle={styles.link}
-            type={ButtonLink.EMAIL_TYPE}
+            type={components.ButtonLink.EMAIL_TYPE}
           >
             {opportunity.owner.email}
-          </ButtonLink>
-          <ButtonLink
+          </components.ButtonLink>
+          <components.ButtonLink
             address={opportunity.owner.phoneNumber}
             buttonStyle={styles.buttonLink}
             labelStyle={styles.link}
-            type={ButtonLink.PHONE_TYPE}
+            type={components.ButtonLink.PHONE_TYPE}
           >
             {masks.parsePhoneNumber(opportunity.owner.phoneNumber)}
-          </ButtonLink>
+          </components.ButtonLink>
         </View>
       </View>
     </View>
