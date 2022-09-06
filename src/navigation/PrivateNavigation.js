@@ -5,8 +5,8 @@ import { DrawerCustomContent } from "./DrawerCustomContent";
 
 import { settings } from "../settings";
 import { profile } from "../profile";
+import { opportunities } from "../opportunities";
 
-import screens from "../screens";
 import theme from "../utils/theme";
 import localization from "../utils/localization";
 
@@ -51,7 +51,7 @@ const PrivateNavigation = () => {
     >
       <Drawer.Screen
         name={localization.t("screens.opportunities.name")}
-        component={screens.OpportunitiesScreen}
+        component={opportunities.OpportunitiesScreen}
         options={{
           drawerLabel: localization.t("screens.opportunities.name"),
         }}

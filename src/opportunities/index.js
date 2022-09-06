@@ -1,5 +1,5 @@
 import OpportunitiesScreen from "./OpportunitiesScreen";
 
-export default {
+export const opportunities = {
   OpportunitiesScreen,
 };
