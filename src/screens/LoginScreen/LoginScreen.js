@@ -7,7 +7,7 @@ import HeaderRegion from "./HeaderRegion";
 import AboutRegion from "./AboutRegion.js";
 import HowItWorksRegion from "./HowItWorksRegion";
 
-import components from "../../components";
+import auth from "../../auth";
 
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
@@ -39,9 +39,9 @@ const LoginScreen = ({ navigation }) => {
           {localization.t("screens.login.top_container.paragraph")}
         </Paragraph>
       </View>
-      <AboutRegion navigation={navigation} ref={viewRefs.about}/>
+      <AboutRegion navigation={navigation} ref={viewRefs.about} />
       <HowItWorksRegion navigation={navigation} ref={viewRefs.howto} />
-      <components.LoginForm navigation={navigation} ref={viewRefs.login} />
+      <auth.LoginForm navigation={navigation} ref={viewRefs.login} />
     </ScrollView>
   );
 };

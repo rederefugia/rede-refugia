@@ -9,7 +9,7 @@ import {
   deleteUser,
   EmailAuthProvider,
 } from "firebase/auth";
-import firestore from "../utils/firebase/firestore";
+import firestore from "../../utils/firebase/firestore";
 
 export const AuthContext = React.createContext({});
 
