@@ -2,12 +2,12 @@ import * as React from "react";
 import { StyleSheet, View, ImageBackground } from "react-native";
 import { Text, TextInput, Button, HelperText, Card } from "react-native-paper";
 
+import auth from "../../auth";
 import theme from "../../utils/theme";
 import localization from "../../utils/localization";
-import providers from "../../providers";
 
 const LoginForm = React.forwardRef(({ navigation }, ref) => {
-  const { authError, login } = React.useContext(providers.auth.AuthContext);
+  const { authError, login } = React.useContext(auth.AuthContext);
 
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");

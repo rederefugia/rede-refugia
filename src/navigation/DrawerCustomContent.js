@@ -6,11 +6,11 @@ import {
   DrawerItem,
 } from "@react-navigation/drawer";
 
-import providers from "../providers";
+import auth from "../auth";
 import theme from "../utils/theme";
 
 export const DrawerCustomContent = (props) => {
-  const { logout } = React.useContext(providers.auth.AuthContext);
+  const { logout } = React.useContext(auth.AuthContext);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>

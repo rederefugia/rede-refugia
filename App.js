@@ -2,16 +2,16 @@ import "react-native-gesture-handler";
 
 import { Provider as PaperProvide } from "react-native-paper";
 
-import providers from "./src/providers";
+import auth from "./src/auth";
 import { Navigator } from "./src/navigation";
 import theme from "./src/utils/theme";
 
 export default function App() {
   return (
-    <providers.auth.AuthProvider>
+    <auth.AuthProvider>
       <PaperProvide theme={theme.DefaultTheme}>
         <Navigator theme={theme.DefaultTheme} />
       </PaperProvide>
-    </providers.auth.AuthProvider>
+    </auth.AuthProvider>
   );
 }

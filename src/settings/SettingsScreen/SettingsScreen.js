@@ -5,7 +5,7 @@ import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
 
 import { List, HelperText, TextInput } from "react-native-paper";
 
-import providers from "../../providers";
+import auth from "../../auth";
 import components from "../../components";
 import theme from "../../utils/theme";
 import localization from "../../utils/localization";
@@ -18,7 +18,7 @@ import localization from "../../utils/localization";
  */
 const SettingsScreen = () => {
   const { authError, deleteAccount } = React.useContext(
-    providers.auth.AuthContext
+    auth.AuthContext
   );
 
 

@@ -2,14 +2,14 @@ import * as React from "react";
 import { StyleSheet, View, ImageBackground } from "react-native";
 import { Button, Card, HelperText, TextInput } from "react-native-paper";
 
+import auth from "../../auth";
 import theme from "../../utils/theme";
-import providers from "../../providers";
 import localization from "../../utils/localization";
 import firestore from "../../utils/firebase/firestore";
 import masks from "../../utils/masks";
 
 const InstitutionIdentificationScreen = ({ navigation }) => {
-  const { cnpj, setCnpj } = React.useContext(providers.auth.AuthContext);
+  const { cnpj, setCnpj } = React.useContext(auth.AuthContext);
   const [isLoading, setIsLoading] = React.useState(false);
   const [error, setError] = React.useState("");
 

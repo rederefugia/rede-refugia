@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 
 import { FlatGrid } from "react-native-super-grid";
 
-import providers from "../../providers";
+import auth from "../../auth";
 import firestore from "../../utils/firebase/firestore";
 import localization from "../../utils/localization";
 import theme from "../../utils/theme";
@@ -11,7 +11,7 @@ import components from "../../components";
 import categories from "../../utils/categories";
 
 const OpportunitiesScreen = ({ navigation }) => {
-  const { user } = React.useContext(providers.auth.AuthContext);
+  const { user } = React.useContext(auth.AuthContext);
   const [opportunities, setOpportunities] = React.useState([]);
   const [categoryFilter, setCategoryFilter] = React.useState("");
   const [isOnlyFavorite, showOnlyFavorites] = React.useState(false);

@@ -3,12 +3,12 @@ import { StyleSheet } from "react-native";
 
 import { IconButton } from "react-native-paper";
 
-import providers from "../../providers";
+import auth from "../../auth";
 import theme from "../../utils/theme";
 import firestore from "../../utils/firebase/firestore";
 
 const FavoriteButton = ({ id }) => {
-  const { user, setUser } = React.useContext(providers.auth.AuthContext);
+  const { user, setUser } = React.useContext(auth.AuthContext);
   const [isFavorite, setIsFavorite] = React.useState(false);
 
   const updateFavorite = async (favorites, state) => {

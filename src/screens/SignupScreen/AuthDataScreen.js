@@ -2,12 +2,12 @@ import * as React from "react";
 import { StyleSheet, View, ImageBackground } from "react-native";
 import { TextInput, Button, HelperText, Card } from "react-native-paper";
 
+import auth from "../../auth";
 import theme from "../../utils/theme";
 import localization from "../../utils/localization";
-import providers from "../../providers";
 
 const AuthDataScreen = ({ navigation }) => {
-  const { authError, signup } = React.useContext(providers.auth.AuthContext);
+  const { authError, signup } = React.useContext(auth.AuthContext);
 
   const [userData, setUserData] = React.useState({
     name: "",

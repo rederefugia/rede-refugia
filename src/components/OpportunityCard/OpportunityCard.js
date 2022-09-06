@@ -7,13 +7,13 @@ import ButtonLink from "../ButtonLink";
 import FavoriteButton from "../FavoriteButton";
 import DeleteButton from "../DeleteButton";
 
-import providers from "../../providers";
+import auth from "../../auth";
 import theme from "../../utils/theme";
 import masks from "../../utils/masks";
 import address from "../../utils/address";
 
 const OpportunityCard = ({ opportunity, updateScreen }) => {
-  const { user, setUser } = React.useContext(providers.auth.AuthContext);
+  const { user, setUser } = React.useContext(auth.AuthContext);
   const [distance, setDistance] = React.useState("");
 
   const bgColor =

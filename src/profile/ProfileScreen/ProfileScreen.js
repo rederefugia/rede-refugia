@@ -8,14 +8,13 @@ import UserInfoInputGroup from "../UserInfoInputGroup";
 import AddressInputGroup from "../AddressInputGroup";
 import ContactInputGroup from "../ContactInputGroup";
 
-import components from "../../components";
-import providers from "../../providers";
+import auth from "../../auth";
 import localization from "../../utils/localization";
 import firestore from "../../utils/firebase/firestore";
 import theme from "../../utils/theme";
 
 const ProfileScreen = () => {
-  const { user, setUser } = React.useContext(providers.auth.AuthContext);
+  const { user, setUser } = React.useContext(auth.AuthContext);
   const [isUpdating, setIsUpdating] = React.useState(false);
   const [hasMessage, showMessage] = React.useState(false);
   const [userData, setUserData] = React.useReducer(

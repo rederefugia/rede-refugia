@@ -7,13 +7,13 @@ import OpportunityLink from "./OpportunityLink";
 import OpportunityLocation from "./OpportunityLocation";
 import OpportunityDescription from "./OpportunityDescription";
 
-import providers from "../../providers";
+import auth from "../../auth";
 import localization from "../../utils/localization";
 import firestore from "../../utils/firebase/firestore";
 import address from "../../utils/address";
 
 const CreateOpportunityModal = ({ trigger, updateScreen }) => {
-  const { user } = React.useContext(providers.auth.AuthContext);
+  const { user } = React.useContext(auth.AuthContext);
   const [canGoNext, setCanGoNext] = React.useState(false);
   let [opportunity, setOpportunity] = React.useReducer(
     (state, newState) => ({ ...state, ...newState }),
