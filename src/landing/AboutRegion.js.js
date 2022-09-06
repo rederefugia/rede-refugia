@@ -1,19 +1,17 @@
 import * as React from "react";
 import { StyleSheet, View, ImageBackground } from "react-native";
 
-import { Title, Paragraph, Button } from "react-native-paper";
+import { Title, Paragraph } from "react-native-paper";
 
-import localization from "../../utils/localization";
-import theme from "../../utils/theme";
+import localization from "../utils/localization";
+import theme from "../utils/theme";
 
-const AboutRegion = React.forwardRef(({ navigation }, ref) => {
-  const handlePress = () => navigation.navigate("user-type");
-
+const AboutRegion = React.forwardRef(({}, ref) => {
   return (
     <View ref={ref}>
       <ImageBackground
         resizeMode="cover"
-        source={require("../../../assets/bg-about.png")}
+        source={require("../../assets/bg-about.png")}
         style={styles.container}
       >
         <Title style={styles.title}>

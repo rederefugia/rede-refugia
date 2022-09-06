@@ -4,15 +4,15 @@ import { StyleSheet, ScrollView, View, Image } from "react-native";
 import { Paragraph } from "react-native-paper";
 
 import HeaderRegion from "./HeaderRegion";
-import AboutRegion from "./AboutRegion.js";
+import AboutRegion from "./AboutRegion.js.js";
 import HowItWorksRegion from "./HowItWorksRegion";
 
-import auth from "../../auth";
+import auth from "../auth";
 
-import localization from "../../utils/localization";
-import theme from "../../utils/theme";
+import localization from "../utils/localization";
+import theme from "../utils/theme";
 
-const LoginScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation }) => {
   const viewRefs = {
     login: React.useRef(null),
     about: React.useRef(null),
@@ -32,7 +32,7 @@ const LoginScreen = ({ navigation }) => {
     <ScrollView style={styles.scrollview}>
       <View style={styles.container}>
         <Image
-          source={require("../../../assets/logo-rede-refugia.png")}
+          source={require("../../assets/logo-rede-refugia.png")}
           style={styles.topLogoImage}
         />
         <Paragraph style={styles.topContainerParagraph}>
@@ -67,4 +67,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
+export default HomeScreen;

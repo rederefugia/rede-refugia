@@ -2,7 +2,7 @@ import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import auth from "../auth";
-import screens from "../screens";
+import landing from "../landing";
 
 import theme from "../utils/theme";
 
@@ -13,7 +13,7 @@ const PublicNavigation = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen
         name="login"
-        component={screens.LoginScreen}
+        component={landing.HomeScreen}
         options={{
           headerShown: true,
           title: "",
@@ -25,18 +25,12 @@ const PublicNavigation = () => {
         }}
       />
       <Stack.Group key="signup">
-        <Stack.Screen
-          name="user-type"
-          component={auth.signup.UserTypeScreen}
-        />
+        <Stack.Screen name="user-type" component={auth.signup.UserTypeScreen} />
         <Stack.Screen
           name="institution-identification"
           component={auth.signup.InstitutionIdentificationScreen}
         />
-        <Stack.Screen
-          name="auth-data"
-          component={auth.signup.AuthDataScreen}
-        />
+        <Stack.Screen name="auth-data" component={auth.signup.AuthDataScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );

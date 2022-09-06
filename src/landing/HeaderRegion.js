@@ -2,10 +2,10 @@ import * as React from "react";
 import { StyleSheet } from "react-native";
 
 import { Button, Avatar } from "react-native-paper";
-import components from "../../components";
+import components from "../components";
 
-import localization from "../../utils/localization";
-import theme from "../../utils/theme";
+import localization from "../utils/localization";
+import theme from "../utils/theme";
 
 const HeaderRegion = ({ handleScroll }) => {
   
@@ -45,7 +45,7 @@ const HeaderRegion = ({ handleScroll }) => {
         {localization.t("screens.login.header.login_menu_label")}
       </Button>
       <Avatar.Image
-        source={require("../../../assets/logo.png")}
+        source={require("../../assets/logo.png")}
         style={styles.headerLogo}
         size={theme.DefaultTheme.fontSizeXLarge}
       />

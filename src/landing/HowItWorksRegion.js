@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Dimensions, StyleSheet, View, Image } from "react-native";
 
-import theme from "../../utils/theme";
+import theme from "../utils/theme";
 
 const window = Dimensions.get("window");
 const imageRatio = 1278 / 1355;
@@ -11,7 +11,7 @@ const HowItWorksRegion = React.forwardRef(({}, ref) => {
     <View style={styles.container} ref={ref}>
       <Image
         style={styles.image}
-        source={require("../../../assets/howto.png")}
+        source={require("../../assets/howto.png")}
       />
     </View>
   );
