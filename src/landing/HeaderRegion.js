@@ -7,6 +7,15 @@ import components from "../components";
 import localization from "../utils/localization";
 import theme from "../utils/theme";
 
+/**
+ * @memberof module:landing.HomeScreen
+ * @namespace module:landing.HomeScreen.HeaderRegion
+ * @name HeaderRegion
+ * @description It builds the Home screen Header Region
+ * @param {Object} props
+ * @param {function} props.handleScroll
+ * @returns {React.ReactElement}
+ */
 const HeaderRegion = ({ handleScroll }) => {
   
   return (
@@ -53,6 +62,9 @@ const HeaderRegion = ({ handleScroll }) => {
   );
 };
 
+/**
+ * @memberof module:landing.HomeScreen.HeaderRegion
+ */
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
   headerLogo: {
