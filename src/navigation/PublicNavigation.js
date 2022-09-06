@@ -2,7 +2,7 @@ import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import auth from "../auth";
-import landing from "../landing";
+import { landing } from "../landing";
 
 import theme from "../utils/theme";
 

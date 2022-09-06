@@ -1,5 +1,10 @@
+"use strict"
+
 import HomeScreen from "./HomeScreen";
 
-export default {
+/**
+ * @module landing
+ */
+export const landing = {
   HomeScreen,
 };

@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 import * as React from "react";
 import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
@@ -17,10 +17,7 @@ import localization from "../../utils/localization";
  * @returns {React.ReactElement} SettingsScreen
  */
 const SettingsScreen = () => {
-  const { authError, deleteAccount } = React.useContext(
-    auth.AuthContext
-  );
-
+  const { authError, deleteAccount } = React.useContext(auth.AuthContext);
 
   /**
    * @typedef PasswordState
@@ -33,7 +30,7 @@ const SettingsScreen = () => {
    * @function
    * @name hasPassword
    * @description It checks if the password state is not empty
-   * @returns {boolean} 
+   * @returns {boolean}
    */
   const hasPassword = () => password.length > 0;
 
@@ -41,7 +38,7 @@ const SettingsScreen = () => {
    * @function
    * @name hasError
    * @description It checks if some authentication error happens
-   * @returns {boolean} 
+   * @returns {boolean}
    */
   const hasError = () => authError?.length > 0;
 

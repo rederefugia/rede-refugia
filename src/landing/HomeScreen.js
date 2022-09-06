@@ -1,3 +1,5 @@
+"use strict";
+
 import * as React from "react";
 import { StyleSheet, ScrollView, View, Image } from "react-native";
 
@@ -12,19 +14,40 @@ import auth from "../auth";
 import localization from "../utils/localization";
 import theme from "../utils/theme";
 
+/**
+ * @component
+ * @name HomeScreen
+ * @description It builds the Home screen view
+ * @returns {React.ReactElement} HomeScreen
+ */
 const HomeScreen = ({ navigation }) => {
   const viewRefs = {
     login: React.useRef(null),
     about: React.useRef(null),
     howto: React.useRef(null),
   };
+
+  /**
+   * @function
+   * @name handleScroll
+   * @description It scroll the page to the component position clicked in the header
+   * @param {string} componentName
+   */
   const handleScroll = (componentName) => {
     viewRefs[componentName].current.scrollIntoView({ behavior: "smooth" });
   };
 
+  /**
+   * @function
+   * @name buildHeader
+   * @description It creates the header region with the buttons to scroll the page
+   * @returns {HeaderRegion}
+   */
+  const buildHeader = () => <HeaderRegion handleScroll={handleScroll} />;
+
   React.useLayoutEffect(() => {
     navigation.setOptions({
-      headerRight: () => <HeaderRegion handleScroll={handleScroll} />,
+      headerRight: buildHeader,
     });
   }, [navigation]);
 
@@ -46,6 +69,9 @@ const HomeScreen = ({ navigation }) => {
   );
 };
 
+/**
+ * Styles definitions for the Home Screen
+ */
 const styles = StyleSheet.create({
   ...theme.DefaultStyle,
   scrollview: {
@@ -67,4 +93,7 @@ const styles = StyleSheet.create({
   },
 });
 
+/**
+ * @module
+ */
 export default HomeScreen;
